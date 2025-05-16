@@ -199,4 +199,57 @@ header {
   .box.card-effect { width: 95vw; max-width: 320px; height: 200px; }
   .group-section { padding: 1rem 0.2rem; }
   .header-title { font-size: 2rem; }
+}
+.maroc-host {
+  box-shadow: 0 0 32px 0 #EF233C, 0 0 16px 4px #FFD700, 0 3px 18px 0 rgba(4,54,29,0.10);
+  position: relative;
+  z-index: 2;
+  animation: maroc-glow 2s infinite alternate;
+}
+@keyframes maroc-glow {
+  0% { box-shadow: 0 0 32px 0 #EF233C, 0 0 16px 4px #FFD700, 0 3px 18px 0 rgba(4,54,29,0.10); }
+  100% { box-shadow: 0 0 48px 8px #FFD700, 0 0 32px 8px #EF233C, 0 3px 18px 0 rgba(4,54,29,0.10); }
+}
+.host-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(90deg, #FFD700 60%, #EF233C 100%);
+  color: #04361D;
+  font-weight: 900;
+  font-size: 1rem;
+  padding: 0.35em 1em 0.35em 1.8em;
+  border-radius: 2em;
+  box-shadow: 0 2px 8px 0 #FFD70099;
+  z-index: 10;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  opacity: 0;
+  transform: translateY(80%) scale(0.7);
+  filter: blur(2px);
+  animation: badge-slide-pop 1.2s cubic-bezier(.68,-0.55,.27,1.55) 0.5s forwards;
+}
+@keyframes badge-slide-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(80%) scale(0.7);
+    filter: blur(2px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10%) scale(1.1) rotate(-8deg);
+    filter: blur(0.5px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0%) scale(1.05) rotate(3deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(-6deg);
+    filter: blur(0);
+  }
 } 
