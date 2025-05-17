@@ -1,81 +1,116 @@
 <!DOCTYPE html>
+<!-- Déclaration du type de document HTML5 -->
 <html lang="fr">
+<!-- Ouverture du document HTML avec spécification de la langue française -->
+
 <head>
+  <!-- Section d'en-tête contenant les métadonnées -->
   <meta charset="UTF-8">
+  <!-- Encodage des caractères en UTF-8 pour supporter les accents -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Configuration pour le responsive design sur les appareils mobiles -->
   <title>Les Équipes - CAN 2025</title>
+  <!-- Titre de la page qui s'affiche dans l'onglet du navigateur -->
+  
+  <!-- Liens vers les feuilles de style -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Framework Bootstrap pour le styling et le responsive -->
   <link rel="stylesheet" href="equipe_qualifiée.css">
+  <!-- Feuille de style personnalisée -->
 </head>
+
 <body>
+  <!-- Corps du document -->
+
+  <!-- En-tête de la page -->
   <header>
+    <!-- Effet visuel d'arrière-plan -->
     <div class="header-aurora">
       <div class="aurora__item"></div>
       <div class="aurora__item"></div>
       <div class="aurora__item"></div>
       <div class="aurora__item"></div>
     </div>
+
+    <!-- Contenu principal de l'en-tête -->
     <div class="header-content position-relative">
       <h1 class="header-title">Les Équipes Qualifiées</h1>
+      <!-- Titre principal -->
       <p class="header-subtitle">Découvrez les 24 équipes qui participeront à la CAN 2025 au Maroc</p>
+      <!-- Sous-titre explicatif -->
     </div>
   </header>
+
+  <!-- Section vidéo héros -->
   <div class="qualified-hero container my-4">
     <div class="qualified-hero-img-wrapper">
       <div class="video-container">
-        <video 
-          autoplay
-          loop
-          muted
-          playsinline
-          class="hero-video"
-        >
+        <!-- Conteneur vidéo avec autoplay et boucle -->
+        <video autoplay loop muted playsinline class="hero-video">
           <source src="videos/tirage_Can2025.mp4" type="video/mp4">
+          <!-- Message de secours si la vidéo ne charge pas -->
           Votre navigateur ne supporte pas la lecture de vidéos.
         </video>
       </div>
     </div>
   </div>
+
+  <!-- Contenu principal de la page -->
   <main class="container my-5">
-    <!-- Groupe A -->
+    
+    <!-- Section Groupe A -->
     <section class="group-section">
       <h2 class="group-title">Groupe A</h2>
+      <!-- Titre du groupe -->
+
+      <!-- Grille Bootstrap pour l'organisation responsive -->
       <div class="row justify-content-center">
+        
+        <!-- Carte Maroc -->
         <div class="col-12 col-sm-6 col-md-3 mb-4">
           <div class="box card-effect maroc-host">
             <div class="imgBox">
-              <img src="images/teams/Maroc.jpg" alt="Maroc">
+              <img src="images/teams/Maroc.jpg" alt="Drapeau du Maroc">
+              <!-- Badge spécial pour le pays hôte -->
               <div class="host-badge">Pays Hôte</div>
             </div>
             <div class="content">
               <h2>Maroc<br><span>Les Lions de l'Atlas</span></h2>
+              <!-- Nom du pays et surnom de l'équipe -->
             </div>
           </div>
         </div>
+
+        <!-- Les autres cartes suivent la même structure -->
+        <!-- Carte Mali -->
         <div class="col-12 col-sm-6 col-md-3 mb-4">
           <div class="box card-effect">
             <div class="imgBox">
-              <img src="images/teams/Mali.jpg" alt="Mali">
+              <img src="images/teams/Mali.jpg" alt="Drapeau du Mali">
             </div>
             <div class="content">
               <h2>Mali<br><span>Les Aigles</span></h2>
             </div>
           </div>
         </div>
+
+        <!-- Carte Zambie -->
         <div class="col-12 col-sm-6 col-md-3 mb-4">
           <div class="box card-effect">
             <div class="imgBox">
-              <img src="images/teams/Zambie.jpg" alt="Zambie">
+              <img src="images/teams/Zambie.jpg" alt="Drapeau de la Zambie">
             </div>
             <div class="content">
               <h2>Zambie<br><span>Chipolopolo</span></h2>
             </div>
           </div>
         </div>
+
+        <!-- Carte Comores -->
         <div class="col-12 col-sm-6 col-md-3 mb-4">
           <div class="box card-effect">
             <div class="imgBox">
-              <img src="images/teams/Comores.jpg" alt="Comores">
+              <img src="images/teams/Comores.jpg" alt="Drapeau des Comores">
             </div>
             <div class="content">
               <h2>Comores<br><span>Les Coelecanthes</span></h2>
@@ -321,35 +356,46 @@
     </section>
   </main>
 
+  <!-- Pied de page -->
   <footer class="text-center p-4 text-white" style="background-color: #04361D;">
     <p>&copy; 2025 CAN Maroc - Tous droits réservés</p>
+    <!-- Copyright et mentions légales -->
   </footer>
 
+  <!-- Scripts JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bibliothèque Bootstrap pour les composants interactifs -->
+
+  <!-- Script personnalisé -->
   <script>
+    // Attendre que le DOM soit entièrement chargé
     document.addEventListener('DOMContentLoaded', function() {
+      // Sélectionner toutes les cartes d'équipe
       const cards = document.querySelectorAll('.box.card-effect');
       
+      // Ajouter un écouteur d'événement sur chaque carte
       cards.forEach(card => {
         card.addEventListener('click', function(e) {
-          e.preventDefault();
+          e.preventDefault(); // Empêcher le comportement par défaut
           
-          // Ajouter la classe pour l'animation
+          // Ajouter une classe CSS pour l'animation
           this.classList.add('clicked');
           
-          // Récupérer le nom du pays depuis le titre
+          // Extraire le nom du pays depuis le titre
           const countryName = this.querySelector('h2').textContent.split('\n')[0].trim();
           
-          // Attendre la fin de l'animation avant la redirection
+          // Déclencher la redirection après l'animation
           setTimeout(() => {
-            // Rediriger vers la page spécifique du pays
+            // Générer un nom de fichier valide
             const pageName = countryName.toLowerCase()
-              .normalize('NFD')
-              .replace(/[\u0300-\u036f]/g, '') // Enlever les accents
-              .replace(/\s+/g, '') // Enlever les espaces
-              + '.html';
+              .normalize('NFD') // Normaliser les caractères
+              .replace(/[\u0300-\u036f]/g, '') // Supprimer les accents
+              .replace(/\s+/g, '') // Supprimer les espaces
+              + '.html'; // Ajouter l'extension
+            
+            // Redirection vers la page de l'équipe
             window.location.href = pageName;
-          }, 500); // Durée de l'animation
+          }, 500); // Délai correspondant à la durée de l'animation
         });
       });
     });
