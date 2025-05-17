@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équipe Nationale du Maroc</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Maroc.css">
+    
+</head>
+<body> 
+    <!-- Navigation -->
+    <nav class="main-navbar">
+        <div class="container nav-container">
+            <div class="nav-logo" style="display:flex;align-items:center;position:absolute;left:32px;top:12px;height:56px;">
+                <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN" style="height:56px;width:auto;vertical-align:middle;display:block;">
+            </div>
+            <div class="nav-links" style="margin-left:110px;">
+                <a href="#acceuil">Acceuil</a>
+                <a href="#archive">Archive</a>
+                <a href="#calendrier">Calendrier</a>
+                <a href="#equipes">Équipes</a>
+                <a href="#stades">Stades</a>
+            </div>
+            <!-- Bouton de langue -->
+            <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;">
+                <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" style="width:26px;height:26px;vertical-align:middle;filter:drop-shadow(0 1px 2px #0002);cursor:pointer;">
+                <ul id="langMenu" class="lang-menu" style="display:none;">
+                    <li data-lang="fr">Français</li>
+                    <li data-lang="ar">العربية</li>
+                    <li data-lang="en">English</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="aurora-background">
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+    </div>
+    <header>
+        <div class="header-aurora">
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+        </div>
+        <h1 class="header-title">Equipe du Maroc</h1>
+      
+    </header>
+
+   
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-container">
+        <div class="hero-slide active" style="background-image: url('https://i.pinimg.com/736x/0b/1b/b8/0b1bb81407206703c488f0d99dd4e317.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('https://i.pinimg.com/736x/9a/ff/f5/9afff51541cd4a55a7a3b7608b61c3b8.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('https://i.pinimg.com/736x/b4/c3/11/b4c31183d38058a54f3a17fa0240e391.jpg')"></div>
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1 class="animate_animated animate_fadeInUp">Les Lions de l'Atlas</h1>
+                <p class="animate_animated animatefadeInUp animate_delay-1s">
+                    L'équipe nationale du Maroc, représentant fièrement les couleurs du Royaume sur la scène internationale.
+                </p>
+                <button class="btn btn-danger animate_animated animatefadeInUp animate_delay-2s px-4 py-2">
+                    <i class="fas fa-play-circle me-2"></i> Voir les temps forts
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="team-info" id="team-info">
+    <div class="container">
+        <div class="section-title">
+            <h2>Équipe Professionnelle</h2>
+            <p class="lead">Les Lions de l'Atlas, une équipe qui fait la fierté de toute une nation.</p>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-lg-6">
+                <h3><i class="fas fa-trophy me-2"></i>Palmarès</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-medal me-2 text-warning"></i>Coupe d'Afrique des Nations (CAN)</span>
+                        <span class="badge bg-success rounded-pill">1976</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-globe me-2 text-info"></i>Premier pays africain en demi-finale de Coupe du Monde</span>
+                        <span class="badge bg-primary rounded-pill">2022</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-star me-2 text-warning"></i>Championnat d'Afrique des Nations (CHAN)</span>
+                        <span class="badge bg-success rounded-pill">2018, 2020</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-trophy me-2 text-danger"></i>Coupe Arabe</span>
+                        <span class="badge bg-success rounded-pill">2012</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <h3><i class="fas fa-clipboard-list me-2"></i>Staff Technique</h3>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://i.pinimg.com/736x/51/e6/08/51e6083932156c1b134c909fd079e3b9.jpg" class="img-fluid rounded-start" alt="Walid Regragui">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Walid Regragui</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Sélectionneur National</h6>
+                                <p class="card-text">Ancien international marocain, il a mené les Lions de l'Atlas à la demi-finale historique de la Coupe du Monde 2022.</p>
+                                <p class="card-text"><small class="text-muted">En poste depuis août 2022</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="team-stats">
+            <div class="stat-item">
+                <span class="stat-number">41</span>
+                <span class="stat-text">Participations à la CAN</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-text">Participations à la Coupe du Monde</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">67</span>
+                <span class="stat-text">Joueurs Internationaux Actifs</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">22</span>
+                <span class="stat-text">Rang FIFA</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+   
+                                            
+<!-- Section Players avec effet Pepsi -->
+<section id="players" class="py-5">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Stars de l'Équipe</h2>
+            <p class="lead">Les Lions qui font la fierté du Maroc</p>
+        </div>
+        
+        <div class="player-card-container">
+            <!-- Joueur 1: Achraf Hakimi -->
+            <div class="pepsi-card" data-player="hakimi">
+                <div class="circle-background"></div>
+                <img src="images/maroc players/achraf.jpg" alt="Achraf Hakimi" class="player-image">
+                <div class="player-info">
+                    <h3 class="player-name">Achraf Hakimi</h3>
+                    <p class="player-position">Défenseur</p>
+                
+                </div>
+            </div>
+            
+            <!-- Joueur 2: Hakim Ziyech -->
+            <div class="pepsi-card" data-player="ziyech">
+                <div class="circle-background"></div>
+                <img src="images/maroc players/ziyech.jpg" alt="Hakim Ziyech" class="player-image">
+                <div class="player-info">
+                    <h3 class="player-name">Hakim Ziyech</h3>
+                    <p class="player-position">Milieu Offensif</p>
+                    
+                    
+                </div>
+            </div>
+            
+            <!-- Joueur 3: Yassine Bounou -->
+            <div class="pepsi-card" data-player="bounou">
+                <div class="circle-background"></div>
+                <img src="images/maroc players/bono.jpg" alt="Yassine Bounou" class="player-image">
+                <div class="player-info">
+                    <h3 class="player-name">Yassine Bounou</h3>
+                    <p class="player-position">Gardien</p>
+                   
+              
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal pour afficher les détails du joueur -->
+    <div class="player-modal" id="playerModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-image-container">
+                <div class="modal-circle"></div>
+                <img src="" alt="Joueur" class="modal-player-image" id="modalPlayerImage">
+            </div>
+            <div class="modal-info">
+                <h2 id="modalPlayerName"></h2>
+                <p id="modalPlayerPosition"></p>
+                <div class="modal-stats" id="modalPlayerStats">
+                    <!-- Les statistiques seront ajoutées dynamiquement -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="team-gallery py-5" id="team-gallery">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Galerie des Lions de l'Atlas</h2>
+            <p class="lead">Des moments inoubliables capturés en images</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item large" data-category="team">
+                <div class="gallery-content">
+                    <img src="https://i.pinimg.com/736x/93/c2/49/93c2494ce748b674fac86f305ea82371.jpg" alt="Équipe Nationale" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Les Lions de l'Atlas</h4>
+                            <p>L'équipe nationale au complet lors de la Coupe du Monde 2022</p>
+                            <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="player">
+                <div class="gallery-content">
+                    <img src="https://i.pinimg.com/736x/68/2b/bb/682bbbe88ae9ffebf79f5eef2673daf4.jpg" alt="Célébration" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Moment de joie</h4>
+                            <p>Célébration après un but crucial contre l'Espagne</p>
+                            <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="fans">
+                <div class="gallery-content">
+                    <img src="https://i.pinimg.com/736x/2b/45/64/2b456445ab74a99c165a24998a1a7265.jpg" alt="Supporters" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>12ème homme</h4>
+                            <p>Les supporters marocains enflamment les tribunes</p>
+                            <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-item vertical" data-category="player">
+                <div class="gallery-content">
+                    <img src="https://i.pinimg.com/736x/ad/ff/68/adff682f3034e68278c7067c72a2cc96.jpg" alt="Hakimi" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Le Lion</h4>
+                            <p>Achraf Hakimi, défenseur d'exception</p>
+                            <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="match">
+                <div class="gallery-content">
+                    <img src="https://i.pinimg.com/736x/21/6e/35/216e358ca927b8c396e303d415ecf4e4.jpg" alt="Action de jeu" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Dans le feu de l'action</h4>
+                            <p>Duel intense lors du match contre le Portugal</p>
+                            <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-item horizontal" data-category="team">
+                <div class="gallery-content">
+                    <img src="https://i.pinimg.com/736x/4d/ae/13/4dae133f438482f966d3ce28f144f50b.jpg" alt="Entraînement" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Préparation</h4>
+                            <p>Séance d'entraînement intensive avant un match crucial</p>
+                            <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="celebration">
+                <div class="gallery-content">
+                    <img src="https://i.pinimg.com/736x/54/80/dc/5480dce5a7901a45d338d4924e5d2ffa.jpg" alt="Victoire" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Victoire historique</h4>
+                            <p>Célébration après la qualification en demi-finale</p>
+                            <span class="view-btn"><i class="fas fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          
+        </div>
+        <!-- Filtres de galerie -->
+        <div class="gallery-filter mt-4">
+            <ul>
+                <li class="filter-item active" data-filter="all">Tous</li>
+                <li class="filter-item" data-filter="team">Équipe</li>
+                <li class="filter-item" data-filter="player">Joueurs</li>
+                <li class="filter-item" data-filter="match">Matchs</li>
+                <li class="filter-item" data-filter="fans">Supporters</li>
+                <li class="filter-item" data-filter="celebration">Célébrations</li>
+                
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Modal pour afficher les images en grand -->
+    <div class="gallery-modal">
+        <span class="close-modal"><i class="fas fa-times"></i></span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption"></div>
+        <a class="prev-btn"><i class="fas fa-chevron-left"></i></a>
+        <a class="next-btn"><i class="fas fa-chevron-right"></i></a>
+    </div>
+</section>
+<!-- Section Commentaires des Fans -->
+<section class="fans-comments py-5" id="contact">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>Partagez votre passion</h2>
+            <p class="lead">Laissez un message de soutien aux Lions de l'Atlas</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="comment-form-container">
+                    <h3 class="mb-4"><i class="fas fa-comment-dots me-2"></i>Votre message</h3>
+                    <form id="fanCommentForm">
+                        <div class="mb-3">
+                            <label for="fanName" class="form-label">Votre nom</label>
+                            <input type="text" class="form-control" id="fanName" placeholder="Entrez votre nom" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fanCity" class="form-label">Votre ville</label>
+                            <input type="text" class="form-control" id="fanCity" placeholder="D'où supportez-vous l'équipe?">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fanMessage" class="form-label">Message aux Lions</label>
+                            <textarea class="form-control" id="fanMessage" rows="4" placeholder="Partagez votre message de soutien..." required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Couleur de votre post-it</label>
+                            <div class="color-picker">
+                                <div class="color-option" data-color="#ffef9e" style="background-color: #ffef9e;"></div>
+                                <div class="color-option" data-color="#a7e8bd" style="background-color: #a7e8bd;"></div>
+                                <div class="color-option" data-color="#fcbad3" style="background-color: #fcbad3;"></div>
+                                <div class="color-option" data-color="#9edfff" style="background-color: #9edfff;"></div>
+                                <div class="color-option" data-color="#d29efc" style="background-color: #d29efc;"></div>
+                                <div class="color-option active" data-color="#ffcc5c" style="background-color: #ffcc5c;"></div>
+                            </div>
+                            <input type="hidden" id="selectedColor" value="#ffcc5c">
+                        </div>
+                        <button type="submit" class="btn btn-danger px-4 py-2">
+                            <i class="fas fa-paper-plane me-2"></i>Envoyer mon soutien
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="fan-comments-preview">
+                    <h3 class="mb-4"><i class="fas fa-star me-2"></i>Comment ça fonctionne</h3>
+                    <div class="preview-animation">
+                        <div class="animated-post-it">
+                            <div class="pin"></div>
+                            <div class="post-it">
+                                <p class="text-dark">Votre message deviendra un post-it sur notre tableau de supporters!</p>
+                                <span class="rotate-text">Votre soutien compte!</span>
+                            </div>
+                        </div>
+                        <div class="arrow-animation">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="corkboard-preview">
+                            <div class="board-texture"></div>
+                            <div class="mini-post-it" style="transform: rotate(-5deg); top: 20px; left: 20px;"></div>
+                            <div class="mini-post-it" style="transform: rotate(7deg); top: 60px; left: 60px;"></div>
+                            <div class="mini-post-it" style="transform: rotate(-3deg); top: 40px; left: 100px;"></div>
+                        </div>
+                    </div>
+                    <div class="preview-text mt-4">
+                        <p>Partagez votre passion pour les Lions de l'Atlas. Vos messages apparaîtront sur le tableau des supporters visible par tous les visiteurs du site.</p>
+                        <p><strong>Rejoignez la communauté des supporters marocains!</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Tableau des Supporters -->
+<section class="fans-corkboard py-5" id="fans-wall">
+    <div class="container-fluid">
+        <div class="section-title text-center mb-5">
+            <h2>Le Mur des Supporters</h2>
+            <p class="lead">Les messages d'encouragement de nos fans à travers le monde</p>
+        </div>
+        
+        <div class="corkboard-container">
+            <div class="corkboard" id="commentsBoard">
+                <!-- Post-it générés dynamiquement -->
+                <div class="post-it-note" style="background-color: #ffef9e; transform: rotate(-3deg); top: 50px; left: 120px;">
+                    <div class="pin"></div>
+                    <div class="post-content">
+                        <p class="post-message">Fiers de nos Lions! Continuez à nous faire rêver!</p>
+                        <div class="post-footer">
+                            <span class="post-author">Ahmed</span>
+                            <span class="post-city">Casablanca</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="post-it-note" style="background-color: #a7e8bd; transform: rotate(5deg); top: 150px; left: 350px;">
+                    <div class="pin"></div>
+                    <div class="post-content">
+                        <p class="post-message">L'exploit en Coupe du Monde restera gravé dans nos cœurs pour toujours!</p>
+                        <div class="post-footer">
+                            <span class="post-author">Fatima</span>
+                            <span class="post-city">Rabat</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="post-it-note" style="background-color: #9edfff; transform: rotate(-7deg); top: 80px; left: 580px;">
+                    <div class="pin"></div>
+                    <div class="post-content">
+                        <p class="post-message">Hakimi est un exemple pour toute la jeunesse marocaine!</p>
+                        <div class="post-footer">
+                            <span class="post-author">Karim</span>
+                            <span class="post-city">Marrakech</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="post-it-note" style="background-color: #fcbad3; transform: rotate(2deg); top: 220px; left: 200px;">
+                    <div class="pin"></div>
+                    <div class="post-content">
+                        <p class="post-message">Je supporte les Lions depuis que je suis petit! Dima Maghrib!</p>
+                        <div class="post-footer">
+                            <span class="post-author">Youssef</span>
+                            <span class="post-city">Tanger</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="post-it-note" style="background-color: #d29efc; transform: rotate(-5deg); top: 300px; left: 450px;">
+                    <div class="pin"></div>
+                    <div class="post-content">
+                        <p class="post-message">Merci pour tous ces moments de bonheur! On est derrière vous!</p>
+                        <div class="post-footer">
+                            <span class="post-author">Leila</span>
+                            <span class="post-city">Agadir</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">
+                <img src="/api/placeholder/100/60" alt="Logo FRMF" class="footer-logo mb-2">
+                <p>© 2025 Fédération Royale Marocaine de Football</p>
+            </div>
+            <div class="col-lg-4 text-lg-center">
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <ul class="footer-links">
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+
+    // Script pour la rotation initiale de l'image principale
+    document.addEventListener('DOMContentLoaded', function() {
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        
+        // Fonction pour changer de slide
+        function changeSlide() {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroSlides[currentSlide].classList.add('active');
+            currentSlide = (currentSlide + 1) % heroSlides.length;
+        }
+        
+        // Changement automatique toutes les 5 secondes
+        setInterval(changeSlide, 5000);
+    });
+     document.addEventListener('DOMContentLoaded', function() {
+        // Filtres de la galerie
+        const filterItems = document.querySelectorAll('.filter-item');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Retirer la classe active de tous les filtres
+                filterItems.forEach(filter => filter.classList.remove('active'));
+                // Ajouter la classe active au filtre cliqué
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                galleryItems.forEach(galleryItem => {
+                    if (filterValue === 'all' || galleryItem.getAttribute('data-category') === filterValue) {
+                        galleryItem.style.display = 'block';
+                        setTimeout(() => {
+                            galleryItem.style.opacity = '1';
+                            galleryItem.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        galleryItem.style.opacity = '0';
+                        galleryItem.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            galleryItem.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Modal de la galerie
+        const modal = document.querySelector('.gallery-modal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.querySelector('.modal-caption');
+        const closeModal = document.querySelector('.close-modal');
+        const viewBtns = document.querySelectorAll('.view-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentIndex = 0;
+        const galleryImages = document.querySelectorAll('.gallery-image');
+        
+        // Ouvrir le modal au clic sur une image
+        viewBtns.forEach((btn, index) => {
+            btn.addEventListener('click', function() {
+                const parentItem = this.closest('.gallery-item');
+                const img = parentItem.querySelector('.gallery-image');
+                const caption = parentItem.querySelector('.gallery-info h4').textContent;
+                
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                }, 10);
+                modalImg.src = img.src;
+                modalCaption.textContent = caption;
+                currentIndex = index;
+                
+                // Animation d'entrée pour l'image
+                modalImg.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    modalImg.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+        
+        // Fermer le modal
+        closeModal.addEventListener('click', function() {
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        });
+        
+        // Navigation dans le modal
+        prevBtn.addEventListener('click', function() {
+            navigateGallery(-1);
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            navigateGallery(1);
+        });
+        
+        function navigateGallery(direction) {
+            currentIndex += direction;
+            
+            // Boucler autour de la galerie
+            if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+            if (currentIndex >= galleryImages.length) currentIndex = 0;
+            
+            // Animer la transition
+            modalImg.style.opacity = '0';
+            modalImg.style.transform = 'scale(0.9)';
+            
+            setTimeout(() => {
+                const galleryItem = galleryImages[currentIndex].closest('.gallery-item');
+                modalImg.src = galleryImages[currentIndex].src;
+                modalCaption.textContent = galleryItem.querySelector('.gallery-info h4').textContent;
+                
+                modalImg.style.opacity = '1';
+                modalImg.style.transform = 'scale(1)';
+            }, 200);
+        }
+        
+        // Effet de survol pour les éléments de la galerie
+        galleryItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const overlay = this.querySelector('.gallery-overlay');
+                overlay.style.opacity = '1';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const overlay = this.querySelector('.gallery-overlay');
+                overlay.style.opacity = '0';
+            });
+        });
+        
+        // Animation au chargement de la page
+        galleryItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('show');
+            }, 100 * index);
+        });
+    });
+    // Script pour gérer les commentaires des fans et le tableau de post-it
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Gestionnaire de sélection de couleur
+    const colorOptions = document.querySelectorAll('.color-option');
+    const selectedColorInput = document.getElementById('selectedColor');
+    
+    colorOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            // Retirer la classe active de toutes les options
+            colorOptions.forEach(opt => opt.classList.remove('active'));
+            
+            // Ajouter la classe active à l'option sélectionnée
+            this.classList.add('active');
+            
+            // Mettre à jour la valeur de la couleur sélectionnée
+            selectedColorInput.value = this.getAttribute('data-color');
+        });
+    });
+    
+    // Gestionnaire de soumission du formulaire
+    const commentForm = document.getElementById('fanCommentForm');
+    const commentsBoard = document.getElementById('commentsBoard');
+    
+    if (commentForm) {
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupérer les valeurs du formulaire
+            const name = document.getElementById('fanName').value;
+            const city = document.getElementById('fanCity').value || 'Inconnu';
+            const message = document.getElementById('fanMessage').value;
+            const color = selectedColorInput.value;
+            
+            // Créer un nouveau post-it
+            createPostIt(name, city, message, color);
+            
+            // Réinitialiser le formulaire
+            this.reset();
+            
+            // Réinitialiser la sélection de couleur
+            colorOptions.forEach(opt => opt.classList.remove('active'));
+            document.querySelector('[data-color="#ffcc5c"]').classList.add('active');
+            selectedColorInput.value = '#ffcc5c';
+            
+            // Afficher un message de confirmation
+            showConfirmation();
+        });
+    }
+    
+    // Fonction pour créer un nouveau post-it
+    function createPostIt(name, city, message, color) {
+        // Générer une position aléatoire sur le tableau
+        const randomTop = Math.floor(Math.random() * 400) + 50; // entre 50px et 450px
+        const randomLeft = Math.floor(Math.random() * 800) + 50; // entre 50px et 850px
+        const randomRotation = Math.floor(Math.random() * 10) - 5; // entre -5deg et 5deg
+        
+        // Créer l'élément post-it
+        const postIt = document.createElement('div');
+        postIt.className = 'post-it-note animate_animated animate_fadeInUp';
+        postIt.style.backgroundColor = color;
+        postIt.style.transform = `rotate(${randomRotation}deg)`;
+        postIt.style.top = `${randomTop}px`;
+        postIt.style.left = `${randomLeft}px`;
+        
+        // Contenu du post-it
+        postIt.innerHTML = `
+            <div class="pin"></div>
+            <div class="post-content">
+                <p class="post-message">${message}</p>
+                <div class="post-footer">
+                    <span class="post-author">${name}</span>
+                    <span class="post-city">${city}</span>
+                </div>
+            </div>
+        `;
+        
+        // Ajouter le post-it au tableau
+        commentsBoard.appendChild(postIt);
+        
+        // Ajouter un effet de tremblement au survol
+        postIt.addEventListener('mouseenter', function() {
+            this.style.animation = 'wobble 0.5s';
+        });
+        
+        postIt.addEventListener('mouseleave', function() {
+            this.style.animation = '';
+        });
+        
+        // Fonction pour déplacer le post-it (drag and drop - simulation)
+        let isDragging = false;
+        let offsetX, offsetY;
+        
+        postIt.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            offsetX = e.clientX - postIt.getBoundingClientRect().left;
+            offsetY = e.clientY - postIt.getBoundingClientRect().top;
+            postIt.style.zIndex = 1000;
+            
+            document.addEventListener('mousemove', movePostIt);
+            document.addEventListener('mouseup', dropPostIt);
+        });
+        
+        function movePostIt(e) {
+            if (!isDragging) return;
+            
+            const boardRect = commentsBoard.getBoundingClientRect();
+            const x = e.clientX - boardRect.left - offsetX;
+            const y = e.clientY - boardRect.top - offsetY;
+            
+            // Limiter les mouvements dans les limites du tableau
+            const maxX = boardRect.width - postIt.offsetWidth;
+            const maxY = boardRect.height - postIt.offsetHeight;
+            
+            postIt.style.left = `${Math.max(0, Math.min(maxX, x))}px`;
+            postIt.style.top = `${Math.max(0, Math.min(maxY, y))}px`;
+        }
+        
+        function dropPostIt() {
+            isDragging = false;
+            postIt.style.zIndex = '10';
+            document.removeEventListener('mousemove', movePostIt);
+            document.removeEventListener('mouseup', dropPostIt);
+        }
+        
+        // Effet d'entrée
+        setTimeout(() => {
+            postIt.style.opacity = '1';
+        }, 100);
+    }
+    
+    // Fonction pour afficher un message de confirmation
+    function showConfirmation() {
+        const confirmation = document.createElement('div');
+        confirmation.className = 'comment-confirmation animate_animated animate_fadeIn';
+        confirmation.innerHTML = `
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong>Merci!</strong> Votre message a été ajouté au mur des supporters.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        `;
+        
+        // Ajouter à la page
+        document.querySelector('.comment-form-container').appendChild(confirmation);
+        
+        // Supprimer après 5 secondes
+        setTimeout(() => {
+            confirmation.classList.add('animate__fadeOut');
+            setTimeout(() => {
+                confirmation.remove();
+            }, 500);
+        }, 5000);
+    }
+    
+    // Renforcer le réalisme du tableau de liège avec des interactions
+    const allPostIts = document.querySelectorAll('.post-it-note');
+    
+    allPostIts.forEach(postIt => {
+        // Effet de tremblement au survol
+        postIt.addEventListener('mouseenter', function() {
+            this.style.animation = 'wobble 0.5s';
+        });
+        
+        postIt.addEventListener('mouseleave', function() {
+            this.style.animation = '';
+        });
+        
+        // Double-clic pour agrandir le post-it
+        postIt.addEventListener('dblclick', function() {
+            if (this.classList.contains('enlarged')) {
+                this.classList.remove('enlarged');
+                this.style.zIndex = '10';
+                this.style.transform = `rotate(${this.dataset.originalRotation || '0deg'})`;
+                this.style.width = '200px';
+            } else {
+                this.dataset.originalRotation = this.style.transform;
+                this.classList.add('enlarged');
+                this.style.zIndex = '1000';
+                this.style.transform = 'rotate(0deg)';
+                this.style.width = '250px';
+            }
+        });
+    });
+    
+    // Animation de style post-it pour le titre de la section
+    const sectionTitle = document.querySelector('#fans-wall .section-title');
+    if (sectionTitle) {
+        sectionTitle.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+        
+        sectionTitle.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    }
+});
+
+
+</script>
+</body>
+</html>

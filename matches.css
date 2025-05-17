@@ -25,7 +25,7 @@ body { /* Style du corps de la page */
   margin: 0; /* Supprime la marge par défaut */
   color: var(--dark-green); /* Couleur du texte */
   min-height: 100vh; /* Hauteur minimale de la page */
-  padding: 20px;  /* Ajoute du padding */
+  padding: 72px 20px 20px;  /* Ajoute du padding */
 }
 
 .main-header { /* En-tête principal */
@@ -93,6 +93,68 @@ body { /* Style du corps de la page */
   background: var(--aurora4);
   bottom: 0; right: 0;
   animation-delay: 6s;
+}
+
+/* Navbar Styles */
+.main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--dark-green);
+    box-shadow: 0 2px 12px 0 rgba(4,54,29,0.10);
+    min-height: 60px;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+.nav-links a {
+    color: var(--beige);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover {
+    background: var(--cambridge-blue);
+    color: var(--dark-green);
+}
+.lang-switcher {
+    cursor: pointer;
+}
+.lang-menu {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0002;
+    position: absolute;
+    top: 36px;
+    right: 0;
+    min-width: 110px;
+    padding: 6px 0;
+    z-index: 100;
+}
+.lang-menu li {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: var(--dark-green);
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.lang-menu li:hover {
+    background: var(--cambridge-blue);
+    color: white;
 }
 
 /* Calendar Styles */
