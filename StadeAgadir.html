@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Stade Ibn-Battouta - Tanger</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="StadeStyle.css">
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header class="bg-primary text-white text-center py-4">
+    <h1>Stade Ibn-Battouta</h1>
+    <p class="lead">Ville de Tanger</p>
+  </header>
+
+  <section class="hero-section container-fluid my-5">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="slider-container">
+          <div class="slides">
+
+            <!-- Slide 1 -->
+            <div class="slide">
+              <img src="agadir/agadir1.png" alt="Vue nocturne">
+              <div class="slide-content">
+                <h3>Vu intérieure du stade</h3>
+                <p>Des gradins modernes offrant une visibilité exceptionnelle sur le terrain depuis chaque siège</p>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+              <img src="agadir/agadire2.png" alt="Vue nocturne">
+              <div class="slide-content">
+                <h3>Vu intérieure du stade</h3>
+                <p>Des gradins modernes offrant une visibilité exceptionnelle sur le terrain depuis chaque siège</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+      <!-- Cartes d'information (côté droit) -->
+      <div class="col-lg-5">
+        <div class="info-cards">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-calendar me-2"></i>
+                <h5 class="card-title mb-0">Début de construction</h5>
+              </div>
+              <p class="card-text">Juin 2004</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-calendar-check me-2"></i>
+                <h5 class="card-title mb-0">Ouverture</h5>
+              </div>
+              <p class="card-text">11 Octobre 2013</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-person-fill me-2"></i>
+                <h5 class="card-title mb-0">Architecte</h5>
+              </div>
+              <p class="card-text">Vittorio Gregotti et Saâd Benkirane</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-people-fill me-2"></i>
+                <h5 class="card-title mb-0">Capacité</h5>
+              </div>
+              <p class="card-text">45 480</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-building-fill-gear me-2"></i>
+                <h5 class="card-title mb-0">Rénovation</h5>
+              </div>
+              <p class="card-text">2025</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-trophy me-2"></i>
+                <h5 class="card-title mb-0">Événements</h5>
+              </div>
+              <p class="card-text">Matchs nationaux et internationaux</p>
+            </div>
+          </div>
+        </div>
+        <!-- Carte de description -->
+        <div class="description-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-journal-bookmark me-2"></i>
+              <h5 class="card-title mb-0">À propos</h5>
+            </div>
+            <p class="card-text">
+              Le Grand Stade d’Agadir est l’une des infrastructures sportives les plus modernes du sud du Maroc. Situé dans la ville d’Agadir, 
+              ce stade a été inauguré en 2013. Il accueille régulièrement des matchs du Hassania Union Sport d’Agadir (HUSA) ainsi que des rencontres
+              de l’équipe nationale marocaine. Conçu selon les normes internationales de la FIFA, il est adapté aux compétitions continentales et mondiales.
+              <br>Dans le cadre des préparatifs pour la CAN 2025 et la Coupe du Monde 2030, le stade est actuellement en cours de rénovation. Ces travaux visent 
+              à améliorer les accès, les tribunes VIP, l’éclairage, les vestiaires et les dispositifs de sécurité.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carte Google Maps -->  
+  <section class="container my-5 location-section">
+    <div class="d-flex align-items-center justify-content-center mb-2">
+      <i class="bi bi-compass me-2"></i>
+      <h3 class="location-title mb-0">Localisation du stade</h3>
+    </div>
+    <div class="map-container">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.304039657278!2d-9.542834324991487!3d30.427481874732997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3c9de97587637%3A0x9668ab97f677bc8e!2sAdrar%20Stadium!5e0!3m2!1sen!2sma!4v1747500580779!5m2!1sen!2sma" 
+          width="600" height="450" style="border:0;" 
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>"
+      </div>
+  </section>
+
+  <!-- Hôtels à proximité -->
+  <section class="container my-5 hotels-section">
+    <div class="d-flex align-items-center justify-content-center mb-2">
+      <i class="bi bi-buildings me-2"></i>
+      <h3 class="hotel-title mb-0">Les Hôtels proches du stade</h3>
+    </div>
+    <div class="hotels-grid">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="agadir/hotel1.jpg" alt="Atlas Amadil Beach" class="hotel-image">
+            <h4>Atlas Amadil Beach</h4>
+          </div>
+          <div class="flip-card-back">
+            <div class="hotel-info">
+              <h4 class="hotel-name">Atlas Amadil Beach</h4>
+              <p class="hotel-distance"><i class="bi bi-geo-alt"></i> Distance: 3.2 km</p>
+              <p class="hotel-description">
+                Hôtel 4 étoiles en bord de mer offrant une vue magnifique sur l'océan 
+                et un accès facile au stade Adrar.
+              </p>
+              <div class="hotel-features">
+                <span class="badge">Plage Privée</span>
+                <span class="badge">Piscines</span>
+                <span class="badge">Spa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="agadir/R.jpeg" alt="Tildi Hotel & SPA" class="hotel-image">
+            <h4>Tildi Hotel & SPA</h4>
+          </div>
+          <div class="flip-card-back">
+            <div class="hotel-info">
+              <h4 class="hotel-name">Tildi Hotel & SPA</h4>
+              <p class="hotel-distance"><i class="bi bi-geo-alt"></i> Distance: 2.8 km</p>
+              <p class="hotel-description">
+                Situé au cœur d'Agadir, cet hôtel 4 étoiles combine confort moderne 
+                et hospitalité marocaine traditionnelle.
+              </p>
+              <div class="hotel-features">
+                <span class="badge">Spa</span>
+                <span class="badge">Restaurant</span>
+                <span class="badge">Navette</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="agadir/R (2).jpeg" alt="Résidence Fleurie" class="hotel-image">
+            <h4>Labranda Les Dunes d'Or</h4>
+          </div>
+          <div class="flip-card-back">
+            <div class="hotel-info">
+              <h4 class="hotel-name">Labranda Les Dunes d'Or</h4>
+              <p class="hotel-distance"><i class="bi bi-geo-alt"></i> Distance: 2.5 km</p>
+              <p class="hotel-description">
+                Resort 4 étoiles avec accès direct à la plage, offrant des chambres spacieuses 
+                et une vue imprenable sur l'océan Atlantique.
+              </p>
+              <div class="hotel-features">
+                <span class="badge">All Inclusive</span>
+                <span class="badge">Plage Privée</span>
+                <span class="badge">4 Restaurants</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS perso -->
+  <script src="StadeScript.js"></script> 
+</body>
+</html>
