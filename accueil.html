@@ -14,15 +14,68 @@
         </header>
         
         <!-- Countdown Timer -->
-        <div class="countdown-container">
-            <div class="countdown-title">Coup d'envoi dans :</div>
-            <div id="countdown" class="countdown-timer">
-                <span id="days">00</span>j
-                <span id="hours">00</span>h
-                <span id="minutes">00</span>m
-                <span id="seconds">00</span>s
+        <!-- Compte à rebours créatif -->
+<div class="countdown-container">
+    <div class="countdown-header">Coup d'envoi dans</div>
+    <div class="countdown-date">21/12/2025</div>
+    <div class="countdown-timer">
+        <div class="segment-container" data-unit="days">
+            <div class="countdown-segment">
+                <div class="flip-card" data-value="0">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <div class="flip-card" data-value="0">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
             </div>
+            <div class="label">Jours</div>
         </div>
+        <div class="countdown-divider">:</div>
+        <div class="segment-container" data-unit="hours">
+            <div class="countdown-segment">
+                <div class="flip-card" data-value="0">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <div class="flip-card" data-value="0">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+            </div>
+            <div class="label">Heures</div>
+        </div>
+        <div class="countdown-divider">:</div>
+        <div class="segment-container" data-unit="minutes">
+            <div class="countdown-segment">
+                <div class="flip-card" data-value="0">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <div class="flip-card" data-value="0">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+            </div>
+            <div class="label">Minutes</div>
+        </div>
+        <div class="countdown-divider">:</div>
+        <div class="segment-container" data-unit="seconds">
+            <div class="countdown-segment">
+                <div class="flip-card" data-value="0">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <div class="flip-card" data-value="0">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+            </div>
+            <div class="label">Secondes</div>
+        </div>
+    </div>
+</div>
         
         <!-- Navigation -->
         <nav class="main-navbar">
@@ -49,72 +102,7 @@
             </div>
         </nav>
         
-        <!-- Section des deux premiers matchs et trophée -->
-        <section class="matches-section" id="matches">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Premiers Matchs</h2>
-                    <div class="ligne-verte"></div>
-                </div>
-                <div class="matches-row">
-                    <!-- Premier match -->
-                    <div class="match-card animate-fadeIn">
-                        <div class="match-header">
-                            <h3>Match d'ouverture</h3>
-                            <p>Groupe A</p>
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <div class="team-flag">MAR</div>
-                                <h4>Maroc</h4>
-                                <p>(Pays hôte)</p>
-                            </div>
-                            <div class="versus">VS</div>
-                            <div class="team">
-                                <div class="team-flag">GHA</div>
-                                <h4>Ghana</h4>
-                            </div>
-                        </div>
-                        <div class="match-info">
-                            <p><i class="far fa-calendar-alt"></i> 15 Janvier 2025 | 20:00</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Stade Mohamed V, Casablanca</p>
-                            <a href="#" class="btn btn-secondary" style="margin-top: 15px;">Plus d'informations</a>
-                        </div>
-                    </div>
-                    <!-- Trophée au centre -->
-                    <div class="trophy-center">
-                        <div class="trophy-img-container">
-                            <img src="images/trophee.jpg" alt="Stades CAN" class="trophy-img" />
-                        </div>
-                    </div>
-                    <!-- Deuxième match -->
-                    <div class="match-card animate-fadeIn" style="animation-delay: 0.3s;">
-                        <div class="match-header">
-                            <h3>Deuxième Match</h3>
-                            <p>Groupe A</p>
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <div class="team-flag">SEN</div>
-                                <h4>Sénégal</h4>
-                                <p>(Tenant du titre)</p>
-                            </div>
-                            <div class="versus">VS</div>
-                            <div class="team">
-                                <div class="team-flag">TUN</div>
-                                <h4>Tunisie</h4>
-                            </div>
-                        </div>
-                        <div class="match-info">
-                            <p><i class="far fa-calendar-alt"></i> 16 Janvier 2025 | 17:00</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Stade Adrar, Agadir</p>
-                            <a href="#" class="btn btn-secondary" style="margin-top: 15px;">Plus d'informations</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+      
         <!-- Section "Le Maroc accueille la CAN" -->
         <section class="maroc-accueil-section">
             <div class="container maroc-accueil-row maroc-accueil-center">
@@ -125,9 +113,9 @@
                 <div class="maroc-accueil-flex">
                     <div class="maroc-accueil-text-col">
                         <p>
-                            Le Royaume du Maroc accueille avec fierté la 35ᵉ édition de la Coupe d’Afrique des Nations. 
+                            Le Royaume du Maroc accueille avec fierté la 35ᵉ édition de la Coupe d'Afrique des Nations. 
                             Terre de traditions et de diversité, le Maroc séduit par sa culture riche, ses villes impériales, ses souks colorés et son hospitalité légendaire. 
-                            Le football occupe une place centrale dans le cœur des Marocains : des clubs mythiques comme le Wydad, le Raja ou la Renaissance de Berkane, aux exploits de l’équipe nationale, demi-finaliste historique de la Coupe du Monde 2022 et vainqueur de la CAN 1976, le Maroc rayonne sur la scène africaine et mondiale.
+                            Le football occupe une place centrale dans le cœur des Marocains : des clubs mythiques comme le Wydad, le Raja ou la Renaissance de Berkane, aux exploits de l'équipe nationale, demi-finaliste historique de la Coupe du Monde 2022 et vainqueur de la CAN 1976, le Maroc rayonne sur la scène africaine et mondiale.
                         </p>
                     </div>
                     <div class="maroc-accueil-img-col">
@@ -328,17 +316,48 @@
 </footer>
         <script src="accueil.js"></script>
         <script>
+// Modifier cette ligne pour définir la bonne date (21 décembre 2025)
+const kickoffDate = new Date("2025-12-21T00:00:00").getTime();
 
-  // Date du coup d'envoi (exemple : 15 janvier 2025 à 20h00)
-  const kickoffDate = new Date("2025-12-20T20:00:00").getTime();
+function updateDigits(unit, value) {
+    const valueStr = value.toString().padStart(2, '0');
+    const unitContainer = document.querySelector(`.segment-container[data-unit="${unit}"]`);
+    
+    if (!unitContainer) return;
+    
+    const digits = unitContainer.querySelectorAll('.flip-card');
+    
+    // Mise à jour du premier chiffre
+    const firstDigit = valueStr[0];
+    const firstCard = digits[0];
+    if (firstCard && firstCard.dataset.value !== firstDigit) {
+        firstCard.dataset.value = firstDigit;
+        firstCard.querySelector('.top').textContent = firstDigit;
+        firstCard.querySelector('.bottom').textContent = firstDigit;
+        firstCard.classList.add('flipping');
+        setTimeout(() => firstCard.classList.remove('flipping'), 500);
+    }
+    
+    // Mise à jour du deuxième chiffre
+    const secondDigit = valueStr[1];
+    const secondCard = digits[1];
+    if (secondCard && secondCard.dataset.value !== secondDigit) {
+        secondCard.dataset.value = secondDigit;
+        secondCard.querySelector('.top').textContent = secondDigit;
+        secondCard.querySelector('.bottom').textContent = secondDigit;
+        secondCard.classList.add('flipping');
+        setTimeout(() => secondCard.classList.remove('flipping'), 500);
+    }
+}
 
-  function updateCountdown() {
+function updateCountdown() {
     const now = new Date().getTime();
     const distance = kickoffDate - now;
 
     if (distance < 0) {
-      document.getElementById("countdown").innerHTML = "Coup d'envoi !";
-      return;
+        document.querySelector('.countdown-header').textContent = "Coup d'envoi !";
+        document.querySelector('.countdown-timer').style.display = "none";
+        return;
     }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -346,62 +365,33 @@
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").textContent = String(days).padStart(2, '0');
-    document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-    document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-    document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-  }
-
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-
-  function updateArchiveTabIndicator() {
-    const indicator = document.querySelector('.archive-tabs-indicator');
-    const tab2023 = document.getElementById('tab-2023');
-    const tab2021 = document.getElementById('tab-2021');
-    if (!indicator || !tab2023 || !tab2021) return;
-    const activeTab = tab2023.classList.contains('active') ? tab2023 : tab2021;
-    const rect = activeTab.getBoundingClientRect();
-    const parentRect = activeTab.parentElement.getBoundingClientRect();
-    indicator.style.width = rect.width + 'px';
-    indicator.style.left = (rect.left - parentRect.left) + 'px';
+    updateDigits('days', days);
+    updateDigits('hours', hours);
+    updateDigits('minutes', minutes);
+    updateDigits('seconds', seconds);
 }
-window.addEventListener('DOMContentLoaded', updateArchiveTabIndicator);
-window.addEventListener('resize', updateArchiveTabIndicator);
-window.showArchive = function(year) {
-    if (year === '2023') {
-        document.getElementById('archive-2023').style.display = 'block';
-        document.getElementById('archive-2021').style.display = 'none';
-        document.getElementById('tab-2023').classList.add('active');
-        document.getElementById('tab-2021').classList.remove('active');
-    } else if (year === '2021') {
-        document.getElementById('archive-2023').style.display = 'none';
-        document.getElementById('archive-2021').style.display = 'block';
-        document.getElementById('tab-2023').classList.remove('active');
-        document.getElementById('tab-2021').classList.add('active');
+
+// Initialisation et mise à jour toutes les secondes
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Ajouter l'élément days manquant dans la structure HTML
+document.addEventListener('DOMContentLoaded', function() {
+    const daysSegment = document.querySelector('[data-unit="days"] .countdown-segment');
+    if (!daysSegment.querySelector('.flip-card')) {
+        const daysCards = `
+            <div class="flip-card" data-value="0">
+                <div class="top">0</div>
+                <div class="bottom">0</div>
+            </div>
+            <div class="flip-card" data-value="0">
+                <div class="top">0</div>
+                <div class="bottom">0</div>
+            </div>
+        `;
+        daysSegment.innerHTML = daysCards;
     }
-    updateArchiveTabIndicator();
-};
-
-
-// Gestion du menu langue (MAJ: clic sur l'icône seulement)
-const langMenu = document.getElementById('langMenu');
-const langIcon = document.getElementById('langIcon');
-if(langIcon && langMenu) {
-    langIcon.addEventListener('click', function(e) {
-        e.stopPropagation();
-        langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
-    });
-    langMenu.querySelectorAll('li').forEach(function(item) {
-        item.addEventListener('click', function() {
-            // Ici, ajouter la logique de changement de langue si besoin
-            langMenu.style.display = 'none';
-        });
-    });
-    document.addEventListener('click', function() {
-        langMenu.style.display = 'none';
-    });
-}
+});
 </script>
 <style>
 /* Ajout du style pour les flags et les boutons d'archive */
