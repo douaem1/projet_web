@@ -1,40 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendar</title>
+    <title>Calendrier CAN 2025</title>
     <link rel="stylesheet" href="matches.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script src="matches.js" defer></script>
   </head>
   <body>
-    <h1>Calendrier Global - CAN 2025 </h1>
+    <header class="main-header">
+      <div class="header-aurora">
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+        <div class="aurora__item"></div>
+      </div>
+      <h1 class="header-title">Calendrier CAN 2025</h1>
+    </header>
+
     <div class="calendar">
       <header>
         <h3></h3>
         <nav>
-          <button id="prev"></button>
-          <button id="next"></button>
+          <button id="prev"><i class="fas fa-chevron-left"></i></button>
+          <button id="next"><i class="fas fa-chevron-right"></i></button>
         </nav>
       </header>
       <section>
         <ul class="days">
-          <li>Sun</li>
-          <li>Mon</li>
-          <li>Tue</li>
-          <li>Wed</li>
-          <li>Thu</li>
-          <li>Fri</li>
-          <li>Sat</li>
+          <li>Dim</li>
+          <li>Lun</li>
+          <li>Mar</li>
+          <li>Mer</li>
+          <li>Jeu</li>
+          <li>Ven</li>
+          <li>Sam</li>
         </ul>
         <ul class="dates"></ul>
       </section>
     </div>
-    <div id="match-list" class="mt-4">
-  <h4>Matchs du jour :</h4>
-  <ul id="matches"></ul>
-</div>
 
+    <div class="match-list">
+      <h2>Matches de la CAN 2025</h2>
+      <div class="match-box" id="match-2025-12-21">
+        <div class="match-date">Dimanche 21 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Maroc</span>
+            <div class="team-flag">
+              <img src="images/Maroc.png" alt="Drapeau du Maroc">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/Comoros.png" alt="Drapeau des Comores">
+            </div>
+            <span class="team-name">Comores</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Mohammed V, Casablanca</span>
+        </div>
+      </div>
+
+      <div class="match-box" id="match-2025-12-22">
+        <div class="match-date">Lundi 22 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Mali</span>
+            <div class="team-flag">
+              <img src="images/teams/Mali.jpg" alt="Drapeau du Mali">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>15:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Zambie.jpg" alt="Drapeau de Zambie">
+            </div>
+            <span class="team-name">Zambie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Ibn Batouta, Tanger</span>
+        </div>
+        <div class="match-separator"></div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Sénégal</span>
+            <div class="team-flag">
+              <img src="images/teams/Senegal.jpg" alt="Drapeau du Sénégal">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Algerie.jpg" alt="Drapeau d'Algérie">
+            </div>
+            <span class="team-name">Algérie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Adrar, Agadir</span>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

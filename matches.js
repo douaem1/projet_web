@@ -3,65 +3,125 @@ const dates = document.querySelector(".dates");
 const navs = document.querySelectorAll("#prev, #next");
 
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Janvier",
+  "Février",
+  "Mars",
+  "Avril",
+  "Mai",
+  "Juin",
+  "Juillet",
+  "Août",
+  "Septembre",
+  "Octobre",
+  "Novembre",
+  "Décembre",
 ];
 
-// Ajout des matchs
+const weekDays = [
+  "Dimanche",
+  "Lundi",
+  "Mardi",
+  "Mercredi",
+  "Jeudi",
+  "Vendredi",
+  "Samedi"
+];
+
+// Simplified match data structure
 const matchs = {
-  "2025-01-13": [
-    { teams: "Maroc 🇲🇦 vs Égypte 🇪🇬", place: "Casablanca", time: "20h00" },
+  "2025-12-21": [
+    {
+      id: "match-2025-12-21",
+      homeTeam: {
+        name: "Maroc",
+        flag: "images/Maroc.png"
+      },
+      awayTeam: {
+        name: "Comores",
+        flag: "images/Comoros.png"
+      },
+      time: "20:00",
+      stadium: "Stade Mohammed V, Casablanca"
+    }
   ],
-  "2025-01-14": [
-    { teams: "Sénégal 🇸🇳 vs Algérie 🇩🇿", place: "Rabat", time: "18h00" }
-  ],
-  // Ajoute d'autres matchs ici manuellement
+  "2025-12-22": [
+    {
+      id: "match-2025-12-22",
+      homeTeam: {
+        name: "Mali",
+        flag: "images/teams/Mali.jpg"
+      },
+      awayTeam: {
+        name: "Zambie",
+        flag: "images/teams/Zambie.jpg"
+      },
+      time: "15:30",
+      stadium: "Stade Ibn Batouta, Tanger"
+    },
+    {
+      homeTeam: {
+        name: "Sénégal",
+        flag: "images/teams/Senegal.jpg"
+      },
+      awayTeam: {
+        name: "Algérie",
+        flag: "images/teams/Algerie.jpg"
+      },
+      time: "18:00",
+      stadium: "Stade Adrar, Agadir"
+    }
+  ]
 };
 
 let date = new Date();
 let month = date.getMonth();
 let year = date.getFullYear();
 
+function scrollToMatch(dateStr) {
+  const matchId = `match-${dateStr}`;
+  const matchElement = document.getElementById(matchId);
+  if (matchElement) {
+    matchElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    matchElement.classList.add('highlight');
+    setTimeout(() => {
+      matchElement.classList.remove('highlight');
+    }, 2000);
+  }
+}
+
+function formatDate(date) {
+  const day = weekDays[date.getDay()];
+  const monthName = months[date.getMonth()];
+  return `${day} ${date.getDate()} ${monthName} ${date.getFullYear()}`;
+}
+
 function renderCalendar() {
-  // premier jour du mois
   const start = new Date(year, month, 1).getDay();
-  // dernier jour du mois
   const endDate = new Date(year, month + 1, 0).getDate();
-  // dernier jour de la semaine du mois
   const end = new Date(year, month, endDate).getDay();
-  // dernier jour du mois précédent
   const endDatePrev = new Date(year, month, 0).getDate();
 
   let datesHtml = "";
 
-  // Ajoute les jours du mois précédent (inactifs)
   for (let i = start; i > 0; i--) {
     datesHtml += `<li class="inactive">${endDatePrev - i + 1}</li>`;
   }
 
-  // Génère les jours du mois actuel dynamiquement
   for (let i = 1; i <= endDate; i++) {
     const fullDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`;
-    let className =
-      i === date.getDate() &&
-      month === new Date().getMonth() &&
-      year === new Date().getFullYear()
-        ? ' class="today"'
-        : "";
+    let className = i === date.getDate() && 
+                   month === new Date().getMonth() && 
+                   year === new Date().getFullYear()
+      ? ' class="today"'
+      : "";
+    
+    if (matchs[fullDate]) {
+      className = className ? className.replace('"', ' has-matches"') : ' class="has-matches"';
+    }
+    
     datesHtml += `<li${className} data-date="${fullDate}">${i}</li>`;
   }
 
-  // Ajoute les jours du mois suivant (inactifs)
   for (let i = end; i < 6; i++) {
     datesHtml += `<li class="inactive">${i - end + 1}</li>`;
   }
@@ -69,47 +129,84 @@ function renderCalendar() {
   dates.innerHTML = datesHtml;
   header.textContent = `${months[month]} ${year}`;
 
-  // Ajoute un écouteur de clic à chaque jour
-  document.querySelectorAll(".dates li").forEach((li) => {
+  // Add click events to dates
+  document.querySelectorAll(".dates li:not(.inactive)").forEach((li) => {
     li.addEventListener("click", () => {
       const selectedDate = li.getAttribute("data-date");
-      const matchList = document.getElementById("matches");
-      matchList.innerHTML = ""; // Vide l'ancienne liste
-
-      if (matchs[selectedDate]) {
-        matchs[selectedDate].forEach((match) => {
-          const item = document.createElement("li");
-          item.innerHTML = `<strong>${match.teams}</strong> – ${match.place} à ${match.time}`;
-          matchList.appendChild(item);
-        });
-      } else {
-        matchList.innerHTML = "<li>Aucun match prévu ce jour-là ! </li>";
+      if (selectedDate) {
+        scrollToMatch(selectedDate);
       }
     });
   });
 }
 
-// Navigation pour changer de mois
-navs.forEach((nav) => {
-  nav.addEventListener("click", (e) => {
-    const btnId = e.target.id;
+function showMatches(selectedDate) {
+  const matchList = document.getElementById("matches");
+  const template = document.getElementById("match-template");
+  matchList.innerHTML = "";
 
-    if (btnId === "prev" && month === 0) {
-      year--;
-      month = 11;
-    } else if (btnId === "next" && month === 11) {
-      year++;
-      month = 0;
+  if (matchs[selectedDate]) {
+    matchs[selectedDate].forEach((match) => {
+      const matchElement = template.content.cloneNode(true);
+      
+      // Date du match
+      matchElement.querySelector(".match-date").textContent = formatDate(new Date(selectedDate));
+      
+      // Équipe à domicile
+      const homeTeam = matchElement.querySelector(".team-home");
+      homeTeam.querySelector(".team-name").textContent = match.homeTeam.name;
+      homeTeam.querySelector(".team-flag img").src = match.homeTeam.flag;
+      homeTeam.querySelector(".team-flag img").alt = `${match.homeTeam.name} flag`;
+      
+      // Heure du match
+      const [time, period] = match.time.split(" ");
+      matchElement.querySelector(".match-time").innerHTML = `
+        <span>${time}</span>
+        <span>${period}</span>
+      `;
+      
+      // Équipe à l'extérieur
+      const awayTeam = matchElement.querySelector(".team-away");
+      awayTeam.querySelector(".team-name").textContent = match.awayTeam.name;
+      awayTeam.querySelector(".team-flag img").src = match.awayTeam.flag;
+      awayTeam.querySelector(".team-flag img").alt = `${match.awayTeam.name} flag`;
+      
+      matchList.appendChild(matchElement);
+    });
+  } else {
+    const noMatch = document.createElement("div");
+    noMatch.className = "match-box";
+    noMatch.innerHTML = `
+      <div class="match-date">${formatDate(new Date(selectedDate))}</div>
+      <div class="match-content">
+        <div class="team">
+          <span class="team-name">Aucun match prévu ce jour</span>
+        </div>
+      </div>
+    `;
+    matchList.appendChild(noMatch);
+  }
+}
+
+// Add navigation event listeners
+navs.forEach(nav => {
+  nav.addEventListener("click", () => {
+    if (nav.id === "prev") {
+      month--;
+      if (month < 0) {
+        month = 11;
+        year--;
+      }
     } else {
-      month = btnId === "next" ? month + 1 : month - 1;
+      month++;
+      if (month > 11) {
+        month = 0;
+        year++;
+      }
     }
-
-    date = new Date(year, month, new Date().getDate());
-    year = date.getFullYear();
-    month = date.getMonth();
-
     renderCalendar();
   });
 });
 
+// Initial render
 renderCalendar();
