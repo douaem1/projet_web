@@ -32,11 +32,10 @@
                 </div>
                 <div class="nav-links" style="margin-left:110px;">
                     <a href="#acceuil">Acceuil</a>
-                    <a href="#ceremony">Cérémonie</a>
-                    <a href="#previous">Archive</a>
-                    <a href="#trophy">Stades</a>
-                    <a href="# equipes">Équipes</a>
-                    <a href="#actualités">Actualités</a>
+                    <a href="#archive">Archive</a>  <!-- Changed from "Actualités" and updated href -->
+                    <a href="#calendrier">Calendrier</a>
+                    <a href="#equipes">Équipes</a>
+                    <a href="#stades">Stades</a>
                 </div>
                 <!-- Bouton de langue -->
                 <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;">
@@ -173,7 +172,7 @@
         </section>
         
         <!-- Archive Section -->
-        <section class="archive-section" id="previous">
+        <section class="archive-section" id="archive">
             <div class="container">
                 <div class="section-title">
                     <h2>Archive</h2>
@@ -243,21 +242,93 @@
         
         <!-- Footer -->
         <footer>
-    <div class="container">
-        <div class="footer-content">
-            <div>
-                <h3 style="color: var(--secondary);">CAN 2025</h3>
-                <p>Le rendez-vous incontournable du football africain</p>
+    <div class="footer-container">
+        <!-- Section principale du footer -->
+        <div class="footer-main">
+            <!-- Colonne 1: Media & News -->
+            <div class="footer-column">
+                <h3>Media & Actualités</h3>
+                <ul>
+                    <li><a href="#actualites">Actualités</a></li>
+                    <li><a href="#highlights">Highlights</a></li>
+                    <li><a href="#photos">Galerie Photos</a></li>
+                    <li><a href="#videos">Vidéos</a></li>
+                    <li><a href="#presse">Espace Presse</a></li>
+                </ul>
             </div>
-           
-            <div>
-                <p>&copy; 2025 Confédération Africaine de Football. Tous droits réservés.</p>
+
+            <!-- Colonne 2: Compétition -->
+            <div class="footer-column">
+                <h3>CAN 2025</h3>
+                <ul>
+                    <li><a href="#equipes">Équipes</a></li>
+                    <li><a href="#matchs">Calendrier</a></li>
+                    <li><a href="#stades">Stades</a></li>
+                    <li><a href="#billets">Billetterie</a></li>
+                    <li><a href="#reglement">Règlement</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3: Organisation -->
+            <div class="footer-column">
+                <h3>Organisation</h3>
+                <ul>
+                    <li><a href="#maroc">Le Maroc Hôte</a></li>
+                    <li><a href="#caf">À propos de la CAF</a></li>
+                    <li><a href="#sponsors">Partenaires</a></li>
+                    <li><a href="#volontaires">Programme Volontaires</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 4: Contact -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <p>Fédération Royale Marocaine de Football</p>
+                    <p>51-53, Avenue Ibn Sina Agdal - Rabat</p>
+                    <p>Tél: +212 537 672 198</p>
+                    <p>Email: can2025@frmf.ma</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section réseaux sociaux -->
+        <div class="social-section">
+            <h3>Suivez-nous</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/CAF" target="_blank">
+                    <img src="images\Archive\facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/caf_online" target="_blank">
+                    <img src="images\Archive\instagram.png" alt="Instagram">
+                </a>
+                <a href="https://x.com/CAF_Online" target="_blank">
+                    <img src="images\Archive\twitter.png" alt="Twitter">
+                </a>
+                <a href="https://www.youtube.com/user/MyAfricanFootball" target="_blank">
+                    <img src="images\Archive\youtube.png" alt="YouTube">
+                </a>
+            </div>
+        </div>
+
+        <!-- Section bas de footer -->
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="#confidentialite">Politique de confidentialité</a>
+                <a href="#cookies">Cookies</a>
+                <a href="#conditions">Conditions d'utilisation</a>
+            </div>
+            <div class="copyright">
+                <p>© 2024-2025 CAN Maroc 2025. Tous droits réservés</p>
+                <small>Projet étudiant - Développé avec passion</small>
             </div>
         </div>
     </div>
+              
 </footer>
         <script src="accueil.js"></script>
         <script>
+
   // Date du coup d'envoi (exemple : 15 janvier 2025 à 20h00)
   const kickoffDate = new Date("2025-12-20T20:00:00").getTime();
 

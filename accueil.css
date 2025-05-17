@@ -19,11 +19,22 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background: var(--candle);
-    color: var(--juniper);
-    /* Ajout d'un padding-top pour ne pas masquer le contenu sous la navbar */
+    display: flex;
+    flex-direction: column;
     padding-top: 90px;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -348,108 +359,107 @@ nav {
 /* Ceremony Section */
 .ceremony-section {
     padding: 60px 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600') center/cover;
+    background: #04361D , url('/api/placeholder/1200/600') center/cover;
 }
 
 .ceremony-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items: center;
+    flex-wrap: nowrap; 
+    gap: 40px;
+    align-items: center; 
+    justify-content: center;
+    max-width: 1400px; 
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.ceremony-text, .ceremony-image {
+    flex: 0 0 600px; /* Changed from flex: 1 to fixed width */
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+    margin: 0; /* Added to remove any default margins */
 }
 
 .ceremony-text {
-    flex: 1;
-    min-width: 300px;
-    color:#f7eedad0;
+    color: #f7eedad0;
+    padding: 40px;
+    background: rgba(4, 54, 29, 0.85);
+    border-radius: 15px;
+    border: 2px solid rgba(210, 180, 140, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;  /* Changed from auto to hidden */
 }
 
 .ceremony-image {
-    flex: 1;
-    min-width: 300px;
-    height: 300px;
-    background-color: #4B0E0E;
-    border-radius: 10px;
+    position: relative;
+    border-radius: 15px;
     overflow: hidden;
-    position: relative;
-}
-
-/* Previous CAN Section */
-.previous-can-section {
-    padding: 60px 0;
-}
-
-.previous-can-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.previous-can-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.previous-can-stats {
-    flex: 1;
-    min-width: 300px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.stat-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-}
-
-.stat-card.mini-stat {
-    min-width: 80px;
-    padding: 6px 0;
-    font-size: 0.92rem;
-    border-radius: 10px;
-    background: #f7f7f7;
-    box-shadow: 0 1px 4px #0001;
-    text-align: center;
-    margin: 0;
-}
-.stat-card.mini-stat .stat-value {
-    font-size: 1.08rem;
-    font-weight: bold;
-    color: var(--secondary, #1e90ff);
-}
-
-.stat-value {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--secondary);
-    margin-bottom: 5px;
-}
-
-/* Trophy Section */
-.trophy-section {
-    padding: 60px 0;
-    text-align: center;
-    position: relative;
-}
-
-.trophy-container {
-    width: 300px;
-    height: 300px;
-    margin: 40px auto;
-    perspective: 1000px;
-}
-
-.trophy {
-    width: 1000%;
-    height: 100%;
-    position: relative;
     transform-style: preserve-3d;
-    animation: rotate 20s infinite linear;
+    transition: transform 0.5s ease;
+}
+
+.ceremony-image:hover {
+    transform: perspective(1000px) rotateY(-15deg) rotateX(5deg) translateY(-10px);
+    box-shadow: 
+        25px 25px 40px rgba(0,0,0,0.3),
+        inset -5px -5px 15px rgba(4, 54, 29, 0.5);
+}
+
+.ceremony-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.ceremony-image:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2) contrast(1.1);
+}
+
+.ceremony-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(210, 180, 140, 0.3) 45%,
+        rgba(4, 54, 29, 0.4) 55%,
+        transparent 100%
+    );
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.ceremony-image:hover::before {
+    transform: translateX(100%);
+}
+
+.ceremony-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(4, 54, 29, 0) 0%,
+        rgba(4, 54, 29, 0.2) 50%,
+        rgba(4, 54, 29, 0.4) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.ceremony-image:hover::after {
+    opacity: 1;
 }
 
 @keyframes rotate {
@@ -528,40 +538,95 @@ nav {
 
 /* Footer */
 footer {
-    background: var(--juniper);
-    color: var(--candle);
-    padding: 30px 0;
+    background-color: #04361D;
+    padding: 60px 0 20px; /* Increased top padding */
+    color: #fff;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px; /* Additional top margin */
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #D2B48C;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.social-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.social-section h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    margin-top: 15px;
 }
 
 .social-links a {
-    color: var(--light);
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
     transition: all 0.3s ease;
 }
 
+.social-links a img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(89%) sepia(18%) saturate(346%) hue-rotate(357deg) brightness(90%) contrast(82%);
+    transition: filter 0.3s ease;
+}
+
 .social-links a:hover {
-    background-color: var(--primary);
+    background: #e63946;
     transform: translateY(-3px);
+}
+
+.social-links a:hover img {
+    filter: brightness(0) saturate(100%) invert(100%);
 }
 
 /* Utilities */
@@ -1364,8 +1429,18 @@ text-align: center;
 /* Le Maroc accueille la CAN */
 .maroc-accueil-section {
     padding: 60px 0 40px 0;
-    background: linear-gradient(90deg, #f7eedad0 60%, #fff 100%);
+    background: #4B0E0E !important;
+
 }
+
+.maroc-accueil-section * {
+    color: #D2B48C !important; ;
+}
+
+.maroc-accueil-section h2 {
+    color: #e63946 !important;
+}
+
 .maroc-accueil-row {
   display: flex;
   flex-wrap: wrap;
@@ -1439,4 +1514,92 @@ text-align: center;
     height: 90px;
     max-width: 99vw;
   }
+}
+.bracket-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.bracket-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bracket-grid .round {
+    flex: 1 1 22%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.bracket-grid .round h3 {
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.bracket-grid .round ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bracket-grid .round ul li {
+    background-color: #eaeaea;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.tournament-bracket-section {
+    flex: 1;
+    width: 100%;
+    padding: 60px 0;
+    background: #fff;
+    margin-bottom: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(210, 180, 140, 0.2);
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #D2B48C;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    color: #D2B48C;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.copyright small {
+    display: block;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.archive-section {
+    margin-bottom: 60px; /* Adds space between archive section and footer */
+    padding-bottom: 40px;
 }
