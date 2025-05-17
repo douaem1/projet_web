@@ -7,189 +7,257 @@
     <link rel="stylesheet" href="accueil.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header-img">
-        <h1 class="header-title">COUPE D'AFRIQUE DES NATIONS 2025</h1>
-    </header>
-    
-    <!-- Countdown Timer -->
-    <div class="countdown-container">
-        <div class="countdown-title">Coup d'envoi dans :</div>
-        <div id="countdown" class="countdown-timer">
-            <span id="days">00</span>j
-            <span id="hours">00</span>h
-            <span id="minutes">00</span>m
-            <span id="seconds">00</span>s
+        <a id="acceuil"></a>
+        <!-- Header -->
+        <header class="header-img">
+            <h1 class="header-title">COUPE D'AFRIQUE DES NATIONS 2025</h1>
+        </header>
+        
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+            <div class="countdown-title">Coup d'envoi dans :</div>
+            <div id="countdown" class="countdown-timer">
+                <span id="days">00</span>j
+                <span id="hours">00</span>h
+                <span id="minutes">00</span>m
+                <span id="seconds">00</span>s
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="main-navbar">
+            <div class="container nav-container">
+                <div class="nav-logo" style="display:flex;align-items:center;position:absolute;left:32px;top:12px;height:56px;">
+                    <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN" style="height:56px;width:auto;vertical-align:middle;display:block;">
+                </div>
+                <div class="nav-links" style="margin-left:110px;">
+                    <a href="#acceuil">Acceuil</a>
+                    <a href="#ceremony">Cérémonie</a>
+                    <a href="#previous">Archive</a>
+                    <a href="#trophy">Stades</a>
+                    <a href="# equipes">Équipes</a>
+                    <a href="#actualités">Actualités</a>
+                </div>
+                <!-- Bouton de langue -->
+                <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;">
+                    <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" style="width:26px;height:26px;vertical-align:middle;filter:drop-shadow(0 1px 2px #0002);cursor:pointer;" />
+                    <ul id="langMenu" class="lang-menu" style="display:none;">
+                        <li data-lang="fr">Français</li>
+                        <li data-lang="ar">العربية</li>
+                        <li data-lang="en">English</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Section des deux premiers matchs et trophée -->
+        <section class="matches-section" id="matches">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Premiers Matchs</h2>
+                    <div class="ligne-verte"></div>
+                </div>
+                <div class="matches-row">
+                    <!-- Premier match -->
+                    <div class="match-card animate-fadeIn">
+                        <div class="match-header">
+                            <h3>Match d'ouverture</h3>
+                            <p>Groupe A</p>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-flag">MAR</div>
+                                <h4>Maroc</h4>
+                                <p>(Pays hôte)</p>
+                            </div>
+                            <div class="versus">VS</div>
+                            <div class="team">
+                                <div class="team-flag">GHA</div>
+                                <h4>Ghana</h4>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> 15 Janvier 2025 | 20:00</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Stade Mohamed V, Casablanca</p>
+                            <a href="#" class="btn btn-secondary" style="margin-top: 15px;">Plus d'informations</a>
+                        </div>
+                    </div>
+                    <!-- Trophée au centre -->
+                    <div class="trophy-center">
+                        <div class="trophy-img-container">
+                            <img src="images/trophee.jpg" alt="Stades CAN" class="trophy-img" />
+                        </div>
+                    </div>
+                    <!-- Deuxième match -->
+                    <div class="match-card animate-fadeIn" style="animation-delay: 0.3s;">
+                        <div class="match-header">
+                            <h3>Deuxième Match</h3>
+                            <p>Groupe A</p>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team">
+                                <div class="team-flag">SEN</div>
+                                <h4>Sénégal</h4>
+                                <p>(Tenant du titre)</p>
+                            </div>
+                            <div class="versus">VS</div>
+                            <div class="team">
+                                <div class="team-flag">TUN</div>
+                                <h4>Tunisie</h4>
+                            </div>
+                        </div>
+                        <div class="match-info">
+                            <p><i class="far fa-calendar-alt"></i> 16 Janvier 2025 | 17:00</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Stade Adrar, Agadir</p>
+                            <a href="#" class="btn btn-secondary" style="margin-top: 15px;">Plus d'informations</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section "Le Maroc accueille la CAN" -->
+        <section class="maroc-accueil-section">
+            <div class="container maroc-accueil-row maroc-accueil-center">
+                <div class="section-title">
+                    <h2>Le Maroc accueille la CAN</h2>
+                    <div class="ligne-verte"></div>
+                </div>
+                <div class="maroc-accueil-flex">
+                    <div class="maroc-accueil-text-col">
+                        <p>
+                            Le Royaume du Maroc accueille avec fierté la 35ᵉ édition de la Coupe d’Afrique des Nations. 
+                            Terre de traditions et de diversité, le Maroc séduit par sa culture riche, ses villes impériales, ses souks colorés et son hospitalité légendaire. 
+                            Le football occupe une place centrale dans le cœur des Marocains : des clubs mythiques comme le Wydad, le Raja ou la Renaissance de Berkane, aux exploits de l’équipe nationale, demi-finaliste historique de la Coupe du Monde 2022 et vainqueur de la CAN 1976, le Maroc rayonne sur la scène africaine et mondiale.
+                        </p>
+                    </div>
+                    <div class="maroc-accueil-img-col">
+                        <img src="images/Archive/maroccoMAP.webp" alt="Carte stylisée du Maroc" class="maroc-carte-img-small">
+                    </div>
+                </div>
+            </div>
+            <div class="maroc-slider maroc-slider-wide">
+                <img class="maroc-slide active" src="images/Archive/decoration1.jpg" alt="Décoration 1">
+                <img class="maroc-slide" src="images/Archive/decoration2.jpg" alt="Décoration 2">
+                <img class="maroc-slide" src="images/Archive/decoration3.jpg" alt="Décoration 3">
+                <img class="maroc-slide" src="images/Archive/decoration4.webp" alt="Décoration 4">
+                <img class="maroc-slide" src="images/Archive/decoration5.jpg" alt="Décoration 5">
+            </div>
+        </section>
+        
+        <!-- Ceremony Section -->
+        <section class="ceremony-section" id="ceremony">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Cérémonie d'Ouverture</h2>
+                    <div class="ligne-verte"></div>
+                </div>
+                <div class="ceremony-content">
+                    <div class="ceremony-text animate-fadeIn">
+                        <h3 style="color: var(--secondary); margin-bottom: 20px;">Une célébration spectaculaire de la culture africaine</h3>
+                        <p style="margin-bottom: 15px;">La cérémonie d'ouverture de la CAN 2025 promet d'être un spectacle éblouissant mettant en valeur la riche diversité culturelle du Maroc et de l'Afrique toute entière. Des performances musicales, des danses traditionnelles et des effets spéciaux viendront sublimer cet événement unique.</p>
+                        <p style="margin-bottom: 15px;">Le grand stade de Casablanca accueillera plus de 65 000 spectateurs pour cette soirée historique qui marquera le début d'un mois de compétition intense entre les meilleures équipes du continent.</p>
+                        <ul style="list-style: none; margin: 20px 0;">
+                            <li style="margin-bottom: 10px;">*Performances culturelles représentant les régions du Maroc</li>
+                            <li style="margin-bottom: 10px;">*Concert avec les plus grandes stars africaines</li>
+                            <li style="margin-bottom: 10px;">*Présentation des équipes participantes</li>
+                            <li style="margin-bottom: 10px;">*Hommage aux légendes du football africain</li>
+                        </ul>
+                        <a href="#" class="btn">Regarder la bande-annonce</a>
+                    </div>
+                    <div class="ceremony-image animate-fadeIn" style="animation-delay: 0.3s;">
+                        <img src="https://i.pinimg.com/736x/3b/4b/a0/3b4ba04195fc2da5c1e8b49c11d4292f.jpg" alt="Cérémonie d'ouverture" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Archive Section -->
+        <section class="archive-section" id="previous">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Archive</h2>
+                    <div class="ligne-verte"></div>
+                </div>
+                <div class="archive-tabs" style="position:relative;">
+                    <div class="archive-tabs-indicator"></div>
+                    <button class="archive-tab active" id="tab-2023" onclick="showArchive('2023')">
+                        <img src="images/teams/cote-divoire.jpg" alt="Côte d'Ivoire" class="flag-icon"> CAN 2023
+                    </button>
+                    <button class="archive-tab" id="tab-2021" onclick="showArchive('2021')">
+                        <img src="images/teams/senegal.jpg" alt="Sénégal" class="flag-icon"> CAN 2021
+                    </button>
+                </div>
+                <div id="archive-2023" class="archive-content" style="display:block;">
+    <div class="archive-row archive-row-2023">
+        <div class="archive-img-col archive-img-col-2023">
+            <div class="archive-img-hover-container">
+                <img src="images/Archive/can2023winner.jpg" alt="Côte d'Ivoire vainqueur CAN 2023" class="archive-img-2023">
+                <div class="archive-img-overlay">
+                    <h3>La victoire historique de la Côte d'Ivoire</h3>
+                    <p>La CAN 2023, organisée en Côte d'Ivoire, a vu la Côte d'Ivoire triompher à domicile après un parcours impressionnant, remportant la finale et décrochant ainsi un nouveau titre continental.</p>
+                </div>
+            </div>
+        </div>
+        <div class="archive-info-col archive-info-col-2023">
+            <a href="#" class="btn btn-highlight-2023">Highlights du match</a>
+            <div class="archive-stats archive-stats-2023">
+                <div class="stat-card mini-stat"><div class="stat-value">52</div><div>Matchs joués</div></div>
+                <div class="stat-card mini-stat"><div class="stat-value">119</div><div>Buts</div></div>
+                <div class="stat-card mini-stat"><div class="stat-value">1 170</div><div>Tirs</div></div>
+                <div class="stat-card mini-stat"><div class="stat-value">17</div><div>Pénalties</div></div>
+                <div class="stat-card mini-stat"><div class="stat-value">40 209</div><div>Passes</div></div>
+                <div class="stat-card mini-stat"><div class="stat-value">165</div><div>Cartons jaunes</div></div>
+                <div class="stat-card mini-stat"><div class="stat-value">13</div><div>Cartons rouges</div></div>
+            </div>
         </div>
     </div>
-    
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <div>
-                <a href="#" style="color: var(--secondary); font-weight: bold; text-decoration: none; font-size: 1.2rem;">CAN 2025</a>
-            </div>
-            <div class="nav-links">
-                <a href="#matches">Matchs</a>
-                <a href="#ceremony">Cérémonie</a>
-                <a href="#previous">CAN 2023</a>
-                <a href="#trophy">Stades</a>
-                <a href="# equipes">Équipes</a>
-                <a href="#actualités">Actualités</a>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Matches Section -->
-    <section class="matches-section" id="matches">
-        <div class="container">
-            <div class="section-title">
-                <h2>Premiers Matchs</h2>
-            </div>
-            <div class="matches-row">
-                <!-- Premier match -->
-                <div class="match-card animate-fadeIn">
-                    <div class="match-header">
-                        <h3>Match d'ouverture</h3>
-                        <p>Groupe A</p>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team">
-                            <div class="team-flag">MAR</div>
-                            <h4>Maroc</h4>
-                            <p>(Pays hôte)</p>
-                        </div>
-                        <div class="versus">VS</div>
-                        <div class="team">
-                            <div class="team-flag">GHA</div>
-                            <h4>Ghana</h4>
-                        </div>
-                    </div>
-                    <div class="match-info">
-                        <p><i class="far fa-calendar-alt"></i> 15 Janvier 2025 | 20:00</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Stade Mohamed V, Casablanca</p>
-                        <a href="#" class="btn btn-secondary" style="margin-top: 15px;">Plus d'informations</a>
-                    </div>
-                </div>
-                <!-- Stades au centre -->
-                <div class="trophy-center">
-                    <div class="trophy-img-container">
-                        <img src="images/trophee.jpg" alt="Stades CAN" class="trophy-img" />
-                    </div>
-                </div>
-                <!-- Deuxième match -->
-                <div class="match-card animate-fadeIn" style="animation-delay: 0.3s;">
-                    <div class="match-header">
-                        <h3>Deuxième Match</h3>
-                        <p>Groupe A</p>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team">
-                            <div class="team-flag">SEN</div>
-                            <h4>Sénégal</h4>
-                            <p>(Tenant du titre)</p>
-                        </div>
-                        <div class="versus">VS</div>
-                        <div class="team">
-                            <div class="team-flag">TUN</div>
-                            <h4>Tunisie</h4>
-                        </div>
-                    </div>
-                    <div class="match-info">
-                        <p><i class="far fa-calendar-alt"></i> 16 Janvier 2025 | 17:00</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Stade Adrar, Agadir</p>
-                        <a href="#" class="btn btn-secondary" style="margin-top: 15px;">Plus d'informations</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Ceremony Section -->
-    <section class="ceremony-section" id="ceremony">
-        <div class="container">
-            <div class="section-title">
-                <h2>Cérémonie d'Ouverture</h2>
-            </div>
-            <div class="ceremony-content">
-                <div class="ceremony-text animate-fadeIn">
-                    <h3 style="color: var(--secondary); margin-bottom: 20px;">Une célébration spectaculaire de la culture africaine</h3>
-                    <p style="margin-bottom: 15px;">La cérémonie d'ouverture de la CAN 2025 promet d'être un spectacle éblouissant mettant en valeur la riche diversité culturelle du Maroc et de l'Afrique toute entière. Des performances musicales, des danses traditionnelles et des effets spéciaux viendront sublimer cet événement unique.</p>
-                    <p style="margin-bottom: 15px;">Le grand stade de Casablanca accueillera plus de 65 000 spectateurs pour cette soirée historique qui marquera le début d'un mois de compétition intense entre les meilleures équipes du continent.</p>
-                    <ul style="list-style: none; margin: 20px 0;">
-                        <li style="margin-bottom: 10px;">🎭 Performances culturelles représentant les régions du Maroc</li>
-                        <li style="margin-bottom: 10px;">🎵 Concert avec les plus grandes stars africaines</li>
-                        <li style="margin-bottom: 10px;">🌟 Présentation des équipes participantes</li>
-                        <li style="margin-bottom: 10px;">⚽ Hommage aux légendes du football africain</li>
-                    </ul>
-                    <a href="#" class="btn">Regarder la bande-annonce</a>
-                </div>
-                <div class="ceremony-image animate-fadeIn" style="animation-delay: 0.3s;">
-                    <img src="https://i.pinimg.com/736x/3b/4b/a0/3b4ba04195fc2da5c1e8b49c11d4292f.jpg" alt="Cérémonie d'ouverture" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Previous CAN Section -->
-    <section class="previous-can-section" id="previous">
-        <div class="container">
-            <div class="section-title">
-                <h2>CAN 2023 - Rétrospective</h2>
-            </div>
-            <div class="previous-can-content">
-                <div class="previous-can-text animate-fadeIn">
-                    <h3 style="color: var(--secondary); margin-bottom: 20px;">La victoire historique du Sénégal</h3>
-                    <p style="margin-bottom: 15px;">La CAN 2023, organisée en Côte d'Ivoire, a été marquée par la victoire éclatante du Sénégal qui a confirmé son statut de puissance majeure du football africain en conservant son titre acquis en 2021.</p>
-                    <p style="margin-bottom: 15px;">Avec un parcours presque parfait, les Lions de la Téranga ont surmonté tous les obstacles pour soulever à nouveau le prestigieux trophée, sous la houlette de leur charismatique entraîneur Aliou Cissé.</p>
-                    <p style="margin-bottom: 20px;">Cette compétition a également été marquée par les performances exceptionnelles de jeunes talents qui ont éclos sous les yeux du monde entier, promettant un avenir radieux pour le football africain.</p>
-                    <a href="#" class="btn">Revivre les moments forts</a>
-                </div>
-                <div class="previous-can-stats">
-                    <div class="stat-card animate-fadeIn" style="animation-delay: 0.3s;">
-                        <div class="stat-value">102</div>
-                        <div>Buts marqués</div>
-                    </div>
-                    <div class="stat-card animate-fadeIn" style="animation-delay: 0.4s;">
-                        <div class="stat-value">24</div>
-                        <div>Équipes participantes</div>
-                    </div>
-                    <div class="stat-card animate-fadeIn" style="animation-delay: 0.5s;">
-                        <div class="stat-value">9</div>
-                        <div>Buts du meilleur buteur</div>
-                    </div>
-                    <div class="stat-card animate-fadeIn" style="animation-delay: 0.6s;">
-                        <div class="stat-value">1.2M</div>
-                        <div>Spectateurs</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-
-
-
 </div>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <h3 style="color: var(--secondary);">CAN 2025</h3>
-                    <p>Le rendez-vous incontournable du football africain</p>
-                </div>
-               
-                <div>
-                    <p>&copy; 2025 Confédération Africaine de Football. Tous droits réservés.</p>
+                <div id="archive-2021" class="archive-content" style="display:none;">
+                    <div class="archive-row archive-row-2021">
+                        <div class="archive-img-col archive-img-col-2021">
+                            <div class="archive-img-hover-container">
+                                <img src="images/Archive/can2021winner.webp" alt="Sénégal vainqueur CAN 2021" class="archive-img-2021">
+                                <div class="archive-img-overlay archive-img-overlay-2021">
+                                    <h3>La victoire historique du Sénégal</h3>
+                                    <p>La CAN 2021, organisée au Cameroun, a vu le Sénégal triompher après un parcours remarquable, remportant la finale et décrochant ainsi son premier titre continental.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="archive-info-col archive-info-col-2021">
+                            <a href="#" class="btn btn-highlight-2021">Highlights du match</a>
+                            <div class="archive-stats archive-stats-2021">
+                                <div class="stat-card mini-stat"><div class="stat-value">52</div><div>Matchs joués</div></div>
+                                <div class="stat-card mini-stat"><div class="stat-value">100</div><div>Buts</div></div>
+                                <div class="stat-card mini-stat"><div class="stat-value">1 214</div><div>Tirs</div></div>
+                                <div class="stat-card mini-stat"><div class="stat-value">11</div><div>Pénalties</div></div>
+                                <div class="stat-card mini-stat"><div class="stat-value">38 697</div><div>Passes</div></div>
+                                <div class="stat-card mini-stat"><div class="stat-value">198</div><div>Cartons jaunes</div></div>
+                                <div class="stat-card mini-stat"><div class="stat-value">14</div><div>Cartons rouges</div></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div>
+                <h3 style="color: var(--secondary);">CAN 2025</h3>
+                <p>Le rendez-vous incontournable du football africain</p>
+            </div>
+           
+            <div>
+                <p>&copy; 2025 Confédération Africaine de Football. Tous droits réservés.</p>
+            </div>
         </div>
-    </footer>
-    <script src="accueil.js"></script>
-    <script>
+    </div>
+</footer>
+        <script src="accueil.js"></script>
+        <script>
   // Date du coup d'envoi (exemple : 15 janvier 2025 à 20h00)
   const kickoffDate = new Date("2025-12-20T20:00:00").getTime();
 
@@ -215,6 +283,405 @@
 
   setInterval(updateCountdown, 1000);
   updateCountdown();
+
+  function updateArchiveTabIndicator() {
+    const indicator = document.querySelector('.archive-tabs-indicator');
+    const tab2023 = document.getElementById('tab-2023');
+    const tab2021 = document.getElementById('tab-2021');
+    if (!indicator || !tab2023 || !tab2021) return;
+    const activeTab = tab2023.classList.contains('active') ? tab2023 : tab2021;
+    const rect = activeTab.getBoundingClientRect();
+    const parentRect = activeTab.parentElement.getBoundingClientRect();
+    indicator.style.width = rect.width + 'px';
+    indicator.style.left = (rect.left - parentRect.left) + 'px';
+}
+window.addEventListener('DOMContentLoaded', updateArchiveTabIndicator);
+window.addEventListener('resize', updateArchiveTabIndicator);
+window.showArchive = function(year) {
+    if (year === '2023') {
+        document.getElementById('archive-2023').style.display = 'block';
+        document.getElementById('archive-2021').style.display = 'none';
+        document.getElementById('tab-2023').classList.add('active');
+        document.getElementById('tab-2021').classList.remove('active');
+    } else if (year === '2021') {
+        document.getElementById('archive-2023').style.display = 'none';
+        document.getElementById('archive-2021').style.display = 'block';
+        document.getElementById('tab-2023').classList.remove('active');
+        document.getElementById('tab-2021').classList.add('active');
+    }
+    updateArchiveTabIndicator();
+};
+
+
+// Gestion du menu langue (MAJ: clic sur l'icône seulement)
+const langMenu = document.getElementById('langMenu');
+const langIcon = document.getElementById('langIcon');
+if(langIcon && langMenu) {
+    langIcon.addEventListener('click', function(e) {
+        e.stopPropagation();
+        langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
+    });
+    langMenu.querySelectorAll('li').forEach(function(item) {
+        item.addEventListener('click', function() {
+            // Ici, ajouter la logique de changement de langue si besoin
+            langMenu.style.display = 'none';
+        });
+    });
+    document.addEventListener('click', function() {
+        langMenu.style.display = 'none';
+    });
+}
 </script>
+<style>
+/* Ajout du style pour les flags et les boutons d'archive */
+.archive-tab {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 22px 10px 16px;
+    margin: 0 8px 20px 0;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px #0001;
+    outline: none;
+}
+.archive-tab .flag-icon {
+    width: 28px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px #0002;
+}
+.archive-tab.active, .archive-tab:hover {
+    background: var(--secondary, #1e90ff);
+    color: #fff;
+}
+.archive-tab.active .flag-icon, .archive-tab:hover .flag-icon {
+    border: 2px solid #fff;
+}
+
+/* Styles pour la section Archive */
+.archive-content {
+    display: none;
+    margin-top: 20px;
+}
+.archive-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+.archive-img-col {
+    flex: 1 1 340px;
+    min-width: 320px;
+    max-width: 520px;
+    position: relative;
+}
+.archive-img-2023 {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px #0002;
+    transition: transform 0.3s;
+}
+.archive-img-hover-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
+.archive-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 128, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.archive-img-hover-container:hover .archive-img-2023 {
+    transform: scale(1.05);
+}
+.archive-img-hover-container:hover .archive-img-overlay {
+    opacity: 1;
+}
+.archive-info-col {
+    flex: 1 1 260px;
+    min-width: 240px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.btn-highlight-2023 {
+    background: var(--secondary, #1e90ff);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+    width: 100%;
+}
+.btn-highlight-2023:hover {
+    background: #4B0E0E
+}
+.archive-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+.stat-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    box-shadow: 0 2px 8px #0001;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+}
+.stat-card:hover {
+    transform: translateY(-2px);
+}
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 8px;
+    color: var(--secondary, #1e90ff);
+}
+
+/* Styles spécifiques pour la section Archive 2021 */
+.archive-img-2021 {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px #0002;
+    transition: transform 0.3s;
+}
+.archive-img-overlay-2021 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 128, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.archive-img-hover-container:hover .archive-img-2021 {
+    transform: scale(1.05);
+}
+.archive-img-hover-container:hover .archive-img-overlay-2021 {
+    opacity: 1;
+}
+.archive-info-col-2021 {
+    flex: 1 1 260px;
+    min-width: 240px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.btn-highlight-2021 {
+    background: var(--secondary, #1e90ff);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+    width: 100%;
+}
+.btn-highlight-2021:hover {
+    background:#4B0E0E;
+}
+.archive-stats-2021 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+.archive-tabs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.archive-tabs-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background: linear-gradient(90deg, #1b9e4c 60%, #43c07a 100%);
+    border-radius: 3px;
+    transition: left 0.35s cubic-bezier(.6,.2,.3,1), width 0.35s cubic-bezier(.6,.2,.3,1);
+    z-index: 1;
+}
+.archive-tab {
+    position: relative;
+    z-index: 2;
+}
+
+/* Styles pour la section "Le Maroc accueille la CAN" */
+.maroc-accueil-section {
+    background: #f9f9f9;
+    padding: 40px 0;
+    border-top: 4px solid var(--secondary, #1e90ff);
+}
+.maroc-accueil-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+}
+.maroc-accueil-img-col {
+    flex: 1 1 300px;
+    min-width: 280px;
+    position: relative;
+}
+.maroc-carte-img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px #0002;
+}
+.maroc-slider {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-top: 16px;
+}
+.maroc-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.maroc-slide.active {
+    opacity: 1;
+}
+.maroc-accueil-text-col {
+    flex: 1 1 300px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.maroc-accueil-text-col h2 {
+    color: var(--secondary, #1e90ff);
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.maroc-accueil-text-col p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #333;
+}
+.maroc-accueil-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.maroc-accueil-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 48px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+.maroc-accueil-text-col, .maroc-accueil-img-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.maroc-accueil-text-col {
+    max-width: 520px;
+    text-align: left;
+    align-items: flex-end;
+}
+.maroc-accueil-img-col {
+    min-width: 260px;
+    max-width: 340px;
+    align-items: flex-start;
+}
+.maroc-carte-img-small {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px #0002;
+}
+@media (max-width: 900px) {
+    .maroc-accueil-flex {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .maroc-accueil-text-col, .maroc-accueil-img-col {
+        align-items: center;
+        text-align: center;
+    }
+    .maroc-accueil-text-col {
+        align-items: center;
+    }
+    .maroc-accueil-img-col {
+        align-items: center;
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #04361D;
+    padding: 20px 0;
+    color: #fff;
+    text-align: center;
+}
+footer a {
+    color: #F1ECDB;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer small {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #ddd;
+}
+</style>
 </body>
 </html>

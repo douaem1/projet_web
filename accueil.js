@@ -165,3 +165,83 @@ const animateOnScroll = () => {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('resize', animateOnScroll);
 animateOnScroll();
+
+// Ajout du script pour agrandir les stats au clic sur le bouton highlight
+function toggleStats2023() {
+    const stats = document.querySelector('.archive-stats-2023');
+    if (!stats) return;
+    stats.classList.toggle('stats-expanded');
+}
+
+// Ajout de l'écouteur sur le bouton highlight CAN2023
+window.addEventListener('DOMContentLoaded', function() {
+    const btn = document.querySelector('.btn-highlight-2023');
+    if (btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleStats2023();
+        });
+    }
+
+    // Correction : retirer l'animation auto après affichage CAN2023
+    const stats = document.querySelector('.archive-stats-2023');
+    if (stats) {
+        stats.classList.remove('stats-expanded');
+    }
+});
+
+// Ajout du script pour agrandir les stats au clic sur le bouton highlight CAN2021
+function toggleStats2021() {
+    const stats = document.querySelector('.archive-stats-2021');
+    if (!stats) return;
+    stats.classList.toggle('stats-expanded');
+}
+
+// Ajout de l'écouteur sur le bouton highlight CAN2021
+window.addEventListener('DOMContentLoaded', function() {
+    const btn2021 = document.querySelector('.btn-highlight-2021');
+    if (btn2021) {
+        btn2021.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleStats2021();
+        });
+    }
+    // Correction : retirer l'animation auto après affichage CAN2021
+    const stats2021 = document.querySelector('.archive-stats-2021');
+    if (stats2021) {
+        stats2021.classList.remove('stats-expanded');
+    }
+});
+
+// Correction : retirer l'animation si on change d'onglet
+window.showArchive = function(year) {
+    document.getElementById('archive-2023').style.display = year === '2023' ? 'block' : 'none';
+    document.getElementById('archive-2021').style.display = year === '2021' ? 'block' : 'none';
+    document.getElementById('tab-2023').classList.toggle('active', year === '2023');
+    document.getElementById('tab-2021').classList.toggle('active', year === '2021');
+    // On retire l'animation stats si on change d'onglet
+    if (year === '2023') {
+        const stats = document.querySelector('.archive-stats-2023');
+        if (stats) stats.classList.remove('stats-expanded');
+        const stats2021 = document.querySelector('.archive-stats-2021');
+        if (stats2021) stats2021.classList.remove('stats-expanded');
+    } else if (year === '2021') {
+        const stats2021 = document.querySelector('.archive-stats-2021');
+        if (stats2021) stats2021.classList.remove('stats-expanded');
+        const stats = document.querySelector('.archive-stats-2023');
+        if (stats) stats.classList.remove('stats-expanded');
+    }
+};
+
+// Slider automatique pour la section Maroc accueille la CAN
+(function() {
+  const slides = document.querySelectorAll('.maroc-slide');
+  let idx = 0;
+  if (slides.length > 1) {
+    setInterval(() => {
+      slides[idx].classList.remove('active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('active');
+    }, 2500);
+  }
+})();
