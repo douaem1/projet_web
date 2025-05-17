@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {  /*definition des couleurs*/
+  --dark-green: #04361D;
+  --cambridge-blue: #76BA9D;
+  --beige: #F0F2D5;
+  --red-pantone: #EF233C;
+  --carmine: #97051D;
+  --aurora1: #76BA9D;
+  --aurora2: #EF233C;
+  --aurora3: #04361D;
+  --aurora4: #97051D;
+}
+
+* { /* Sélecteur pour tous les éléments */
+  margin: 0; /* Supprime la marge par défaut */
+  padding: 0; /* Supprime le padding par défaut */
+  box-sizing: border-box;  /* Inclut la bordure et le padding dans la taille */
+  font-family: 'Poppins', sans-serif; /* Définit la police globale */
+}
+
+body { /* Style du corps de la page */
+  font-family: 'Poppins', sans-serif; /* Police principale */
+  background: var(--beige); /* Couleur de fond */
+  margin: 0; /* Supprime la marge par défaut */
+  color: var(--dark-green); /* Couleur du texte */
+  min-height: 100vh; /* Hauteur minimale de la page */
+  padding: 72px 20px 20px;  /* Ajoute du padding */
+}
+
+.main-header { /* En-tête principal */
+  background: var(--dark-green); /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  text-align: center; /* Centre le texte */
+  padding: 3rem 0 2rem 0; /* Ajoute du padding */
+  position: relative; /* Position relative pour les éléments enfants */
+  overflow: hidden; /* Cache les débordements */
+  margin-bottom: 2rem;  /* Marge inférieure */
+}
+
+.header-title { /* Titre de l'en-tête */
+  font-size: 3rem;  /* Taille de la police */
+  font-weight: 700; /* Épaisseur de la police */
+  margin-bottom: 1rem;  /* Marge inférieure */
+  position: relative; /* Position relative pour les éléments enfants */
+  z-index: 2; /* Z-index pour superposer les éléments */
+  background: linear-gradient(90deg, var(--aurora1), var(--aurora2), var(--aurora3), var(--aurora4), var(--aurora1)); /* Dégradé de couleur */
+
+  background-size: 200% 200%; /* Taille du dégradé */
+  background-clip: text;  /* Découpe le texte avec le dégradé */
+  -webkit-background-clip: text;  /* Découpe le texte avec le dégradé pour WebKit */
+  color: transparent; /* Rend le texte transparent */
+  -webkit-text-fill-color: transparent; /* Remplit le texte avec la couleur de fond */
+  animation: aurora-text 6s ease-in-out infinite alternate; /* Animation du dégradé */
+}
+
+.header-aurora { /* En-tête avec aurore */
+  position: absolute; /* Position absolue */
+  top: 0; left: 0; width: 100%; height: 100%; /* Prend toute la largeur et la hauteur */
+  z-index: 1;   /* Z-index pour superposer les éléments */
+  pointer-events: none; /* Désactive les événements de la souris */
+}
+
+.header-aurora .aurora__item { /* Éléments de l'aurore */
+  position: absolute; /* Position absolue */
+  width: 60vw; height: 60vw;  /* Taille de l'élément */
+  filter: blur(2.5rem);   /* Flou */
+  opacity: 0.7; /* Opacité */
+  mix-blend-mode: lighten;  /* Mode de mélange */
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; /* Bordure arrondie */
+  animation: aurora-border 8s ease-in-out infinite alternate; /* Animation de la bordure */
+}
+
+.header-aurora .aurora__item:nth-child(1) { /* Premier élément de l'aurore */ 
+  background: var(--aurora1);   
+  top: -20%; left: -10%; 
+  animation-delay: 0s;
+}
+
+.header-aurora .aurora__item:nth-child(2) { /* Deuxième élément de l'aurore */
+  background: var(--aurora2);
+  top: 10%; right: -15%;
+  animation-delay: 2s;
+}
+
+.header-aurora .aurora__item:nth-child(3) {   /* Troisième élément de l'aurore */
+  background: var(--aurora3);
+  bottom: -20%; left: 10%;
+  animation-delay: 4s;
+}
+
+.header-aurora .aurora__item:nth-child(4) { /* Quatrième élément de l'aurore */
+  background: var(--aurora4);
+  bottom: 0; right: 0;
+  animation-delay: 6s;
+}
+
+/* Navbar Styles */
+.main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--dark-green);
+    box-shadow: 0 2px 12px 0 rgba(4,54,29,0.10);
+    min-height: 60px;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+.nav-links a {
+    color: var(--beige);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover {
+    background: var(--cambridge-blue);
+    color: var(--dark-green);
+}
+.lang-switcher {
+    cursor: pointer;
+}
+.lang-menu {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0002;
+    position: absolute;
+    top: 36px;
+    right: 0;
+    min-width: 110px;
+    padding: 6px 0;
+    z-index: 100;
+}
+.lang-menu li {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: var(--dark-green);
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.lang-menu li:hover {
+    background: var(--cambridge-blue);
+    color: white;
+}
+
+/* Calendar Styles */
+.calendar { /* Styles du calendrier */
+  background: rgba(255,255,255,0.95); /* Couleur de fond */
+  border-radius: 15px;  /* Bordure arrondie */
+  padding: 2rem;  /* Ajoute du padding */
+  max-width: 800px; /* Largeur maximale */
+  margin: 0 auto 2rem auto; /* Centre le calendrier */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07);  /* Ombre */
+  position: relative; /* Position relative pour les éléments enfants */
+}
+
+.calendar header {  /* En-tête du calendrier */
+  display: flex;  /* Flexbox pour l'alignement */
+  justify-content: space-between; /* Espace entre les éléments */
+  align-items: center;  /* Centre les éléments */
+  margin-bottom: 20px;  /* Marge inférieure */
+  background: transparent;      /* Couleur de fond transparente */
+  padding: 0; /* Pas de padding */
+}
+
+.calendar h3 {  /* Titre du calendrier */
+  color: var(--dark-green); /* Couleur du texte */
+  font-size: 1.5rem;  /* Taille de la police */
+  font-weight: 700; /* Épaisseur de la police */
+  text-transform: uppercase;  /* Met le texte en majuscules */
+  letter-spacing: 2px;  /* Espacement entre les lettres */
+}
+
+.calendar nav button {  /* Boutons de navigation */
+  background: none; /* Pas de couleur de fond */
+  border: none; /* Pas de bordure */
+  font-size: 1.2rem;  /* Taille de la police */
+  cursor: pointer;  /* Curseur en main */
+  padding: 10px;  /* Ajoute du padding */
+  color: var(--dark-green);   /* Couleur du texte */    
+  transition: all 0.3s ease;  /* Transition pour les effets */
+}
+
+.calendar nav button:hover {  /* Effet au survol */
+  color: var(--red-pantone);  /* Couleur du texte au survol */
+  transform: scale(1.1);  /* Agrandit le bouton */
+}
+
+.calendar .days { /* Jours de la semaine */
+  display: grid;  /* Flexbox pour l'alignement */
+  grid-template-columns: repeat(7, 1fr);  /* 7 colonnes */
+  text-align: center; /* Centre le texte */
+  margin-bottom: 10px;    /* Marge inférieure */ 
+}
+
+.calendar .days li { /* Jours de la semaine */
+  list-style: none; /* Pas de liste */
+  color: var(--dark-green); /* Couleur du texte */
+  font-weight: 500;   /* Épaisseur de la police */
+  padding: 5px; /* Ajoute du padding */
+}
+
+.calendar .dates {  /* Dates */
+  display: grid;    /* Flexbox pour l'alignement */
+  grid-template-columns: repeat(7, 1fr);  /* 7 colonnes */
+  gap: 5px; /* Espace entre les éléments */
+}
+
+.calendar .dates li { /* Dates */
+  list-style: none; /* Pas de liste */
+  text-align: center;   /* Centre le texte */
+  padding: 10px;    /* Ajoute du padding */
+  cursor: pointer;    /* Curseur en main */
+  border-radius: 10px;  /* Bordure arrondie */
+  transition: all 0.3s ease;  /* Transition pour les effets */
+  background: white;  /* Couleur de fond */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Ombre */
+}
+
+.calendar .dates li:hover:not(.inactive) {  /* Effet au survol */
+  background: var(--cambridge-blue);  /* Couleur de fond au survol */
+  color: white; /* Couleur du texte au survol */
+  transform: translateY(-2px);    /* Déplace l'élément vers le haut */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);   /* Ombre au survol */
+}       
+
+.calendar .dates li.inactive {  /* Dates inactives */
+  color: #ccc;      /* Couleur du texte */
+  cursor: default;  /* Curseur par défaut */
+  background: transparent;  /* Couleur de fond transparente */
+  box-shadow: none;   /* Pas d'ombre */
+}
+
+.calendar .dates li.today {   /* Date d'aujourd'hui */
+  background: var(--dark-green);  /* Couleur de fond */
+  color: white;   /* Couleur du texte */
+  font-weight: bold;  /* Épaisseur de la police */
+}
+
+.calendar .dates li.has-matches { /* Dates avec matchs */
+  background: var(--red-pantone);   /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  font-weight: bold;      /* Épaisseur de la police */
+}
+
+/* Match Styles */
+.match-list { /* Liste des matchs */
+  max-width: 800px; /* Largeur maximale */
+  margin: 0 auto; /* Centre la liste */
+}
+
+.match-list h2 {    /* Titre de la liste des matchs */
+  color: var(--dark-green); /* Couleur du texte */
+  margin-bottom: 2rem;  /* Marge inférieure */
+  padding-bottom: 1rem; /* Ajoute du padding */
+  border-bottom: 3px solid var(--dark-green); /* Bordure inférieure */
+  font-size: 1.5rem;    /* Taille de la police */  
+  font-weight: 700;   /* Épaisseur de la police */
+  text-transform: uppercase;    /* Met le texte en majuscules */
+  letter-spacing: 2px;  /* Espacement entre les lettres */
+  position: relative; /* Position relative pour les éléments enfants */
+  display: inline-block;    /* Affiche en ligne */
+}
+
+.match-box {  /* Boîte de match */
+  background: rgba(255,255,255,0.95);   /* Couleur de fond */
+  border-radius: 15px;  /* Bordure arrondie */
+  padding: 2rem;  /* Ajoute du padding */
+  margin-bottom: 20px;  /* Marge inférieure */
+  box-shadow: 0 3px 18px 0 rgba(4,54,29,0.10), 0 1.5px 6px 0 var(--cambridge-blue);   /* Ombre */
+  position: relative; /* Position relative pour les éléments enfants */
+  transition: all 0.4s ease;    /* Transition pour les effets */
+  overflow: hidden; /* Cache les débordements */
+}
+
+.match-box::before {  /* Effet d'aurore */
+  content: '';  /* Contenu vide */
+  position: absolute; /* Position absolue */
+  inset: 0; /* Prend toute la largeur et la hauteur */
+  z-index: 0; /* Z-index pour superposer les éléments */
+  pointer-events: none;   /* Désactive les événements de la souris */
+  background: radial-gradient(circle at 60% 40%, var(--aurora2) 0%, transparent 70%),   
+              radial-gradient(circle at 30% 80%, var(--aurora1) 0%, transparent 80%);
+  opacity: 0.18;  /* Opacité */
+  transition: opacity 0.4s;   /* Transition pour l'opacité */
+}
+
+.match-box:hover { /* Effet au survol */
+  transform: translateY(-8px) scale(1.02);  /* Déplace et agrandit l'élément */
+  box-shadow: 0 8px 32px 0 var(--red-pantone), 0 2px 12px 0 var(--cambridge-blue);  /* Ombre au survol */
+}
+
+.match-box:hover::before {  /* Effet d'aurore au survol */
+  opacity: 0.35;  /* Opacité */
+  filter: blur(2px);    /* Flou */
+}
+
+.match-date { /* Date du match */
+  font-size: 1.2rem;    /* Taille de la police */
+  color: var(--dark-green);   /* Couleur du texte */
+  margin-bottom: 20px;  /* Marge inférieure */
+  padding-bottom: 10px; /* Ajoute du padding */
+  border-bottom: 2px solid var(--cambridge-blue );  /* Bordure inférieure */
+  font-weight: 700; /* Épaisseur de la police */
+  position: relative;   /* Position relative pour les éléments enfants */
+  z-index: 1; /* Z-index pour superposer les éléments */
+}
+
+.match-separator {  /* Séparateur de match */
+  margin: 20px 0; /* Marge */
+  height: 1px;  /* Hauteur */
+  background: linear-gradient ( 
+    to right,
+    transparent,
+    var(--cambridge-blue),
+    var(--cambridge-blue),
+    transparent   
+  );  /* Dégradé */
+  opacity: 0.5; /* Opacité */
+}
+
+.match-content { /* Contenu du match */
+  display: flex;  /* Flexbox pour l'alignement */
+  align-items: center;  /* Centre les éléments */
+  justify-content: space-between; /* Espace entre les éléments */
+  gap: 20px;  /* Espace entre les éléments */
+  position: relative; /* Position relative pour les éléments enfants */
+  z-index: 1;   /* Z-index pour superposer les éléments */
+  padding: 10px 0;  /* Ajoute du padding */    
+}
+
+.match-content + .match-stadium { /* Stade du match */
+  margin-top: 20px; /* Marge supérieure */      
+  margin-top: 15px;   
+  padding-top: 15px;  /* Ajoute du padding */
+  border-top: 1px solid rgba(118, 186, 157, 0.2); /* Bordure supérieure */
+}
+
+.team { /* Équipe */
+  display: flex;  /* Flexbox pour l'alignement */
+  align-items: center;  /* Centre les éléments */
+  gap: 15px;  /* Espace entre les éléments */
+  flex: 1;  /* Prend tout l'espace disponible */
+}
+
+.team-home {  /* Équipe à domicile */
+  text-align: right;      
+  justify-content: flex-end;  
+}
+
+.team-away {    /* Équipe à l'extérieur */
+  text-align: left;     
+  flex-direction: row-reverse;
+}
+
+.team-name {  /* Nom de l'équipe */
+    font-size: 1.2rem;  /* Taille de la police */
+  color: var(--dark-green); /* Couleur du texte */
+  font-weight: 700; /* Épaisseur de la police */
+}
+
+.team-flag {
+  width: 80px;  /* Largeur */
+  height: 80px;   /* Hauteur */
+  border-radius: 50%; /* Bordure arrondie */
+  overflow: hidden; /* Cache les débordements */
+  box-shadow: 0 3px 18px 0 rgba(4,54,29,0.15);  /* Ombre */
+  background: white;  /* Couleur de fond */
+  display: flex;  /* Flexbox pour l'alignement */
+  align-items: center;  /* Centre les éléments */
+  justify-content: center;  /* Centre les éléments */
+  transition: all 0.4s ease;  /* Transition pour les effets */
+}
+
+.team-flag:hover {  /* Effet au survol */
+  transform: scale(1.1);  /* Agrandit l'élément */
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2); /* Ombre au survol */
+}
+
+.team-flag img {  /* Image du drapeau */
+  width: 100%;  /* Largeur */
+  height: 100%; /* Hauteur */
+  object-fit: cover;  /* Ajuste l'image */
+}
+
+.match-time { /* Heure du match */
+  font-size: 2rem;  /* Taille de la police */
+  color: var(--red-pantone);    /* Couleur du texte */
+  font-weight: 700; /* Épaisseur de la police */
+  padding: 0 20px;  /* Ajoute du padding */
+  text-align: center; /* Centre le texte */
+  position: relative; /* Position relative pour les éléments enfants */
+}
+
+.match-time::before,  /* Heure du match avant */
+.match-time::after {  /* Heure du match après */
+  content: '';    /* Contenu vide */
+  position: absolute; /* Position absolue */
+  width: 2px; /* Largeur */
+  height: 40px; /* Hauteur */
+  background: var(--cambridge-blue);    /* Couleur de fond */
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%);  /* Centre verticalement */
+}
+
+.match-time::before { /* Heure du match avant */
+  left: 0;  /* À gauche */ 
+}
+
+.match-time::after {  /* Heure du match après */
+  right: 0; /* À droite */
+} 
+
+.match-stadium {  /* Stade du match */
+  margin-top: 15px; /* Marge supérieure */  
+  padding-top: 15px;    /* Ajoute du padding */
+  border-top: 1px solid var(--cambridge-blue);  /* Bordure supérieure */
+  color: var(--dark-green); /* Couleur du texte */
+  font-size: 1rem;  /* Taille de la police */
+  text-align: center; /* Centre le texte */
+  position: relative; /* Position relative pour les éléments enfants */
+  z-index: 1; /* Z-index pour superposer les éléments */
+  display: flex;  /* Flexbox pour l'alignement */
+  align-items: center;  /* Centre les éléments */
+  justify-content: center;  /* Centre les éléments */
+  gap: 8px; /* Espace entre les éléments */
+}
+
+.match-stadium i {    /* Icône du stade */
+  color: var(--red-pantone);  /* Couleur de l'icône */
+  font-size: 1.2rem;  /* Taille de la police */
+}
+
+.match-stadium span { /* Texte du stade */
+  font-weight: 500; /* Épaisseur de la police */
+}
+
+@keyframes aurora-text {  /* Animation du texte */
+  0% { background-position: 0% 50%; }  
+  100% { background-position: 100% 50%; } 
+}
+
+@keyframes aurora-border {  /* Animation de la bordure */
+  0% { border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; }    
+  25% { border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%; }
+  50% { border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%; }
+  75% { border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%; }
+  100% { border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; }
+}
+
+@keyframes highlightMatch { /* Animation de surbrillance du match */
+  0% {  
+    transform: scale(1);  
+    box-shadow: 0 3px 18px 0 rgba(4,54,29,0.10);  
+  }
+  50% {
+    transform: scale(1.02) translateY(-8px);
+    box-shadow: 0 8px 32px 0 var(--red-pantone), 0 2px 12px 0 var(--cambridge-blue);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 3px 18px 0 rgba(4,54,29,0.10);
+  }
+}
+
+@media (max-width: 768px) { /* Styles pour les écrans plus petits */
+  .header-title { /* Titre de l'en-tête */
+    font-size: 2rem;  /* Taille de la police */
+  }
+
+  .calendar { /* Styles du calendrier */
+    padding: 1rem;  /* Ajoute du padding */
+  }   
+
+  .match-content {  /* Contenu du match */
+    flex-direction: column; /* Colonne */
+    gap: 15px;  /* Espace entre les éléments */
+  } 
+
+  .team { /* Équipe */
+    justify-content: center; /* Centre les éléments */
+  }
+
+  .team-home, .team-away { /* Équipe à domicile et à l'extérieur */
+    flex-direction: row; /* Ligne */
+    text-align: center; /* Centre le texte */
+  }
+
+  .match-time { /* Heure du match */
+    padding: 15px 0; /* Ajoute du padding */
+    font-size: 1.5rem; /* Taille de la police */
+  }
+
+  .match-time::before, /* Heure du match avant */
+  .match-time::after { /* Heure du match après */
+    width: 40px;  /* Largeur */
+    height: 2px; /* Hauteur */
+    left: 50%;  /* Centre horizontalement */
+    transform: translateX(-50%); /* Centre horizontalement */
+  }
+
+  .match-time::before { /* Heure du match avant */
+    top: 0; /* En haut */
+  }
+
+  .match-time::after {  /* Heure du match après */
+    top: auto;  /* En bas */
+    bottom: 0;  /* En bas */
+  }
+}

@@ -1,0 +1,892 @@
+<!DOCTYPE html> <!-- Déclare le type de document HTML5 -->
+<html lang="fr"><!--  langue française -->
+  <head>
+    <meta charset="UTF-8" /><!-- Encodage des caractères en UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><!-- Compatibilité avec Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Responsive design pour mobiles -->
+    <title>Calendrier CAN 2025</title> <!-- Titre de la page -->
+    <link rel="stylesheet" href="matches.css" /><!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /><!-- Icones Font Awesome (optionnele) -->
+    <script src="matches.js" defer></script> <!-- liaison avec  script de JS-->
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="main-navbar">
+        <div class="container nav-container">
+            <div class="nav-logo" style="display:flex;align-items:center;position:absolute;left:32px;top:12px;height:56px;">
+                <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN" style="height:56px;width:auto;vertical-align:middle;display:block;">
+            </div>
+            <div class="nav-links" style="margin-left:110px;">
+                <a href="#acceuil">Acceuil</a>
+                <a href="#archive">Archive</a>
+                <a href="#calendrier">Calendrier</a>
+                <a href="#equipes">Équipes</a>
+                <a href="#stades">Stades</a>
+            </div>
+            <!-- Bouton de langue -->
+            <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;">
+                <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" style="width:26px;height:26px;vertical-align:middle;filter:drop-shadow(0 1px 2px #0002);cursor:pointer;">
+                <ul id="langMenu" class="lang-menu" style="display:none;">
+                    <li data-lang="fr">Français</li>
+                    <li data-lang="ar">العربية</li>
+                    <li data-lang="en">English</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="main-header"> <!-- Entete principal de la page -->
+      <div class="header-aurora"> <!-- Effet visuel d'aurore dans l'entete -->
+        <div class="aurora__item"></div> <!-- Element d'aurore -->
+        <div class="aurora__item"></div> 
+        <div class="aurora__item"></div> 
+        <div class="aurora__item"></div> 
+      </div>
+      <h1 class="header-title">Calendrier CAN 2025</h1> <!-- Titre principal affiché -->
+    </header>
+
+    <div class="calendar"> <!-- Conteneur du calendrier -->
+      <header>
+        <h3></h3> <!-- Titre du mois (rempli par JS) -->
+        <nav>
+          <button id="prev"><i class="fas fa-chevron-left"></i></button> <!-- Bouton mois précédent -->
+          <button id="next"><i class="fas fa-chevron-right"></i></button><!-- Bouton mois suivant -->
+        </nav>
+      </header>
+      <section>
+        <ul class="days"> <!-- Liste des jours de la semaine -->
+          <li>Dim</li>
+          <li>Lun</li>
+          <li>Mar</li>
+          <li>Mer</li>
+          <li>Jeu</li>
+          <li>Ven</li>
+          <li>Sam</li>
+        </ul>
+        <ul class="dates"></ul> <!-- Liste des dates (rempli par JS) -->
+      </section>
+    </div>
+
+    <div class="match-list"> <!-- Conteneur de la liste des matchs -->
+      <h2>Matches de la CAN 2025</h2> <!-- Titre de la liste des matchs -->
+      <div class="match-box" id="match-2025-12-21"> <!-- Match du 21 décembre 2025 -->
+        <div class="match-date">Dimanche 21 Décembre 2025</div> <!-- Date du match -->
+        <div class="match-content"> <!-- Contenu du match -->
+          <div class="team team-home"> <!-- Équipe à domicile -->
+            <span class="team-name">Maroc</span> <!-- Nom de l'équipe -->
+            <div class="team-flag"> <!-- Drapeau de l'équipe -->
+              <img src="images/teams/Maroc.jpg" alt="Drapeau du Maroc"> <!-- Image du drapeau -->
+            </div>
+          </div>
+          <div class="match-time"> <!-- Heure du match -->
+            <span>20:00</span> <!-- Heure affichée -->
+          </div>
+          <div class="team team-away"> <!-- Équipe à l'extérieur -->
+            <div class="team-flag"> <!-- Drapeau de l'équipe -->
+              <img src="images/teams/Comores.jpg" alt="Drapeau des Comores"> <!-- Image du drapeau -->
+            </div>
+            <span class="team-name">Comores</span> <!-- Nom de l'équipe -->
+          </div>
+        </div>
+        <div class="match-stadium"> <!-- Stade du match -->
+          <i class="fas fa-map-marker-alt"></i> <!-- Icône de localisation -->
+          <span>Stade Moulay Abdellah , Rabat </span> <!-- Nom du stade -->
+        </div>
+      </div>
+
+      <div class="match-box" id="match-2025-12-22">
+        <div class="match-date">Lundi 22 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Mali</span>
+            <a href="details.html">
+            <div class="team-flag">
+            <img src="images/teams/Mali.jpg" alt="Drapeau du Mali">
+            </div>
+            </a>
+          </div>
+          <div class="match-time">
+            <span>15:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Zambie.jpg" alt="Drapeau de Zambie">
+            </div>
+            <span class="team-name">Zambie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Mohamed V , Casablanca </span>
+        </div>
+        <div class="match-separator"></div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Egypte</span>
+            <div class="team-flag">
+              <img src="images/teams/egypte.jpg" alt="Drapeau de l'egypte">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/zimbabwe.jpg" alt="Drapeau du Zimbabwe">
+            </div>
+            <span class="team-name">Zimbabwe</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Adrar, Agadir</span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Afrique du Sud</span>
+            <div class="team-flag">
+              <img src="images/teams/Afrique du sud.jpg" alt="Drapeau de l'afrique de sud">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Angola.jpg" alt="Drapeau du Angola">
+            </div>
+            <span class="team-name">Angola</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade de Marrakech</span>
+        </div>
+      </div>
+      <div class="match-box" id="match-2025-12-23">
+        <div class="match-date">Mardi 23 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Nigeria</span>
+            <div class="team-flag">
+              <img src="images/teams/nigeria.jpg" alt="Drapeau de Nigeria">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>13:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/tanzanie.jpg" alt="Drapeau du tanzanie">
+            </div>
+            <span class="team-name">Tanzanie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span> Stade du Fes</span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Tunisie</span>
+            <div class="team-flag">
+              <img src="images/teams/tunisie.jpg" alt="Drapeau de Tunisie">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>15:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/ouganda.jpg" alt="Drapeau d'ouganda">
+            </div>
+            <span class="team-name">Ouganda</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Prince Moulay Abdellah Olympique Annexe , Rabat</span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Sénégal</span>
+            <div class="team-flag">
+              <img src="images/teams/senegal.jpg" alt="Drapeau du Sénégal">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/botswana.jpg" alt="Drapeau du botswana">
+            </div>
+            <span class="team-name">Botswana</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Ibn Batouta , Tanger </span>
+        </div>
+        <div class="match-separator"></div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">DR Congo</span>
+            <div class="team-flag">
+              <img src="images/teams/rdc.jpg" alt="Drapeau du DR Congo">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/benin.jpg" alt="Drapeau de Bénin">
+            </div>
+            <span class="team-name">Bénin</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Al Barid , Rabat </span>
+        </div>
+      </div>
+      <div class="match-box" id="match-2025-12-24">
+        <div class="match-date">Mercredi 24 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Algérie</span>
+            <div class="team-flag">
+              <img src="images/teams/algerie.jpg" alt="Drapeau de l'algerie">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>13:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/soudan.jpg" alt="Drapeau de sudan">
+            </div>
+            <span class="team-name">Sudan</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Moulay Hassan , Rabat </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Burkina Faso</span>
+            <div class="team-flag">
+              <img src="images/teams/burkina-faso.jpg" alt="Drapeau de burkina faso">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>15:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/guinee-equatoriale.jpg" alt="Drapeau du guinee-equatoriale">
+            </div>
+            <span class="team-name">Guinée équatoriale</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Mohamed V , Casablanca </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Cote d'Ivoire</span>
+            <div class="team-flag">
+              <img src="images/teams/cote-divoire.jpg" alt="Drapeau de cote d'Ivoire">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/mozambique.jpg" alt="Drapeau de mozambique">
+            </div>
+            <span class="team-name">Mozambique</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade de Marrakech </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Cameroun</span>
+            <div class="team-flag">
+              <img src="images/teams/cameroun.jpg" alt="Drapeau du Cameroun">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/gabon.jpg" alt="Drapeau du Gabon">
+            </div>
+            <span class="team-name">Gabon</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Adrar, Agadir</span>
+        </div>
+      </div>
+      <div class="match-box" id="match-2025-12-26">
+        <div class="match-date">Vendredi 26 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Maroc</span>
+            <div class="team-flag">
+              <img src="images/teams/Maroc.jpg" alt="Drapeau du Maroc">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>13:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Mali.jpg" alt="Drapeau de Mali">
+            </div>
+            <span class="team-name">Mali</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Moulay Abdellah , Rabat </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Zambie</span>
+            <div class="team-flag">
+              <img src="images/teams/Zambie.jpg" alt="Drapeau de Zambie ">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>15:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Comores.jpg" alt="Drapeau du Comores">
+            </div>
+            <span class="team-name">Comores</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Mohamed V , Casablanca </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Egypte</span>
+            <div class="team-flag">
+              <img src="images/teams/egypte.jpg" alt="Drapeau de  l'Egypte">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Afrique du sud.jpg" alt="Drapeau de l'afrique du sud">
+            </div>
+            <span class="team-name">Afrique du Sud</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Adrar , Agadir </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Angola</span>
+            <div class="team-flag">
+              <img src="images/teams/Angola.jpg" alt="Drapeau d'Angola">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/zimbabwe.jpg" alt="Drapeau du Zimbabwe">
+            </div>
+            <span class="team-name">Zimbabwe</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade de Marrakech</span>
+        </div>
+      </div>
+      <div class="match-box" id="match-2025-12-27">
+        <div class="match-date">Samedi 27 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Nigeria</span>
+            <div class="team-flag">
+              <img src="images/teams/nigeria.jpg" alt="Drapeau de Nigeria">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>13:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/tunisie.jpg" alt="Drapeau du Tunisie">
+            </div>
+            <span class="team-name">Tunisie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade du Fes </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Ouganda</span>
+            <div class="team-flag">
+              <img src="images/teams/ouganda.jpg" alt="Drapeau de Ouganda">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>15:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/tanzanie.jpg" alt="Drapeau du tanzanie">
+            </div>
+            <span class="team-name">Tanzanie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade al Barid , Rabat  </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Sénégal</span>
+            <div class="team-flag">
+              <img src="images/teams/senegal.jpg" alt="Drapeau du senegal">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/rdc.jpg" alt="Drapeau de DR Congo">
+            </div>
+            <span class="team-name">DR Congo</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Ibn Batouta , Tanger </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Bénin</span>
+            <div class="team-flag">
+              <img src="images/teams/benin.jpg" alt="Drapeau du benin">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/botswana.jpg" alt="Drapeau du botswana">
+            </div>
+            <span class="team-name">Botswana</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Moulay Abdellah Olympique Annexe , Rabat</span>
+        </div>
+      </div>
+      <div class="match-box" id="match-2025-12-28">
+        <div class="match-date">Dimanche 28 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Algérie</span>
+            <div class="team-flag">
+              <img src="images/teams/algerie.jpg" alt="Drapeau de l'algerie">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>13:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/burkina-faso.jpg" alt="Drapeau du burkina-faso">
+            </div>
+            <span class="team-name">Burkina Faso </span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Moulay Hassan , Rabat </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Sudan</span>
+            <div class="team-flag">
+              <img src="images/teams/soudan.jpg" alt="Drapeau du soudan">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>15:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/guinee-equatoriale.jpg" alt="Drapeau du guinee-equatoriale">
+            </div>
+            <span class="team-name">Guinée équatoriale</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Mohamed V , Casablanca </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Cote d'Ivoire</span>
+            <div class="team-flag">
+              <img src="images/teams/cote-divoire.jpg" alt="Drapeau de cote d'Ivoire">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/cameroun.jpg" alt="Drapeau du cameron">
+            </div>
+            <span class="team-name">Camerun</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade de Marrakech </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Gabon</span>
+            <div class="team-flag">
+              <img src="images/teams/gabon.jpg" alt="Drapeau du Gabon">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/mozambique.jpg" alt="Drapeau dU Mozambique">
+            </div>
+            <span class="team-name">Mozambique</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Adrar, Agadir</span>
+        </div>
+      </div>
+      <div class="match-box" id="match-2025-12-29">
+        <div class="match-date">Lundi 29 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Comores</span>
+            <div class="team-flag">
+              <img src="images/teams/Comores.jpg" alt="Drapeau de Comores">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Mali.jpg" alt="Drapeau de Mali">
+            </div>
+            <span class="team-name">Mali</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Mohamed V , Casablanca</span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name"></span>
+            <span class="team-name">Maroc</span>
+            <div class="team-flag">
+              <img src="images/teams/Maroc.jpg" alt="Drapeau du Maroc">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Zambie.jpg" alt="Drapeau du zambie">
+            </div>
+            <span class="team-name">Zambie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Prince Moulay Abdellah , Rabat </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name"></span>
+            <span class="team-name">Angola</span>
+            <div class="team-flag">
+              <img src="images/teams/Angola.jpg" alt="Drapeau de angola">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/egypte.jpg" alt="Drapeau d'egypte">
+            </div>
+            <span class="team-name">Egypte</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Adrar , Agadir </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Zimbabwe</span>
+            <div class="team-flag">
+              <img src="images/teams/zimbabwe.jpg" alt="Drapeau du Zimbabwe">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/Afrique du sud.jpg" alt="Drapeau d'afrique du sud">
+            </div>
+            <span class="team-name">Afrique du Sud</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade de Marrakech</span>
+        </div>
+      </div>
+       <div class="match-box" id="match-2025-12-30">
+        <div class="match-date">Mercredi 30 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Tunisie</span>
+            <div class="team-flag">
+              <img src="images/teams/tunisie.jpg" alt="Drapeau de tunisie">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/tanzanie.jpg" alt="Drapeau de Tanzanie">
+            </div>
+            <span class="team-name">Tanzanie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Moulay Abdellah Olympique Annexe , Rabat </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Ouganda</span>
+            <div class="team-flag">
+              <img src="images/teams/ouganda.jpg" alt="Drapeau d'ouganda">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/nigeria.jpg" alt="Drapeau du Nigéria">
+            </div>
+            <span class="team-name">Nigéria</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade du Fes </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Bénin</span>
+            <div class="team-flag">
+              <img src="images/teams/benin.jpg" alt="Drapeau de Benin">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/senegal.jpg" alt="Drapeau du senegal">
+            </div>
+            <span class="team-name">Sénégal</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Ibn-Battouta , Tanger </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Botswana</span>
+            <div class="team-flag">
+              <img src="images/teams/botswana.jpg" alt="Drapeau du botswana">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/rdc.jpg" alt="Drapeau du Dr Congo">
+            </div>
+            <span class="team-name">DR Congo</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span> Stade Al Barid , Rabat</span>
+        </div>
+      </div>
+      <div class="match-box" id="match-2025-12-31">
+        <div class="match-date">Mercredi 31 Décembre 2025</div>
+        <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Guinée équatoriale</span>
+            <div class="team-flag">
+              <img src="images/teams/guinee-equatoriale.jpg" alt="Drapeau du guinee-equatoriale">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              
+              <img src="images/teams/algerie.jpg" alt="Drapeau de l'algerie">
+              
+            </div>
+            <span class="team-name">Algérie</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Moulay Hassan , Rabat </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Sudan</span>
+            <div class="team-flag">
+              <img src="images/teams/soudan.jpg" alt="Drapeau du soudan">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>18:00</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/burkina-faso.jpg" alt="Drapeau du burkina-faso">
+            </div>
+            <span class="team-name">Burkina-faso</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Mohamed V , Casablanca </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Cote d'Ivoire</span>
+            <div class="team-flag">
+              <img src="images/teams/cote-divoire.jpg" alt="Drapeau de cote d'Ivoire">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/gabon.jpg" alt="Drapeau du Gabon">
+            </div>
+            <span class="team-name">Gabon</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade de Marrakech </span>
+        </div>
+         <div class="match-separator"></div>
+         <div class="match-content">
+          <div class="team team-home">
+            <span class="team-name">Mozambique</span>
+            <div class="team-flag">
+              <img src="images/teams/mozambique.jpg" alt="Drapeau du mozambique">
+            </div>
+          </div>
+          <div class="match-time">
+            <span>20:30</span>
+          </div>
+          <div class="team team-away">
+            <div class="team-flag">
+              <img src="images/teams/cameroun.jpg" alt="Drapeau du Cameroun">
+            </div>
+            <span class="team-name">Cameron</span>
+          </div>
+        </div>
+        <div class="match-stadium">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Stade Adrar, Agadir</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
