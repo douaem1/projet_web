@@ -12,28 +12,28 @@
   <body>
     <!-- Navigation -->
     <nav class="main-navbar">
-        <div class="container nav-container">
-            <div class="nav-logo" style="display:flex;align-items:center;position:absolute;left:32px;top:12px;height:56px;">
-                <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN" style="height:56px;width:auto;vertical-align:middle;display:block;">
-            </div>
-            <div class="nav-links" style="margin-left:110px;">
-                <a href="#acceuil">Acceuil</a>
-                <a href="#archive">Archive</a>
-                <a href="#calendrier">Calendrier</a>
-                <a href="#equipes">Équipes</a>
-                <a href="#stades">Stades</a>
-            </div>
-            <!-- Bouton de langue -->
-            <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;">
-                <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" style="width:26px;height:26px;vertical-align:middle;filter:drop-shadow(0 1px 2px #0002);cursor:pointer;">
-                <ul id="langMenu" class="lang-menu" style="display:none;">
-                    <li data-lang="fr">Français</li>
-                    <li data-lang="ar">العربية</li>
-                    <li data-lang="en">English</li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <div class="container nav-container">
+          <div class="nav-logo" style="display:flex;align-items:center;position:absolute;left:32px;top:12px;height:56px;">
+              <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN" style="height:56px;width:auto;vertical-align:middle;display:block;">
+          </div>
+          <div class="nav-links" style="margin-left:110px;">
+              <a href="accueil.html">Acceuil</a>
+              <a href="accueil.html#archive">Archive</a>  <!-- Changed from "Actualités" and updated href -->
+              <a href="#calendrier">Calendrier</a>
+              <a href="equipe_qualifiée.html">Équipes</a>
+              <a href="menu3d.html">Stades</a>
+          </div>
+          <!-- Bouton de langue -->
+          <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;">
+              <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" style="width:26px;height:26px;vertical-align:middle;filter:drop-shadow(0 1px 2px #0002);cursor:pointer;" />
+              <ul id="langMenu" class="lang-menu" style="display:none;">
+                  <li data-lang="fr">Français</li>
+                  <li data-lang="ar">العربية</li>
+                  <li data-lang="en">English</li>
+              </ul>
+          </div>
+      </div>
+  </nav>
     <header class="main-header"> <!-- Entete principal de la page -->
       <div class="header-aurora"> <!-- Effet visuel d'aurore dans l'entete -->
         <div class="aurora__item"></div> <!-- Element d'aurore -->
@@ -73,9 +73,10 @@
         <div class="match-content"> <!-- Contenu du match -->
           <div class="team team-home"> <!-- Équipe à domicile -->
             <span class="team-name">Maroc</span> <!-- Nom de l'équipe -->
+            <a href="marocleslionsdel'atlas.html">
             <div class="team-flag"> <!-- Drapeau de l'équipe -->
               <img src="images/teams/Maroc.jpg" alt="Drapeau du Maroc"> <!-- Image du drapeau -->
-            </div>
+            </div></a>
           </div>
           <div class="match-time"> <!-- Heure du match -->
             <span>20:00</span> <!-- Heure affichée -->
@@ -89,7 +90,7 @@
         </div>
         <div class="match-stadium"> <!-- Stade du match -->
           <i class="fas fa-map-marker-alt"></i> <!-- Icône de localisation -->
-          <span>Stade Moulay Abdellah , Rabat </span> <!-- Nom du stade -->
+          <a href="MoulayAbdellah.html"></href><span>Stade Moulay Abdellah , Rabat </span></a> <!-- Nom du stade -->
         </div>
       </div>
 
@@ -116,7 +117,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Mohamed V , Casablanca </span>
+          <a href="MohammedV.html"><span>Stade Mohamed V , Casablanca </span></a>
         </div>
         <div class="match-separator"></div>
         <div class="match-content">
@@ -138,7 +139,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Adrar, Agadir</span>
+          <a href="StadeAgadir.html"><span>Stade Adrar, Agadir</span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -160,7 +161,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade de Marrakech</span>
+          <a href="StadeMarrakech.html"><span>Stade de Marrakech</span></a>
         </div>
       </div>
       <div class="match-box" id="match-2025-12-23">
@@ -184,7 +185,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span> Stade du Fes</span>
+          <a href="StadeFes.html"><span> Stade du Fes</span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -206,7 +207,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Prince Moulay Abdellah Olympique Annexe , Rabat</span>
+          <a href="Annexe Moulay Abdellah.html"><span>Stade Prince Moulay Abdellah Olympique Annexe , Rabat</span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -228,7 +229,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Ibn Batouta , Tanger </span>
+          <a href="StadeTanger.html"><span>Stade Ibn Batouta , Tanger </span></a>
         </div>
         <div class="match-separator"></div>
         <div class="match-content">
@@ -250,7 +251,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Al Barid , Rabat </span>
+          <a href="StadeBarid.html"><span>Stade Al Barid , Rabat </span></a>
         </div>
       </div>
       <div class="match-box" id="match-2025-12-24">
@@ -274,7 +275,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Moulay Hassan , Rabat </span>
+          <a href="MoulayHassan.html"><span>Stade Moulay Hassan , Rabat </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -296,7 +297,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Mohamed V , Casablanca </span>
+          <a href="MohammedV.html"><span>Stade Mohamed V , Casablanca </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -318,7 +319,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade de Marrakech </span>
+          <a href="StadeMarrakech.html"><span>Stade de Marrakech </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -340,7 +341,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Adrar, Agadir</span>
+          <a href="StadeAgadir.html"><span>Stade Adrar, Agadir</span></a>
         </div>
       </div>
       <div class="match-box" id="match-2025-12-26">
@@ -364,7 +365,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Moulay Abdellah , Rabat </span>
+          <a href="MoulayAbdellah.html"><span>Stade Moulay Abdellah , Rabat </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -386,7 +387,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Mohamed V , Casablanca </span>
+          <a href="MohammedV.html"><span>Stade Mohamed V , Casablanca </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -408,7 +409,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Adrar , Agadir </span>
+          <a href="StadeAgadir.html"><span>Stade Adrar , Agadir </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -430,7 +431,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade de Marrakech</span>
+          <a href="StadeMarrakech.html"><span>Stade de Marrakech</span></a>
         </div>
       </div>
       <div class="match-box" id="match-2025-12-27">
@@ -454,7 +455,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade du Fes </span>
+          <a href="StadeFes.html"><span>Stade du Fes </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -476,7 +477,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade al Barid , Rabat  </span>
+          <a href="StadeBarid.html"><span>Stade al Barid , Rabat  </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -498,7 +499,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Ibn Batouta , Tanger </span>
+          <a href="StadeTanger.html"><span>Stade Ibn Batouta , Tanger </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -520,7 +521,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Moulay Abdellah Olympique Annexe , Rabat</span>
+          <a href="Annexe Moulay Abdellah.html"><span>Stade Moulay Abdellah Olympique Annexe , Rabat</span></a>
         </div>
       </div>
       <div class="match-box" id="match-2025-12-28">
@@ -544,7 +545,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Moulay Hassan , Rabat </span>
+          <a href="MoulayHassan.html"><span>Stade Moulay Hassan , Rabat </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -566,7 +567,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Mohamed V , Casablanca </span>
+          <a href="MohammedV.html"><span>Stade Mohamed V , Casablanca </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -588,7 +589,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade de Marrakech </span>
+          <a href="StadeMarrakech.html"><span>Stade de Marrakech </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -610,7 +611,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Adrar, Agadir</span>
+          <a href="StadeAgadir.html"><span>Stade Adrar, Agadir</span></a>
         </div>
       </div>
       <div class="match-box" id="match-2025-12-29">
@@ -634,7 +635,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Mohamed V , Casablanca</span>
+          <a href="MohammedV.html"><span>Stade Mohamed V , Casablanca</span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -657,7 +658,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Prince Moulay Abdellah , Rabat </span>
+          <a href="MoulayAbdellah.html"><span>Stade Prince Moulay Abdellah , Rabat </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -680,7 +681,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Adrar , Agadir </span>
+          <a href="StadeAgadir.html"><span>Stade Adrar , Agadir </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -702,7 +703,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade de Marrakech</span>
+          <a href="StadeMarrakech.html"><span>Stade de Marrakech</span></a>
         </div>
       </div>
        <div class="match-box" id="match-2025-12-30">
@@ -726,7 +727,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Moulay Abdellah Olympique Annexe , Rabat </span>
+          <a href="Annexe Moulay Abdellah.html"><span>Stade Moulay Abdellah Olympique Annexe , Rabat </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -770,7 +771,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Ibn-Battouta , Tanger </span>
+          <a href="StadeTanger.html"><span>Stade Ibn-Battouta , Tanger </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -792,7 +793,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span> Stade Al Barid , Rabat</span>
+          <a href="StadeBarid.html"><span> Stade Al Barid , Rabat</span></a>
         </div>
       </div>
       <div class="match-box" id="match-2025-12-31">
@@ -818,7 +819,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Moulay Hassan , Rabat </span>
+          <a href="MoulayHassan.html"><span>Stade Moulay Hassan , Rabat </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -840,7 +841,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Mohamed V , Casablanca </span>
+          <a href="MohammedV.html"><span>Stade Mohamed V , Casablanca </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -862,7 +863,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade de Marrakech </span>
+          <a href="StadeMarrakech.html"><span>Stade de Marrakech </span></a>
         </div>
          <div class="match-separator"></div>
          <div class="match-content">
@@ -884,7 +885,7 @@
         </div>
         <div class="match-stadium">
           <i class="fas fa-map-marker-alt"></i>
-          <span>Stade Adrar, Agadir</span>
+          <a href="StadeAgadir.html"><span>Stade Adrar, Agadir</span></a>
         </div>
       </div>
     </div>

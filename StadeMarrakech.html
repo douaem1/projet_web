@@ -1,36 +1,57 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Stade Ibn-Battouta - Tanger</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="StadeStyle.css">
+<!DOCTYPE html>      <!-- Déclaration du type de document HTML5 -->
+<html lang="fr">    <!-- Début du document HTML avec langue française -->
+<head>      <!-- Début de l'en-tête du document -->
+  <meta charset="UTF-8">    <!-- Définition de l'encodage des caractères -->
+  <title>Stade Ibn-Battouta - Tanger</title>   <!-- Titre de la page dans l'onglet du navigateur -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">   <!-- Lien vers la feuille de style Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">   <!-- Lien vers les icônes Bootstrap -->
+  <link rel="stylesheet" href="StadeStyle.css">  <!-- Lien vers la feuille de style personnalisée -->
 </head>
 <body>
 
-  <!-- En-tête -->
-  <header class="bg-primary text-white text-center py-4">
-    <h1>Stade Ibn-Battouta</h1>
-    <p class="lead">Ville de Tanger</p>
-  </header>
+   <!-- Navigation -->
+   <nav class="main-navbar">
+    <div class="container nav-container">
+        <div class="nav-logo" style="display:flex;align-items:center;position:absolute;left:32px;top:12px;height:56px;">
+            <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN" style="height:56px;width:auto;vertical-align:middle;display:block;">
+        </div>
+         <!-- Menu de navigation -->
+        <div class="nav-links" style="margin-left:110px;">
+            <a href="accueil.html">Acceuil</a>   <!-- Lien vers la section accueil -->
+            <a href="accueil.html#archive">Archive</a>  <!-- Changed from "Actualités" and updated href -->
+            <a href="matches.html#calendrier">Calendrier</a>   <!-- Lien vers la section calendrier -->  
+            <a href="equipe_qualifiée.html">Équipes</a>  <!-- Lien vers la section équipes -->
+            <a href="menu3d.html">Stades</a> <!-- Lien vers la section stades -->
+        </div>
+        <!-- Bouton de langue -->
+        <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;">   
+            <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" style="width:26px;height:26px;vertical-align:middle;filter:drop-shadow(0 1px 2px #0002);cursor:pointer;" />
+            <ul id="langMenu" class="lang-menu" style="display:none;">
+                <li data-lang="fr">Français</li>   <!-- Option langue française -->
+                <li data-lang="ar">العربية</li>
+                <li data-lang="en">English</li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-  <section class="hero-section container-fluid my-5">
+  <section class="hero-section container-fluid my-5">    <!-- Section principale avec marges -->
     <div class="row">
-      <div class="col-lg-7">
-        <div class="slider-container">
+      <div class="col-lg-7">   <!-- Colonne gauche occupant 7/12 de la largeur -->
+        <div class="slider-container">    <!-- Conteneur du slider -->
           <div class="slides">
 
             <!-- Slide 1 -->
             <div class="slide">
               <img src="marakech/marakech1.png" alt="Vue nocturne">
-              <div class="slide-content">
+              <div class="slide-content">      <!-- la classe respenssable de style de contenu texte du slide -->
                 <h3>Vu intérieure du stade</h3>
                 <p>Des gradins modernes offrant une visibilité exceptionnelle sur le terrain depuis chaque siège</p>
               </div>
             </div>
             
             <!-- Slide 2 -->
+            <!-- Slide 2 : meme chose que dans slide 1 -->
             <div class="slide">
               <img src="marakech/marakeche3.jpg" alt="Vue nocturne">
               <div class="slide-content">
@@ -44,9 +65,9 @@
     
 
       <!-- Cartes d'information (côté droit) -->
-      <div class="col-lg-5">
-        <div class="info-cards">
-          <div class="card">
+      <div class="col-lg-5">   <!-- Colonne de droite (5/12) pour les informations -->
+        <div class="info-cards">    <!-- Conteneur des cartes d'information -->
+          <div class="card">        <!-- ...contenu de la description... -->
             <div class="card-body">
               <div class="d-flex align-items-center mb-2">
                 <i class="bi bi-calendar me-2"></i>
@@ -127,52 +148,59 @@
     </div>
   </section>
 
-  <!-- Carte Google Maps -->  
+  <!-- Carte Google Maps --> 
+  <!-- Section de la carte avec marges (my-5) et classe conteneur Bootstrap --> 
   <section class="container my-5 location-section">
     <div class="d-flex align-items-center justify-content-center mb-2">
-      <i class="bi bi-compass me-2"></i>
-      <h3 class="location-title mb-0">Localisation du stade</h3>
+      <i class="bi bi-compass me-2"></i>   <!-- Icône de boussole avec marge droite -->
+      <h3 class="location-title mb-0">Localisation du stade</h3>   <!-- Titre de la section sans marge en bas -->
     </div>
-    <div class="map-container">
-      <div class="ratio ratio-16x9">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3394.3256308193336!2d-7.982946724933489!3d31.70699877412909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafed72c50b7e8d%3A0x4016a0e3c7405e4c!2sMarrakech%20Stadium!5e0!3m2!1sen!2sma!4v1747499523477!5m2!1sen!2sma" 
-          width="600" height="450" style="border:0;" 
+    <div class="map-container">    <!-- Conteneur pour la carte -->
+      <div class="ratio ratio-16x9">   <!-- Maintient le ratio 16:9 pour la carte -->
+        <iframe  /* URL de la carte Google Maps avec les coordonnées du stade */
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.392467869849!2d-5.8580578!3d35.741157199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b87a7b9e9b7e5%3A0xad9add5f6dc2c4c8!2sStade%20Ibn%20Batouta!5e0!3m2!1sfr!2sma!4v1746990244526!5m2!1sfr!2sma" 
+         /* Dimensions de iframe */ 
+          width="600" height="450" 
+          /* Supprime la bordure */
+          style="border:0;" 
+          /* Politique de sécurité pour les références croisées et charge la carte uniquement quand nécessaire */
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>"
       </div>
   </section>
 
   <!-- Hôtels à proximité -->
-  <section class="container my-5 hotels-section">
-    <div class="d-flex align-items-center justify-content-center mb-2">
-      <i class="bi bi-buildings me-2"></i>
-      <h3 class="hotel-title mb-0">Les Hôtels proches du stade</h3>
+  <section class="container my-5 hotels-section">  <!-- Adds margin top and bottom of 5 units, Custom class de styling -->
+    <div class="d-flex align-items-center justify-content-center mb-2">  <!-- Flexbox pour centrer le contenu -->
+      <i class="bi bi-buildings me-2"></i>  <!-- Icône de bâtiments avec marge droite -->
+      <h3 class="hotel-title mb-0">Les Hôtels proches du stade</h3> <!-- Titre de la section sans marge en bas -->
     </div>
-    <div class="hotels-grid">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="marakech\R.jpeg" alt="Kenzi Club Agdal Medina" class="hotel-image">
-            <h4>Kenzi Club Agdal Medina</h4>
+    <div class="hotels-grid"> <!-- Grille pour les hôtels -->
+      <div class="flip-card">  <!--Container pour les carte individual -->
+        <div class="flip-card-inner">  <!--  container for flip effet -->
+          <div class="flip-card-front">  <!-- Front de la carte -->
+            <img src="marakech\R.jpeg" alt="Kenzi Club Agdal Medina" class="hotel-image">  <!-- Image de l'hôtel -->
+            <h4>Kenzi Club Agdal Medina</h4>  <!-- Titre de l'hôtel -->
           </div>
-          <div class="flip-card-back">
-            <div class="hotel-info">
-              <h4 class="hotel-name">Kenzi Club Agdal Medina</h4>
-              <p class="hotel-distance"><i class="bi bi-geo-alt"></i> Distance: 2.5 km</p>
-              <p class="hotel-description">
+          <div class="flip-card-back">  <!-- Back de la carte -->
+            <div class="hotel-info">     <!-- Conteneur pour les informations de l'hôtel -->
+              <h4 class="hotel-name">Kenzi Club Agdal Medina</h4>   <!-- Nom de l'hôtel -->
+              <p class="hotel-distance"><i class="bi bi-geo-alt"></i> Distance: 2.5 km</p>  <!-- Distance de l'hôtel au stade -->
+              <p class="hotel-description"> <!-- Description de l'hôtel -->
                 Resort 5 étoiles avec vue sur l'Atlas, offrant une expérience luxueuse 
                 dans un cadre marocain authentique.
               </p>
-              <div class="hotel-features">
-                <span class="badge">Piscines</span>
-                <span class="badge">Spa</span>
-                <span class="badge">All Inclusive</span>
+              <div class="hotel-features">  <!-- Caractéristiques de l'hôtel -->
+                <span class="badge">Piscines</span>  <!-- Badge pour les piscines -->
+                <span class="badge">Spa</span>  <!-- Badge pour le spa -->
+                <span class="badge">All Inclusive</span>  <!-- Badge pour le tout inclus -->
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- la meme chose pour les autres cartes -->
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
