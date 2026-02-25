@@ -1,382 +1,344 @@
-<!DOCTYPE html>
-<!-- Déclaration du type de document HTML5 -->
-<html lang="fr">
-<!-- Ouverture du document HTML avec spécification de la langue française -->
+<!DOCTYPE html> <!-- Définition du type de document HTML5 -->
+<html lang="fr"> <!-- Début du document HTML avec langue française définie -->
+<head> <!-- Début de la section d'en-tête contenant les métadonnées -->
+  <meta charset="UTF-8"> <!-- Définition de l'encodage des caractères en UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration pour adaptation aux appareils mobiles -->
+  <title>Les Équipes - CAN 2025</title> <!-- Titre de la page qui apparaît dans l'onglet du navigateur -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Importation du framework CSS Bootstrap -->
+  <link rel="stylesheet" href="equipe_qualifiée.css"> <!-- Lien vers la feuille de style CSS personnalisée -->
+</head> <!-- Fin de la section d'en-tête -->
+<body> <!-- Début du corps de la page -->
+    <!-- Navigation --> <!-- Commentaire indiquant le début de la barre de navigation -->
+    <nav class="main-navbar"> <!-- Conteneur principal de la barre de navigation -->
+        <div class="container nav-container"> <!-- Conteneur pour centrer et limiter la largeur des éléments de navigation -->
+            <div class="nav-logo" style="display:flex;align-items:center;position:absolute;left:32px;top:12px;height:56px;"> <!-- Conteneur du logo avec style en ligne -->
+                <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN" style="height:56px;width:auto;vertical-align:middle;display:block;"> <!-- Image du logo avec styles en ligne -->
+            </div> <!-- Fin du conteneur du logo -->
+            <div class="nav-links" style="margin-left:110px;"> <!-- Conteneur des liens de navigation avec décalage à gauche -->
+                <a href="#acceuil">Acceuil</a> <!-- Lien vers la section d'accueil -->
+                <a href="#archive">Archive</a> <!-- Lien vers la section d'archive -->
+                <a href="#calendrier">Calendrier</a> <!-- Lien vers la section de calendrier -->
+                <a href="#equipes">Équipes</a> <!-- Lien vers la section des équipes -->
+                <a href="#stades">Stades</a> <!-- Lien vers la section des stades -->
+            </div> <!-- Fin du conteneur des liens de navigation -->
+            <!-- Bouton de langue --> <!-- Commentaire indiquant le sélecteur de langue -->
+            <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;"> <!-- Conteneur du sélecteur de langue avec positionnement absolu -->
+                <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" style="width:26px;height:26px;vertical-align:middle;filter:drop-shadow(0 1px 2px #0002);cursor:pointer;"> <!-- Icône de langue cliquable -->
+                <ul id="langMenu" class="lang-menu" style="display:none;"> <!-- Liste déroulante des langues (cachée par défaut) -->
+                    <li data-lang="fr">Français</li> <!-- Option de langue française -->
+                    <li data-lang="ar">العربية</li> <!-- Option de langue arabe -->
+                    <li data-lang="en">English</li> <!-- Option de langue anglaise -->
+                </ul> <!-- Fin de la liste des langues -->
+            </div> <!-- Fin du conteneur du sélecteur de langue -->
+        </div> <!-- Fin du conteneur de navigation -->
+    </nav> <!-- Fin de la barre de navigation -->
+    <header> <!-- Début de l'en-tête principal de la page -->
+    <div class="header-aurora"> <!-- Conteneur pour l'effet d'aurore dans l'en-tête -->
+      <div class="aurora__item"></div> <!-- Premier élément de l'effet d'aurore -->
+      <div class="aurora__item"></div> <!-- Deuxième élément de l'effet d'aurore -->
+      <div class="aurora__item"></div> <!-- Troisième élément de l'effet d'aurore -->
+      <div class="aurora__item"></div> <!-- Quatrième élément de l'effet d'aurore -->
+    </div> <!-- Fin du conteneur d'effet d'aurore -->
+    <div class="header-content position-relative"> <!-- Conteneur du contenu de l'en-tête avec positionnement relatif -->
+      <h1 class="header-title">Les Équipes Qualifiées</h1> <!-- Titre principal de la page -->
+      <p class="header-subtitle">Découvrez les 24 équipes qui participeront à la CAN 2025 au Maroc</p> <!-- Sous-titre descriptif -->
+    </div> <!-- Fin du conteneur de contenu d'en-tête -->
+  </header> <!-- Fin de l'en-tête principal -->
+  <div class="qualified-hero container my-4"> <!-- Conteneur de la section héro avec marges verticales -->
+    <div class="qualified-hero-img-wrapper"> <!-- Conteneur pour l'image/vidéo héro -->
+      <div class="video-container"> <!-- Conteneur spécifique pour la vidéo -->
+        <video 
+          autoplay <!-- La vidéo démarre automatiquement -->
+          loop <!-- La vidéo tourne en boucle -->
+          muted <!-- La vidéo est muette par défaut -->
+          playsinline <!-- La vidéo joue dans son cadre (important pour mobile) -->
+          class="hero-video" <!-- Classe CSS pour styliser la vidéo -->
+        > <!-- Ouverture de la balise vidéo avec attributs -->
+          <source src="videos/tirage_Can2025.mp4" type="video/mp4"> <!-- Source de la vidéo au format MP4 -->
+          Votre navigateur ne supporte pas la lecture de vidéos. <!-- Texte alternatif si la vidéo ne peut pas être lue -->
+        </video> <!-- Fin de l'élément vidéo -->
+      </div> <!-- Fin du conteneur de vidéo -->
+    </div> <!-- Fin du conteneur d'image héro -->
+  </div> <!-- Fin du conteneur héro -->
+  <main class="container my-5"> <!-- Début du contenu principal avec espacement vertical -->
+    <!-- Groupe A --> <!-- Commentaire indiquant le début du groupe A -->
+    <section class="group-section"> <!-- Section pour le groupe A -->
+      <h2 class="group-title">Groupe A</h2> <!-- Titre du groupe A -->
+      <div class="row justify-content-center"> <!-- Ligne avec contenu centré (système de grille Bootstrap) -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour chaque équipe avec marge en bas -->
+          <div class="box card-effect maroc-host"> <!-- Carte pour l'équipe avec effet et classe spéciale pour le pays hôte -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/Maroc.jpg" alt="Maroc"> <!-- Image de l'équipe du Maroc -->
+              <div class="host-badge">Pays Hôte</div> <!-- Badge indiquant le pays hôte -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel de la carte -->
+              <h2>Maroc<br><span>Les Lions de l'Atlas</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la deuxième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/Mali.jpg" alt="Mali"> <!-- Image de l'équipe du Mali -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Mali<br><span>Les Aigles</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la troisième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/Zambie.jpg" alt="Zambie"> <!-- Image de l'équipe de Zambie -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Zambie<br><span>Chipolopolo</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la quatrième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/Comores.jpg" alt="Comores"> <!-- Image de l'équipe des Comores -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Comores<br><span>Les Coelecanthes</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+      </div> <!-- Fin de la ligne du groupe A -->
+    </section> <!-- Fin de la section du groupe A -->
 
-<head>
-  <!-- Section d'en-tête contenant les métadonnées -->
-  <meta charset="UTF-8">
-  <!-- Encodage des caractères en UTF-8 pour supporter les accents -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Configuration pour le responsive design sur les appareils mobiles -->
-  <title>Les Équipes - CAN 2025</title>
-  <!-- Titre de la page qui s'affiche dans l'onglet du navigateur -->
-  
-  <!-- Liens vers les feuilles de style -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Framework Bootstrap pour le styling et le responsive -->
-  <link rel="stylesheet" href="equipe_qualifiée.css">
-  <!-- Feuille de style personnalisée -->
-</head>
+    <!-- Groupe B --> <!-- Commentaire indiquant le début du groupe B -->
+    <section class="group-section"> <!-- Section pour le groupe B -->
+      <h2 class="group-title">Groupe B</h2> <!-- Titre du groupe B -->
+      <div class="row justify-content-center"> <!-- Ligne avec contenu centré -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la première équipe du groupe B -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/egypte.jpg" alt="Égypte"> <!-- Image de l'équipe d'Égypte -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Égypte<br><span>Les Pharaons</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la deuxième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/Afrique du sud.jpg" alt="Afrique du Sud"> <!-- Image de l'équipe d'Afrique du Sud -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Afrique du Sud<br><span>Bafana Bafana</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la troisième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/Angola.jpg" alt="Angola"> <!-- Image de l'équipe d'Angola -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Angola<br><span>Palancas Negras</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la quatrième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/zimbabwe.jpg" alt="Zimbabwe"> <!-- Image de l'équipe du Zimbabwe -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Zimbabwe<br><span>The Warriors</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+      </div> <!-- Fin de la ligne du groupe B -->
+    </section> <!-- Fin de la section du groupe B -->
 
-<body>
-<<<<<<< HEAD
-  <!-- Corps du document -->
+    <!-- Groupe C --> <!-- Commentaire indiquant le début du groupe C -->
+    <section class="group-section"> <!-- Section pour le groupe C -->
+      <h2 class="group-title">Groupe C</h2> <!-- Titre du groupe C -->
+      <div class="row justify-content-center"> <!-- Ligne avec contenu centré -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la première équipe du groupe C -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/nigeria.jpg" alt="Nigeria"> <!-- Image de l'équipe du Nigeria -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Nigeria<br><span>Super Eagles</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la deuxième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/tunisie.jpg" alt="Tunisie"> <!-- Image de l'équipe de Tunisie -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Tunisie<br><span>Les Aigles de Carthage</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la troisième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/ouganda.jpg" alt="Ouganda"> <!-- Image de l'équipe d'Ouganda -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Ouganda<br><span>The Cranes</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la quatrième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/tanzanie.jpg" alt="Tanzanie"> <!-- Image de l'équipe de Tanzanie -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Tanzanie<br><span>Taifa Stars</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+      </div> <!-- Fin de la ligne du groupe C -->
+    </section> <!-- Fin de la section du groupe C -->
 
-  <!-- En-tête de la page -->
-  <header>
-    <!-- Effet visuel d'arrière-plan -->
-=======
-    <!-- Navigation -->
-    <nav class="main-navbar">
-        <div class="container nav-container">
-            <div class="nav-logo" style="display:flex;align-items:center;position:absolute;left:32px;top:12px;height:56px;">
-                <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN" style="height:56px;width:auto;vertical-align:middle;display:block;">
-            </div>
-            <div class="nav-links" style="margin-left:110px;">
-                <a href="#acceuil">Acceuil</a>
-                <a href="#archive">Archive</a>
-                <a href="#calendrier">Calendrier</a>
-                <a href="#equipes">Équipes</a>
-                <a href="#stades">Stades</a>
-            </div>
-            <!-- Bouton de langue -->
-            <div class="lang-switcher" style="position:absolute;top:18px;right:32px;z-index:10;display:flex;align-items:center;gap:6px;">
-                <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" style="width:26px;height:26px;vertical-align:middle;filter:drop-shadow(0 1px 2px #0002);cursor:pointer;">
-                <ul id="langMenu" class="lang-menu" style="display:none;">
-                    <li data-lang="fr">Français</li>
-                    <li data-lang="ar">العربية</li>
-                    <li data-lang="en">English</li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header>
->>>>>>> 6db069d0afc2bbcda2e554042e2dec13702a25da
-    <div class="header-aurora">
-      <div class="aurora__item"></div>
-      <div class="aurora__item"></div>
-      <div class="aurora__item"></div>
-      <div class="aurora__item"></div>
-    </div>
+    <!-- Groupe D --> <!-- Commentaire indiquant le début du groupe D -->
+    <section class="group-section"> <!-- Section pour le groupe D -->
+      <h2 class="group-title">Groupe D</h2> <!-- Titre du groupe D -->
+      <div class="row justify-content-center"> <!-- Ligne avec contenu centré -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la première équipe du groupe D -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/senegal.jpg" alt="Sénégal"> <!-- Image de l'équipe du Sénégal -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Sénégal<br><span>Les Lions de la Téranga</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la deuxième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/rdc.jpg" alt="RD Congo"> <!-- Image de l'équipe de RD Congo -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>RD Congo<br><span>Les Léopards</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la troisième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/benin.jpg" alt="Bénin"> <!-- Image de l'équipe du Bénin -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Bénin<br><span>Les Écureuils</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la quatrième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/botswana.jpg" alt="Botswana"> <!-- Image de l'équipe du Botswana -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Botswana<br><span>The Zebras</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+      </div> <!-- Fin de la ligne du groupe D -->
+    </section> <!-- Fin de la section du groupe D -->
 
-    <!-- Contenu principal de l'en-tête -->
-    <div class="header-content position-relative">
-      <h1 class="header-title">Les Équipes Qualifiées</h1>
-      <!-- Titre principal -->
-      <p class="header-subtitle">Découvrez les 24 équipes qui participeront à la CAN 2025 au Maroc</p>
-      <!-- Sous-titre explicatif -->
-    </div>
-  </header>
+    <!-- Groupe E --> <!-- Commentaire indiquant le début du groupe E -->
+    <section class="group-section"> <!-- Section pour le groupe E -->
+      <h2 class="group-title">Groupe E</h2> <!-- Titre du groupe E -->
+      <div class="row justify-content-center"> <!-- Ligne avec contenu centré -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la première équipe du groupe E -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/algerie.jpg" alt="Algérie"> <!-- Image de l'équipe d'Algérie -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Algérie<br><span>Les Fennecs</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la deuxième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/burkina-faso.jpg" alt="Burkina Faso"> <!-- Image de l'équipe du Burkina Faso -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Burkina Faso<br><span>Les Étalons</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la troisième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/guinee-equatoriale.jpg" alt="Guinée équatoriale"> <!-- Image de l'équipe de Guinée équatoriale -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Guinée équatoriale<br><span>Nzalang Nacional</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la quatrième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/soudan.jpg" alt="Soudan"> <!-- Image de l'équipe du Soudan -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Soudan<br><span>Les Sokour</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+      </div> <!-- Fin de la ligne du groupe E -->
+    </section> <!-- Fin de la section du groupe E -->
 
-  <!-- Section vidéo héros -->
-  <div class="qualified-hero container my-4">
-    <div class="qualified-hero-img-wrapper">
-      <div class="video-container">
-        <!-- Conteneur vidéo avec autoplay et boucle -->
-        <video autoplay loop muted playsinline class="hero-video">
-          <source src="videos/tirage_Can2025.mp4" type="video/mp4">
-          <!-- Message de secours si la vidéo ne charge pas -->
-          Votre navigateur ne supporte pas la lecture de vidéos.
-        </video>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contenu principal de la page -->
-  <main class="container my-5">
-    
-    <!-- Section Groupe A -->
-    <section class="group-section">
-      <h2 class="group-title">Groupe A</h2>
-      <!-- Titre du groupe -->
-
-      <!-- Grille Bootstrap pour l'organisation responsive -->
-      <div class="row justify-content-center">
-        
-        <!-- Carte Maroc -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect maroc-host">
-            <div class="imgBox">
-              <img src="images/teams/Maroc.jpg" alt="Drapeau du Maroc">
-              <!-- Badge spécial pour le pays hôte -->
-              <div class="host-badge">Pays Hôte</div>
+    <!-- Groupe F --> <!-- Commentaire indiquant le début du groupe F -->
+    <section class="group-section"> <!-- Section pour le groupe F -->
+      <h2 class="group-title">Groupe F</h2> <!-- Titre du groupe F -->
+      <div class="row justify-content-center"> <!-- Ligne avec contenu centré -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la première équipe du groupe F -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/cote-divoire.jpg" alt="Côte d'Ivoire"> <!-- Image de l'équipe de Côte d'Ivoire -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Côte d'Ivoire<br><span>Les Éléphants</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la deuxième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/cameroun.jpg" alt="Cameroun"> <!-- Image de l'équipe du Cameroun -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Cameroun<br><span>Les Lions Indomptables</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la troisième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/gabon.jpg" alt="Gabon"> <!-- Image de l'équipe du Gabon -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Gabon<br><span>Les Panthères</span></h2> <!-- Nom du pays et surnom de l'équipe -->
+            </div> <!-- Fin du conteneur de contenu -->
+          </div> <!-- Fin de la carte d'équipe -->
+        </div> <!-- Fin de la colonne -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4"> <!-- Colonne responsive pour la quatrième équipe -->
+          <div class="box card-effect"> <!-- Carte pour l'équipe avec effet -->
+            <div class="imgBox"> <!-- Conteneur de l'image d'équipe -->
+              <img src="images/teams/mozambique.jpg" alt="Mozambique"> <!-- Image de l'équipe du Mozambique -->
+            </div> <!-- Fin du conteneur d'image -->
+            <div class="content"> <!-- Conteneur du contenu textuel -->
+              <h2>Mozambique<br><span>Os Mambas</span></h2> <!-- Nom du pays et surnom de l'équipe -->
             </div>
-            <div class="content">
-              <h2>Maroc<br><span>Les Lions de l'Atlas</span></h2>
-              <!-- Nom du pays et surnom de l'équipe -->
-            </div>
-          </div>
-        </div>
-
-        <!-- Les autres cartes suivent la même structure -->
-        <!-- Carte Mali -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/Mali.jpg" alt="Drapeau du Mali">
-            </div>
-            <div class="content">
-              <h2>Mali<br><span>Les Aigles</span></h2>
-            </div>
-          </div>
-        </div>
-
-        <!-- Carte Zambie -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/Zambie.jpg" alt="Drapeau de la Zambie">
-            </div>
-            <div class="content">
-              <h2>Zambie<br><span>Chipolopolo</span></h2>
-            </div>
-          </div>
-        </div>
-
-        <!-- Carte Comores -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/Comores.jpg" alt="Drapeau des Comores">
-            </div>
-            <div class="content">
-              <h2>Comores<br><span>Les Coelecanthes</span></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Groupe B -->
-    <section class="group-section">
-      <h2 class="group-title">Groupe B</h2>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/egypte.jpg" alt="Égypte">
-            </div>
-            <div class="content">
-              <h2>Égypte<br><span>Les Pharaons</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/Afrique du sud.jpg" alt="Afrique du Sud">
-            </div>
-            <div class="content">
-              <h2>Afrique du Sud<br><span>Bafana Bafana</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/Angola.jpg" alt="Angola">
-            </div>
-            <div class="content">
-              <h2>Angola<br><span>Palancas Negras</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/zimbabwe.jpg" alt="Zimbabwe">
-            </div>
-            <div class="content">
-              <h2>Zimbabwe<br><span>The Warriors</span></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Groupe C -->
-    <section class="group-section">
-      <h2 class="group-title">Groupe C</h2>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/nigeria.jpg" alt="Nigeria">
-            </div>
-            <div class="content">
-              <h2>Nigeria<br><span>Super Eagles</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/tunisie.jpg" alt="Tunisie">
-            </div>
-            <div class="content">
-              <h2>Tunisie<br><span>Les Aigles de Carthage</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/ouganda.jpg" alt="Ouganda">
-            </div>
-            <div class="content">
-              <h2>Ouganda<br><span>The Cranes</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/tanzanie.jpg" alt="Tanzanie">
-            </div>
-            <div class="content">
-              <h2>Tanzanie<br><span>Taifa Stars</span></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Groupe D -->
-    <section class="group-section">
-      <h2 class="group-title">Groupe D</h2>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/senegal.jpg" alt="Sénégal">
-            </div>
-            <div class="content">
-              <h2>Sénégal<br><span>Les Lions de la Téranga</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/rdc.jpg" alt="RD Congo">
-            </div>
-            <div class="content">
-              <h2>RD Congo<br><span>Les Léopards</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/benin.jpg" alt="Bénin">
-            </div>
-            <div class="content">
-              <h2>Bénin<br><span>Les Écureuils</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/botswana.jpg" alt="Botswana">
-            </div>
-            <div class="content">
-              <h2>Botswana<br><span>The Zebras</span></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Groupe E -->
-    <section class="group-section">
-      <h2 class="group-title">Groupe E</h2>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/algerie.jpg" alt="Algérie">
-            </div>
-            <div class="content">
-              <h2>Algérie<br><span>Les Fennecs</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/burkina-faso.jpg" alt="Burkina Faso">
-            </div>
-            <div class="content">
-              <h2>Burkina Faso<br><span>Les Étalons</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/guinee-equatoriale.jpg" alt="Guinée équatoriale">
-            </div>
-            <div class="content">
-              <h2>Guinée équatoriale<br><span>Nzalang Nacional</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/soudan.jpg" alt="Soudan">
-            </div>
-            <div class="content">
-              <h2>Soudan<br><span>Les Sokour</span></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Groupe F -->
-    <section class="group-section">
-      <h2 class="group-title">Groupe F</h2>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/cote-divoire.jpg" alt="Côte d'Ivoire">
-            </div>
-            <div class="content">
-              <h2>Côte d'Ivoire<br><span>Les Éléphants</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/cameroun.jpg" alt="Cameroun">
-            </div>
-            <div class="content">
-              <h2>Cameroun<br><span>Les Lions Indomptables</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/gabon.jpg" alt="Gabon">
-            </div>
-            <div class="content">
-              <h2>Gabon<br><span>Les Panthères</span></h2>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-          <div class="box card-effect">
-            <div class="imgBox">
-              <img src="images/teams/mozambique.jpg" alt="Mozambique">
-            </div>
-            <div class="content">
-              <h2>Mozambique<br><span>Os Mambas</span></h2>
             </div>
           </div>
         </div>
@@ -384,46 +346,35 @@
     </section>
   </main>
 
-  <!-- Pied de page -->
   <footer class="text-center p-4 text-white" style="background-color: #04361D;">
     <p>&copy; 2025 CAN Maroc - Tous droits réservés</p>
-    <!-- Copyright et mentions légales -->
   </footer>
 
-  <!-- Scripts JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Bibliothèque Bootstrap pour les composants interactifs -->
-
-  <!-- Script personnalisé -->
   <script>
-    // Attendre que le DOM soit entièrement chargé
     document.addEventListener('DOMContentLoaded', function() {
-      // Sélectionner toutes les cartes d'équipe
       const cards = document.querySelectorAll('.box.card-effect');
       
-      // Ajouter un écouteur d'événement sur chaque carte
       cards.forEach(card => {
         card.addEventListener('click', function(e) {
-          e.preventDefault(); // Empêcher le comportement par défaut
+          e.preventDefault();
           
-          // Ajouter une classe CSS pour l'animation
+          // Ajouter la classe pour l'animation
           this.classList.add('clicked');
           
-          // Extraire le nom du pays depuis le titre
+          // Récupérer le nom du pays depuis le titre
           const countryName = this.querySelector('h2').textContent.split('\n')[0].trim();
           
-          // Déclencher la redirection après l'animation
+          // Attendre la fin de l'animation avant la redirection
           setTimeout(() => {
-            // Générer un nom de fichier valide
+            // Rediriger vers la page spécifique du pays
             const pageName = countryName.toLowerCase()
-              .normalize('NFD') // Normaliser les caractères
-              .replace(/[\u0300-\u036f]/g, '') // Supprimer les accents
-              .replace(/\s+/g, '') // Supprimer les espaces
-              + '.html'; // Ajouter l'extension
-            
-            // Redirection vers la page de l'équipe
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '') // Enlever les accents
+              .replace(/\s+/g, '') // Enlever les espaces
+              + '.html';
             window.location.href = pageName;
-          }, 500); // Délai correspondant à la durée de l'animation
+          }, 500); // Durée de l'animation
         });
       });
     });
