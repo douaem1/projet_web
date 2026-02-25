@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu 3D Étendu</title>
+    <title>Stades - CAN 2025 Maroc</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        :root {
+            --dark-green: #04361D;
+            --mint-green: #76BA9D;
+            --beige: #F0F2D5;
+            --red: #EF233C;
+            --crimson: #97051D;
+            --warm-wood: #4B0E0E;
+            --light: #F1ECDB;
+            --primary: #EF233C;
+            --secondary: #1e90ff;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -16,39 +28,318 @@
         body {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #2a2a2a;
+            background: var(--beige);
             font-family: 'Oswald', sans-serif;
+            padding-top: 100px; /* Espace pour la navbar */
+            overflow-x: hidden;
         }
 
-        ul {
+        /* Navigation */
+        nav {
+            background: var(--warm-wood);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .main-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 80px;
+            background: #4B0E0E;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            transition: box-shadow 0.2s, background 0.2s;
+        }
+
+        .main-navbar .nav-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-navbar .nav-logo {
+            position: absolute;
+            top: 12px;
+            left: 32px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .main-navbar .nav-logo img {
+            height: 56px;
+            width: auto;
+            display: block;
+        }
+
+        .main-navbar .nav-links {
+            margin-left: 110px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            gap: 32px;
+        }
+
+        .main-navbar .nav-links a {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #F1ECDB;
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .main-navbar .nav-links a:hover, 
+        .main-navbar .nav-links a:focus,
+        .main-navbar .nav-links a.active {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        .lang-switcher {
+            position: absolute;
+            top: 18px;
+            right: 32px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-switcher img {
+            width: 26px;
+            height: 26px;
+            vertical-align: middle;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+            cursor: pointer;
+        }
+
+        .lang-menu {
+            display: none;
+            list-style: none;
+            background: var(--beige);
+            border-radius: 8px;
+            overflow: hidden;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .lang-menu li {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: var(--dark-green);
+        }
+
+        .lang-menu li:hover {
+            background: var(--mint-green);
+        }
+
+        /* Page Title */
+        .page-title {
+            color: var(--dark-green);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--red);
+        }
+
+        /* Main content wrapper */
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+
+        /* 3D Location Logo */
+        .location-logo-container {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+        }
+
+        .location-logo {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            transform-style: preserve-3d;
+            animation: rotate 15s infinite linear;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotateY(0deg) rotateX(15deg); }
+            100% { transform: rotateY(360deg) rotateX(15deg); }
+        }
+
+        .location-logo-front, 
+        .location-logo-back,
+        .location-logo-top,
+        .location-logo-bottom,
+        .location-logo-left,
+        .location-logo-right {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            background: var(--crimson);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            color: var(--beige);
+            font-size: 120px;
+        }
+
+        .location-logo-front {
+            transform: translateZ(120px);
+            background: linear-gradient(45deg, var(--crimson), var(--red));
+        }
+
+        .location-logo-back {
+            transform: translateZ(-120px) rotateY(180deg);
+            background: linear-gradient(45deg, var(--dark-green), #075434);
+        }
+
+        .location-logo-top {
+            transform: rotateX(90deg) translateZ(120px);
+            background: var(--dark-green);
+        }
+
+        .location-logo-bottom {
+            transform: rotateX(-90deg) translateZ(120px);
+            background: var(--crimson);
+        }
+
+        .location-logo-left {
+            transform: rotateY(-90deg) translateZ(120px);
+            background: linear-gradient(to right, var(--crimson), var(--dark-green));
+        }
+
+        .location-logo-right {
+            transform: rotateY(90deg) translateZ(120px);
+            background: linear-gradient(to right, var(--dark-green), var(--crimson));
+        }
+
+        .logo-shadow {
+            position: absolute;
+            width: 240px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 50%;
+            bottom: -50px;
+            filter: blur(20px);
+            animation: shadow-pulse 4s infinite alternate;
+        }
+
+        @keyframes shadow-pulse {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            100% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        /* 3D Menu Container repositioned */
+        .menu-container {
+            width: 50%;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        ul.menu-3d {
             position: relative;
             transform: skewY(-15deg);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            margin-left: auto;
         }
 
-        li {
+        .menu-3d li {
             position: relative;
             list-style: none;
-            width: 200px;
-            padding: 15px;
-            background: #3e3f46;
+            width: 280px;
+            padding: 18px;
+            background: var(--dark-green);
             z-index: var(--i);
             transition: 0.5s;
         }
 
-        li:hover {
-            background: #996fae;
-            transform: translateX(50px);
+        .menu-3d li:hover {
+            background: var(--crimson);
+            transform: translateX(-50px);
         }
 
-        li::before {
+        .menu-3d li::before {
             font-family: "Font Awesome 6 Free";
-            color: #999;
+            font-weight: 900;
+            color: var(--beige);
             display: flex;
             justify-content: center;
             align-items: center;
-            content: attr(data-icon);
+            content: '\f3c5'; /* Map marker icon */
             position: absolute;
             top: 0;
             left: -40px;
@@ -60,11 +351,11 @@
             transition: 0.5s;
         }
 
-        li:hover::before {
-            background: #7b5190;
+        .menu-3d li:hover::before {
+            background: #7b0418;
         }
 
-        li::after {
+        .menu-3d li::after {
             content: "";
             position: absolute;
             top: -40px;
@@ -77,57 +368,196 @@
             transition: 0.5s;
         }
 
-        li:hover::after {
-            background: #86589d;
+        .menu-3d li:hover::after {
+            background: #8a0519;
         }
 
-        li a {
+        .menu-3d li a {
             text-decoration: none;
-            color: #999;
+            color: var(--beige);
             display: block;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             transition: 0.5s;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
-        li:hover a {
-            color: #fff;
+        .menu-3d li:hover a {
+            color: white;
+            transform: scale(1.05);
         }
 
-        li:last-child::after {
+        .menu-3d li:last-child::after {
             box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            width: 100%;
+            background: var(--dark-green);
+            color: var(--beige);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .content-wrapper {
+                flex-direction: column;
+                gap: 80px;
+            }
+
+            .location-logo-container, .menu-container {
+                width: 100%;
+            }
+
+            .menu-3d li:hover {
+                transform: translateX(30px);
+            }
+
+            ul.menu-3d {
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
 <body>
-    <ul>
-        <li style="--i: 9;" data-icon="">
-            <a href="#">Complex Sportif Prince Moulay Abdellah</a>
-        </li>
-        <li style="--i: 8;" data-icon="">
-            <a href="#">Stade Olympique Annexe Complexe Sportif Prince Moulay Abdellah </a>
-        </li>
-        <li style="--i: 7;" data-icon="">
-            <a href="#">Stade Al Barid</a>
-        </li>
-        <li style="--i: 6;" data-icon="">
-            <a href="#">Complexe Sportif Prince Héritier Moulay El Hassan</a>
-        </li>
-        <li style="--i: 5;" data-icon="">
-            <a href="#">Complexe Sportif Mohammed 5</a>
-        </li>
-        <li style="--i: 4;" data-icon="">
-            <a href="#">Grand Stade D'Agadir</a>
-        </li>
-        <li style="--i: 3;" data-icon="">
-            <a href="#">Grand stade de marrakech </a>
-        </li>
-        <li style="--i: 2;" data-icon="">
-            <a href="#">complexe sportif de fes</a>
-        </li>
-        <li style="--i: 1;" data-icon="">
-            <a href="#">grand stade de tanger</a>
-        </li>
-    </ul>
+    <!-- Navigation -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/Archive/logoCAN_PNG.webp" alt="Logo CAN">
+            </div>
+            <div class="nav-links">
+                <a href="accueil.html">Accueil</a>
+                <a href="accueil.html#archive">Archive</a>
+                <a href="matches.html">Calendrier</a>
+                <a href="equipe_qualifiée.html">Équipes</a>
+                <a href="menu3d.html" class="active">Stades</a>
+            </div>
+            <!-- Bouton de langue -->
+            <div class="lang-switcher">
+                <img id="langIcon" src="images/Archive/languageButton.png" alt="Langue" />
+                <ul id="langMenu" class="lang-menu">
+                    <li data-lang="fr">Français</li>
+                    <li data-lang="ar">العربية</li>
+                    <li data-lang="en">English</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="page-title">Les Stades de la CAN 2025</h1>
+
+    <div class="content-wrapper">
+        <!-- Grand logo de localisation 3D animé -->
+        <div class="location-logo-container">
+            <div class="location-logo">
+                <div class="location-logo-front">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-logo-back">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-logo-top">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-logo-bottom">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-logo-left">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-logo-right">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="logo-shadow"></div>
+            </div>
+        </div>
+
+        <!-- Menu 3D maintenant à droite -->
+        <div class="menu-container">
+            <ul class="menu-3d">
+                <li style="--i: 9;">
+                    <a href="MoulayAbdellah.html">Complex Sportif Prince Moulay Abdellah</a>
+                </li>
+                <li style="--i: 8;">
+                    <a href="Annexe Moulay Abdellah.html">Stade Olympique Annexe Complexe Prince Moulay Abdellah</a>
+                </li>
+                <li style="--i: 7;">
+                    <a href="StadeBarid.html">Stade Al Barid</a>
+                </li>
+                <li style="--i: 6;">
+                    <a href="MoulayHassan.html">Complexe Sportif Prince Héritier Moulay El Hassan</a>
+                </li>
+                <li style="--i: 5;">
+                    <a href="MohammedV.html">Complexe Sportif Mohammed V</a>
+                </li>
+                <li style="--i: 4;">
+                    <a href="StadeAgadir.html">Grand Stade D'Agadir</a>
+                </li>
+                <li style="--i: 3;">
+                    <a href="StadeMarrakech.html">Grand Stade de Marrakech</a>
+                </li>
+                <li style="--i: 2;">
+                    <a href="StadeFes.html">Complexe Sportif de Fès</a>
+                </li>
+                <li style="--i: 1;">
+                    <a href="StadeTanger.html">Grand Stade de Tanger</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CAN Maroc - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Script pour afficher/masquer le menu de langues
+        document.getElementById('langIcon').addEventListener('click', function() {
+            const langMenu = document.getElementById('langMenu');
+            langMenu.style.display = langMenu.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Fermer le menu de langues lorsqu'on clique ailleurs
+        document.addEventListener('click', function(event) {
+            if (!event.target.matches('#langIcon')) {
+                document.getElementById('langMenu').style.display = 'none';
+            }
+        });
+        
+        // Animation au survol du menu 3D
+        const menu3d = document.querySelector('.menu-3d');
+        menu3d.addEventListener('mouseenter', function() {
+            this.style.transform = 'skewY(-15deg) translateZ(10px)';
+        });
+        
+        menu3d.addEventListener('mouseleave', function() {
+            this.style.transform = 'skewY(-15deg) translateZ(0)';
+        });
+
+        // Ajout d'un effet d'intensité de rotation du logo au scroll
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const logo = document.querySelector('.location-logo');
+            
+            // Intensifie la rotation jusqu'à un certain point
+            const speed = Math.min(15 + scrollPosition / 100, 30);
+            logo.style.animationDuration = speed + 's';
+        });
+
+        // Effet interactif sur le logo quand on passe la souris dessus
+        const logo = document.querySelector('.location-logo');
+        logo.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        
+        logo.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+    </script>
 </body>
 </html>

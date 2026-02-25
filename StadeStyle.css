@@ -1,3 +1,4 @@
+/* Définition des variables de couleurs personnalisées pour le thème */
 :root {
   --dark-green: #04361D;
   --cambridge-blue: #76BA9D;
@@ -21,191 +22,198 @@
 }
 
 
-/* Base styles */
+/* Styles de base pour le corps de la page */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--beige);
+  /* Utilise une pile de polices système pour une meilleure compatibilité */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: var(--beige);  /* Applique la couleur de fond beige */
 }
 
-/* Header */
-header {
-  background: linear-gradient(135deg, var(--moroccan-red) 0%, var(--carmine) 100%);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-
-
-/* Sections */
+/* Style des sections */
 section {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 30px;      /* Espacement supérieur */
+  padding-bottom: 30px;   /* Espacement inférieur */
 }
 
 /* Slider container et slides */
 .slider-container {
-  position: relative;
-  height: 836px;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  position: relative;  /* Pour le positionnement des éléments enfants */
+  height: 836px;  /* Hauteur fixe */
+  width: 100%;   /* Largeur complète */
+  margin: 0 auto;   /* Centrage horizontal */
+  overflow: hidden;   /* Cache tout contenu débordant */
+  border-radius: 20px;  /* Coins arrondis */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);   /* Ajoute une ombre portée */
 }
 
+/* Conteneur des slides */
 .slides {
-  height: 100%;
-  position: relative;
+  height: 100%;         /* Prend toute la hauteur du conteneur parent */
+  position: relative;   /* Contexte de positionnement pour les slides */
 }
 
+/* Style individuel de chaque slide */
 .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  position: absolute;   /* Positionnement absolu par rapport au conteneur */
+  top: 0;              /* Aligné en haut */
+  left: 0;             /* Aligné à gauche */
+  width: 100%;         /* Prend toute la largeur */
+  height: 100%;        /* Prend toute la hauteur */
+  opacity: 0;          /* Invisible par défaut */
+  transition: opacity 1s ease-in-out;  /* Animation de fondu */
 }
 
+/* Style du slide actif */
 .slide.active {
-  opacity: 1;
+  opacity: 1;          /* Rend visible le slide actif */
 }
 
+/* Style des images dans les slides */
 .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;         /* Prend toute la largeur */
+  height: 100%;        /* Prend toute la hauteur */
+  object-fit: cover;   /* Couvre tout l'espace disponible sans déformer */
 }
 
+/* Style du contenu des slides */
 .slide-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  color: white;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+  position: absolute;           /* Positionnement absolu dans le slide */
+  bottom: 0;                    /* Aligné en bas du slide */
+  left: 0;                      /* Aligné à gauche */
+  right: 0;                     /* Aligné à droite */
+  padding: 2rem;                /* Espacement intérieur */
+  /* Dégradé de fond pour la lisibilité du texte */
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));  
+  color: white;                 /* Texte en blanc */
+  transform: translateY(20px);  /* Décalage initial pour l'animation */
+  opacity: 0;                   /* Invisible par défaut */
+  transition: all 0.5s ease-in-out;  /* Animation fluide */
 }
 
+/* Animation du contenu du slide actif */
 .slide.active .slide-content {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(0);     /* Retour à la position normale */
+  opacity: 1;                   /* Devient visible */
 }
 
-/* Info cards */
+/* Style des cartes d'information */
 .info-cards {
-  max-width: 100%;  /* Utilise toute la largeur disponible */
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Crée 2 colonnes de même taille */
-  gap: 0.8rem; /* Espace entre les cartes */
-  row-gap: 1.2rem; 
+  max-width: 100%;             /* Largeur maximale */
+  margin: 0 auto;              /* Centrage horizontal */
+  display: grid;               /* Utilisation de Grid */
+  grid-template-columns: repeat(2, 1fr);  /* 2 colonnes égales */
+  gap: 0.8rem;                 /* Espace entre les cartes */
+  row-gap: 1.2rem;             /* Espace entre les rangées */
 }
 
+/* Style individuel des cartes */
 .info-cards .card {
-  border: none;
-  border-radius: 12px;  
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.438);
-  backdrop-filter: blur(10px); 
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);  /* Ombre plus légère */
-  overflow: hidden;
-  cursor: pointer;
+  border: none;                /* Pas de bordure */
+  border-radius: 12px;         /* Coins arrondis */
+  transition: all 0.3s ease;   /* Animation au survol */
+  background: rgba(255, 255, 255, 0.438);  /* Fond semi-transparent */
+  backdrop-filter: blur(10px); /* Effet de flou */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);  /* Ombre portée */
+  overflow: hidden;            /* Cache le débordement */
+  cursor: pointer;             /* Curseur pointeur */
 }
 
+/* Effet au survol des cartes */
 .info-cards .card:hover {
-  background: rgba(255, 255, 255, 0.607);
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(239, 35, 60, 0.3);
+  background: rgba(255, 255, 255, 0.607);  /* Fond plus opaque */
+  transform: translateY(-8px);  /* Léger déplacement vers le haut */
+  box-shadow: 0 8px 20px rgba(239, 35, 60, 0.3);  /* Ombre plus prononcée */
 }
 
+/* Styles for the card body within info cards */
 .info-cards .card-body {
   padding: 1rem 0.8rem;  /* Réduit le padding */
-  text-align: center;
+  text-align: center;    /* Center-align all content */
 }
 
+/* Title styling for info cards */
 .info-cards .card-title {
-  font-size: 1.5rem;  /* Réduit de 1.4rem à 1.2rem */
-  font-weight: 700;
-  color: var(--carmine);
+  font-size: 1.5rem;         /* taille titre */
+  font-weight: 700;          /* Bold text */
+  color: var(--carmine);     /* utiliser colore */
 }
 
+/* Text styling pour info cards */
 .info-cards .card-text {
-  font-size: 1.5rem;  /* Réduit de 1.4rem à 1.1rem */
-  font-weight: 500;
-  color: var(--moroccan-blue);
+  font-size: 1.5rem;         /* Text taille */
+  font-weight: 500;          /* Bold text */
+  color: var(--moroccan-blue);  /* utiliser colore */
 }
 
+/* Style des icônes Bootstrap dans les cartes d'information */
 .info-cards .bi {
-  font-size: 1.8rem;
-  font-weight: 700; 
-  color: var(--carmine);
-  margin-bottom: 0.5rem;
-  transition: transform 0.3s ease;
+  font-size: 1.8rem;         /* Taille de l'icône */
+  font-weight: 700;          /* Épaisseur de l'icône */
+  color: var(--carmine);     /* Couleur carmin de l'icône */
+  margin-bottom: 0.5rem;     /* Espace en dessous de l'icône */
+  transition: transform 0.3s ease; /* Animation fluide */
 }
 
+/* Effet au survol des icônes */
 .info-cards .card:hover .bi {
-  transform: scale(1.2);
+  transform: scale(1.2);     /* Agrandissement de l'icône au survol */
 }
 
-/* Ajout d'une bordure subtile au survol */
+/* Effets supplémentaires au survol des cartes */
 .info-cards .card:hover {
-  border-bottom: 4px solid var(--carmine);
+  border-bottom: 4px solid var(--carmine); /* Ajoute une bordure inférieure au survol */
 }
 
-/* Animation lors du clic */
+/* Animation au clic sur les cartes */
 .info-cards .card:active {
-  transform: scale(0.98);
+  transform: scale(0.98);    /* Léger effet de rétrécissement au clic */
 }
 
-/* Description card */
+/* Carte de description */
 .description-card .card {
-  border: none;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.438);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: all 0.3s ease; 
-  margin-top: 1.2rem; 
+  border: none;                           /* Pas de bordure */
+  border-radius: 15px;                    /* Coins arrondis */
+  background: rgba(255, 255, 255, 0.438); /* Fond blanc semi-transparent */
+  backdrop-filter: blur(10px);            /* Effet de flou d'arrière-plan */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Ombre portée légère */
+  transition: all 0.3s ease;              /* Animation fluide pour tous les changements */
+  margin-top: 1.2rem;                     /* Espace au-dessus de la carte */
 }
 
+/* Style des cartes au survol */
 .description-card .card:hover {
-  background: rgba(255, 255, 255, 0.607);
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(239, 35, 60, 0.3);
+    background: rgba(255, 255, 255, 0.607);     /* Fond plus opaque au survol */
+    transform: translateY(-8px);                 /* Effet de soulèvement */
+    box-shadow: 0 8px 20px rgba(239, 35, 60, 0.3); /* Ombre portée rougeâtre */
 }
 
+/* Style du titre de la carte */
 .description-card .card-title {
-  font-size: 1.5rem;  /* Réduit de 1.4rem à 1.2rem */
-  font-weight: 700;
-  color: var(--carmine);
+    font-size: 1.5rem;                          /* Taille du titre */
+    font-weight: 700;                           /* Texte en gras */
+    color: var(--carmine);                      /* Couleur carmin */
 }
 
+/* Style du texte de la carte */
 .description-card .card-text {
-  font-size: 1.5rem;  /* Réduit de 1.4rem à 1.1rem */
-  font-weight: 500;
-  text-align: justify; /* Justifie le texte */
-  padding: 0.8rem;     /* Ajoute un peu d'espace autour du texte */
-  color: var(--moroccan-blue);
+    font-size: 1.5rem;                          /* Taille du texte */
+    font-weight: 500;                           /* Texte semi-gras */
+    text-align: justify;                        /* Alignement justifié */
+    padding: 0.8rem;                            /* Marge intérieure */
+    color: var(--moroccan-blue);                /* Couleur bleu marocain */
 }
 
+/* Style des icônes Bootstrap */
 .description-card .bi {
-  font-size: 1.8rem;  /* Réduit de 2rem à 1.8rem */ 
-  font-weight: 700; 
-  color: var(--carmine);
-  transition: transform 0.3s ease;
+    font-size: 1.8rem;                          /* Taille de l'icône */
+    font-weight: 700;                           /* Épaisseur de l'icône */
+    color: var(--carmine);                      /* Couleur carmin */
+    transition: transform 0.3s ease;            /* Animation au survol */
 }
 
+/* Animation de l'icône au survol */
 .description-card .card:hover .bi {
-  transform: scale(1.2);
-}
-
-/* Ajout d'une bordure subtile au survol */
-.description-card .card:hover {
-  border-bottom: 4px solid var(--carmine);
+    transform: scale(1.2);                      /* Agrandissement de l'icône */
 }
 
 /* Animation lors du clic */
@@ -214,48 +222,49 @@ section {
 }
 
 /* Google Maps */
+/* Section de localisation Google Maps */
 .location-section {
-  background: rgba(255, 255, 255, 0.438);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.438);     /* Fond blanc semi-transparent */
+  backdrop-filter: blur(10px);                 /* Effet de flou d'arrière-plan */
+  padding: 2rem;                               /* Espacement intérieur */
+  border-radius: 20px;                         /* Coins arrondis */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);     /* Ombre portée légère */
 }
 
+/* Titre de la section localisation */
 .location-section .location-title {
-  font-size: 2rem;  
-  font-weight: 700;
-  padding-bottom: 1.5rem;
-  color: var(--carmine);
+  font-size: 2rem;                            /* Taille du titre */
+  font-weight: 700;                           /* Texte en gras */
+  padding-bottom: 1.5rem;                     /* Espace sous le titre */
+  color: var(--carmine);                      /* Couleur carmin */
 }
 
+/* Style des icônes dans la section localisation */
 .location-section .bi {
-  font-size: 1.8rem;  /* Augmenté de 2rem à 2.5rem */
-  font-weight: 700;
-  padding-bottom: 1.5rem;
-  color: var(--carmine);
-  transition: transform 0.3s ease;
+  font-size: 1.8rem;                          /* Taille de l'icône */
+  font-weight: 700;                           /* Épaisseur de l'icône */
+  padding-bottom: 1.5rem;                     /* Espace sous l'icône */
+  color: var(--carmine);                      /* Couleur carmin */
+  transition: transform 0.3s ease;            /* Animation au survol */
 }
 
-/* Animation de l'icône au survol de la section */
+/* Animation de l'icône au survol */
 .location-section:hover .bi {
-  transform: scale(1.2);
+  transform: scale(1.2);                      /* Agrandissement de l'icône */
 }
 
+/* Conteneur de la carte */
 .map-container {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(50, 42, 126, 0.30);
-  transition: transform 0.3s ease;
+  border-radius: 10px;                        /* Coins arrondis */
+  overflow: hidden;                           /* Cache les débordements */
+  box-shadow: 0 8px 25px rgba(50, 42, 126, 0.30); /* Ombre portée */
+  transition: transform 0.3s ease;            /* Animation au survol */
 }
 
+/* Effet au survol du conteneur de la carte */
 .map-container:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(239, 35, 59, 0.461);
-}
-
-.map-container:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);                /* Effet de soulèvement */
+  box-shadow: 0 8px 20px rgba(239, 35, 59, 0.461); /* Ombre rougeâtre */
 }
 
 
@@ -273,99 +282,110 @@ ul {
 }
 
 
-/* Hotels Section */
+/* Section des hôtels */
 .hotels-section {
-  padding: 2rem 0;
-  border-radius: 20px;
-  margin: 2rem auto;
+  padding: 2rem 0;                /* Espacement vertical */
+  border-radius: 20px;            /* Coins arrondis */
+  margin: 2rem auto;              /* Marge automatique pour centrage */
 }
 
+/* Titre de la section hôtels */
 .hotels-section .hotel-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--carmine);
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  font-size: 2rem;                /* Taille du texte */
+  font-weight: 700;               /* Graisse de la police */
+  color: var(--carmine);          /* Couleur du texte */
+  margin-bottom: 1.5rem;          /* Marge inférieure */
+  padding-bottom: 1.5rem;         /* Espacement inférieur interne */
 }
 
+/* Icônes dans la section hôtels */
 .hotels-section .bi {
-  font-size: 1.8rem;
-  font-weight: 700;
-  padding-bottom: 1.5rem;
-  color: var(--carmine);
-  transition: transform 0.3s ease;
+  font-size: 1.8rem;              /* Taille de l'icône */
+  font-weight: 700;               /* Graisse de l'icône */
+  padding-bottom: 1.5rem;         /* Espacement bas */
+  color: var(--carmine);          /* Couleur de l'icône */
+  transition: transform 0.3s ease; /* Animation au survol */
 }
 
+/* Grille des hôtels */
 .hotels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+  display: grid;                  /* Affichage en grille */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colonnes responsive */
+  gap: 2rem;                     /* Espacement entre les éléments */
+  padding: 1rem;                 /* Espacement interne */
 }
 
 /* Flip Card Styles */
+/* Styles des cartes qui se retournent */
 .flip-card {
-  width: 100%;
-  height: 400px;
-  perspective: 1000px;
-  border-radius: 15px;
+  width: 100%;                    /* Prend toute la largeur disponible */
+  height: 400px;                  /* Hauteur fixe */
+  perspective: 1000px;            /* Perspective pour l'effet 3D */
+  border-radius: 15px;            /* Coins arrondis */
 }
 
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  border-radius: 15px;
+  position: relative;             /* Position relative pour les faces */
+  width: 100%;                    /* Largeur complète */
+  height: 100%;                   /* Hauteur complète */
+  text-align: center;             /* Centrage du texte */
+  transition: transform 0.8s;      /* Animation de rotation */
+  transform-style: preserve-3d;    /* Préserve l'effet 3D */
+  border-radius: 15px;            /* Coins arrondis */
 }
 
+/* Animation au survol */
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg);      /* Rotation de la carte */
 }
 
+/* Styles communs pour les faces avant et arrière */
 .flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 15px;
-  overflow: hidden;
+  position: absolute;              /* Position absolue dans la carte */
+  width: 100%;                     /* Largeur complète */
+  height: 100%;                    /* Hauteur complète */
+  -webkit-backface-visibility: hidden;  /* Cache le verso (Safari) */
+  backface-visibility: hidden;     /* Cache le verso */
+  border-radius: 15px;             /* Coins arrondis */
+  overflow: hidden;                /* Cache les débordements */
 }
 
+/* Face avant de la carte */
 .flip-card-front {
-  background-color: #fff;
+  background-color: #fff;        /* Fond blanc pour la face avant */
 }
 
+/* Face arrière de la carte */
 .flip-card-back {
-  background: rgba(255, 255, 255, 0.9);
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);  /* Fond blanc semi-transparent */
+  transform: rotateY(180deg);            /* Rotation de 180 degrés */
+  display: flex;                         /* Utilisation de flexbox */
+  align-items: center;                   /* Centrage vertical */
+  justify-content: center;               /* Centrage horizontal */
 }
 
+/* Style de l'image de l'hôtel */
 .hotel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;                          /* Largeur complète */
+  height: 100%;                         /* Hauteur complète */
+  object-fit: cover;                    /* Couverture optimale de l'image */
 }
 
+/* Conteneur des informations de l'hôtel */
 .hotel-info {
-  padding: 1.5rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 1.5rem;                      /* Espacement intérieur */
+  height: 100%;                         /* Hauteur complète */
+  display: flex;                        /* Utilisation de flexbox */
+  flex-direction: column;               /* Disposition en colonne */
+  justify-content: center;              /* Centrage vertical */
 }
 
+/* Nom de l'hôtel */
 .hotel-name {
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: var(--moroccan-red);
-  margin-bottom: 1rem;
+  font-size: 1.7rem;                    /* Taille du texte */
+  font-weight: 600;                     /* Épaisseur de la police */
+  color: var(--moroccan-red);           /* Couleur rouge marocaine */
+  margin-bottom: 1rem;                  /* Marge inférieure */
 }
 
 .hotel-distance {
